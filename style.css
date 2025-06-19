@@ -1,0 +1,28 @@
+/* সাধারণ সেটিং */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+}
+
+/* হেডার ও ফুটার */
+header, footer  {
+  background-color: #004080;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* ন্যাভিগেশন */
+nav {
+  background-color: #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #004080;
+  font-weight: bold;
