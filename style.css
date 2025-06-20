@@ -26,3 +26,50 @@ nav a {
   text-decoration: none;
   color: #004080;
   font-weight: bold;
+  }
+
+  /* 🖼️ ব্যানার */
+.banner img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 🎥 ইউটিউব ভিডিও */
+.video {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #f9f9f9;
+}
+
+.video h2 {
+  margin-bottom: 15px;
+  color: #003d80;
+  font-size: 24px;
+}
+
+/* 🌐 সোশ্যাল মিডিয়া */
+.social {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #eee;
+}
+
+.social h2 {
+  margin-bottom: 15px;
+  color: #003d80;
+  font-size: 24px;
+}
+
+.icons a {
+  margin: 0 10px;
+  font-size: 30px;
+  color: #003d80;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.icons a:hover {
+  color: #ff6600;
+  transform: scale(1.2);
+}
