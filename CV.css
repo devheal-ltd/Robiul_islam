@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.profile img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ab47bc;
+}
+
+.profile-info h1 {
+  font-size: 28px;
+  color: #4a148c;
+}
+
+.profile-info p {
+  font-size: 16px;
+  margin-top: 4px;
+  color: #555;
+}
+
+section {
+  margin-top: 30px;
+}
+
+section h2 {
+  font-size: 22px;
+  color: #6a1b9a;
+  border-bottom: 2px solid #ce93d8;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 25px;
+}
+
+ul li {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.objective {
+  background-color: #f3e5f5;
+  padding: 15px;
+  border-radius: 10px;
+  color: #4a148c;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile img {
+    margin-bottom: 15px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  section h2 {
+    font-size: 20px;
+  }
+
+  .profile-info h1 {
+    font-size: 24px;
+  }
+}
