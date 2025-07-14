@@ -27,14 +27,9 @@ nav a {
   text-decoration: none;
   color: #004080;
   font-weight: bold;
-  border: #180d77 1px solid;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
+  border: #003d80 1px solid;
   }
-nav a:hover {
-  background-color: #004080;
-  color: white;
 
   /* 🖼️ ব্যানার */
 .banner img {
@@ -74,7 +69,8 @@ nav a:hover {
   margin: 0 10px;
   font-size: 30px;
   color: #003d80;
-  transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
 }
 
 .icons a:hover {
