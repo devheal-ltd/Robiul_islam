@@ -100,4 +100,19 @@ ul li {
   .profile-info h1 {
     font-size: 24px;
   }
+  .roles_Contact {
+    background: #f3e5f5;
+    color: #4a148c;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .whatsapp-button, .call-button {
+    background-color: white;
+    color: #4a148c;
+    padding: 2px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
 }
