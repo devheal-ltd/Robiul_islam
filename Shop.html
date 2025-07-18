@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Categories</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .category-box {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .category-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .category-box h4 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+
+    .category-box ul {
+      padding-left: 18px;
+      margin: 0;
+      list-style-type: disc;
+    }
+
+    .category-box ul li {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .category-box ul li a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .category-box ul li a:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <h2>Product Categories</h2>
+  <div class="category-grid">
+    <div class="category-box">
+      <h4>🔌 Home Appliances</h4>
+      <ul>
+        <li><a href="#">Refrigerator & Freezer</a></li>
+        <li><a href="#">Washing Machine</a></li>
+        <li><a href="#">Microwave Oven, Rice Cooker, Blender</a></li>
+        <li><a href="#">Air Conditioner, Fan, Heater</a></li>
+        <li><a href="#">Water Purifier</a></li>
+      </ul>
+    </div>
+    <div class="category-box">
+      <h4>🧰 Automotive & Tools</h4>
+      <ul>
+        <li><a href="#">Motorcycles & Accessories</a></li>
+        <li><a href="#">Car Accessories</a></li>
+        <li><a href="#">Helmets & Riding Gear</a></li>
+        <li><a href="#">Garage Tools</a></li>
+        <li><a href="#">Vehicle Maintenance</a></li>
+      </ul>
+    </div>
+    <div class="category-box">
+      <h4>📚 Education & Office Supplies</h4>
+      <ul>
+        <li><a href="#">Books & Notebooks</a></li>
+        <li><a href="#">Pens, Pencils & Stationery</a></li>
+        <li><a href="#">Files & Folders</a></li>
+        <li><a href="#">Office Chairs & Tables</a></li>
+        <li><a href="#">Printers & Ink</a></li>
+        <li><a href="#">Whiteboards & Boards</a></li>
+      </ul>
+    </div>
+    <div class="category-box">
+      <h4>🕌 Islamic Products</h4>
+      <ul>
+        <li><a href="#">Quran & Islamic Books</a></li>
+        <li><a href="#">Prayer Mat (Janamaz) & Cap (Topi)</a></li>
+        <li><a href="#">Miswak & Attar</a></li>
+        <li><a href="#">Islamic Gifts</a></li>
+      </ul>
+    </div>
+    <div class="category-box">
+      <h4>🧳 Travel & Outdoor</h4>
+      <ul>
+        <li><a href="#">Luggage & Trolley Bags</a></li>
+        <li><a href="#">Umbrellas & Raincoats</a></li>
+        <li><a href="#">Camping Gear</a></li>
+        <li><a href="#">Travel Accessories</a></li>
+      </ul>
+    </div>
+    <div class="category-box">
+      <h4>🛠️ Construction & Hardware</h4>
+      <ul>
+        <li><a href="#">Construction Materials</a></li>
+        <li><a href="#">Electrical Tools & Wiring</a></li>
+        <li><a href="#">Plumbing & Sanitary Items</a></li>
+        <li><a href="#">Paint & Paint Tools</a></li>
+        <li><a href="#">Hand Tools</a></li>
+      </ul>
+    </div>
+    <div class="category-box">
+      <h4>🐶 Pet Supplies</h4>
+      <ul>
+        <li><a href="#">Pet Food</a></li>
+        <li><a href="#">Cages & Carriers</a></li>
+        <li><a href="#">Pet Toys</a></li>
+        <li><a href="#">Health & Grooming Products</a></li>
+      </ul>
+    </div>
+    <div class="category-box">
+      <h4>🎁 Gifts & Handicrafts</h4>
+      <ul>
+        <li><a href="#">Handmade Crafts</a></li>
+        <li><a href="#">Wall Art & Paintings</a></li>
+        <li><a href="#">Gift Boxes & Customized Items</a></li>
+        <li><a href="#">Birthday/Anniversary Gifts</a></li>
+      </ul>
+    </div>
+    <div class="category-box">
+      <h4>💼 Services</h4>
+      <ul>
+        <li><a href="#">Graphic Design Services</a></li>
+        <li><a href="#">Website Development</a></li>
+        <li><a href="#">Assignment/Project Help</a></li>
+        <li><a href="#">Freelancing & Virtual Services</a></li>
+      </ul>
+    </div>
+    <div class="category-box">
+      <h4>⚙️ Optional / Special Categories</h4>
+      <ul>
+        <li><a href="#">Agricultural Products</a></li>
+        <li><a href="#">Sports Items</a></li>
+        <li><a href="#">Festival Decorations</a></li>
+        <li><a href="#">Safety Equipment</a></li>
+        <li><a href="#">Local Fashion</a></li>
+        <li><a href="#">Digital Goods</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
