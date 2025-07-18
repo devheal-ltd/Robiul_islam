@@ -1,173 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Categories</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>All Categories</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
+    * {
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 30px;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      padding: 40px 20px;
       color: #333;
+    }
+    nav {
+      background-color: #004080;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      border: 2px solid white;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    /* হেডার ও ফুটার */
+ footer  {
+  background-color: #004080;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #222;
     }
 
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .category-box {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 15px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .category-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    }
-
-    .category-box h4 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #007bff;
-    }
-
-    .category-box ul {
-      padding-left: 18px;
-      margin: 0;
-      list-style-type: disc;
-    }
-
-    .category-box ul li {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 5px;
-    }
-
-    .category-box ul li a {
-      color: #333;
+    .category-card {
+      background: #fff;
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
       text-decoration: none;
-      transition: color 0.3s;
+      color: #333;
     }
 
-    .category-box ul li a:hover {
-      color: #007bff;
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .category-card span {
+      display: block;
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      /* 🌐 সোশ্যাল মিডিয়া */
+.social {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #eee;
+}
+
+.social h2 {
+  margin-bottom: 15px;
+  color: #003d80;
+  font-size: 24px;
+}
+
+.icons a {
+  margin: 0 10px;
+  font-size: 30px;
+  color: #003d80;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.icons a:hover {
+  color: #ff6600;
+  transform: scale(1.2);
+}
+
     }
   </style>
 </head>
 <body>
-  <h2>Product Categories</h2>
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i>
+      HOME</a>
+  </nav>
+
+  <h1>Explore Our Categories</h1>
+
   <div class="category-grid">
-    <div class="category-box">
-      <h4>🔌 Home Appliances</h4>
-      <ul>
-        <li><a href="#">Refrigerator & Freezer</a></li>
-        <li><a href="#">Washing Machine</a></li>
-        <li><a href="#">Microwave Oven, Rice Cooker, Blender</a></li>
-        <li><a href="#">Air Conditioner, Fan, Heater</a></li>
-        <li><a href="#">Water Purifier</a></li>
-      </ul>
-    </div>
-    <div class="category-box">
-      <h4>🧰 Automotive & Tools</h4>
-      <ul>
-        <li><a href="#">Motorcycles & Accessories</a></li>
-        <li><a href="#">Car Accessories</a></li>
-        <li><a href="#">Helmets & Riding Gear</a></li>
-        <li><a href="#">Garage Tools</a></li>
-        <li><a href="#">Vehicle Maintenance</a></li>
-      </ul>
-    </div>
-    <div class="category-box">
-      <h4>📚 Education & Office Supplies</h4>
-      <ul>
-        <li><a href="#">Books & Notebooks</a></li>
-        <li><a href="#">Pens, Pencils & Stationery</a></li>
-        <li><a href="#">Files & Folders</a></li>
-        <li><a href="#">Office Chairs & Tables</a></li>
-        <li><a href="#">Printers & Ink</a></li>
-        <li><a href="#">Whiteboards & Boards</a></li>
-      </ul>
-    </div>
-    <div class="category-box">
-      <h4>🕌 Islamic Products</h4>
-      <ul>
-        <li><a href="#">Quran & Islamic Books</a></li>
-        <li><a href="#">Prayer Mat (Janamaz) & Cap (Topi)</a></li>
-        <li><a href="#">Miswak & Attar</a></li>
-        <li><a href="#">Islamic Gifts</a></li>
-      </ul>
-    </div>
-    <div class="category-box">
-      <h4>🧳 Travel & Outdoor</h4>
-      <ul>
-        <li><a href="#">Luggage & Trolley Bags</a></li>
-        <li><a href="#">Umbrellas & Raincoats</a></li>
-        <li><a href="#">Camping Gear</a></li>
-        <li><a href="#">Travel Accessories</a></li>
-      </ul>
-    </div>
-    <div class="category-box">
-      <h4>🛠️ Construction & Hardware</h4>
-      <ul>
-        <li><a href="#">Construction Materials</a></li>
-        <li><a href="#">Electrical Tools & Wiring</a></li>
-        <li><a href="#">Plumbing & Sanitary Items</a></li>
-        <li><a href="#">Paint & Paint Tools</a></li>
-        <li><a href="#">Hand Tools</a></li>
-      </ul>
-    </div>
-    <div class="category-box">
-      <h4>🐶 Pet Supplies</h4>
-      <ul>
-        <li><a href="#">Pet Food</a></li>
-        <li><a href="#">Cages & Carriers</a></li>
-        <li><a href="#">Pet Toys</a></li>
-        <li><a href="#">Health & Grooming Products</a></li>
-      </ul>
-    </div>
-    <div class="category-box">
-      <h4>🎁 Gifts & Handicrafts</h4>
-      <ul>
-        <li><a href="#">Handmade Crafts</a></li>
-        <li><a href="#">Wall Art & Paintings</a></li>
-        <li><a href="#">Gift Boxes & Customized Items</a></li>
-        <li><a href="#">Birthday/Anniversary Gifts</a></li>
-      </ul>
-    </div>
-    <div class="category-box">
-      <h4>💼 Services</h4>
-      <ul>
-        <li><a href="#">Graphic Design Services</a></li>
-        <li><a href="#">Website Development</a></li>
-        <li><a href="#">Assignment/Project Help</a></li>
-        <li><a href="#">Freelancing & Virtual Services</a></li>
-      </ul>
-    </div>
-    <div class="category-box">
-      <h4>⚙️ Optional / Special Categories</h4>
-      <ul>
-        <li><a href="#">Agricultural Products</a></li>
-        <li><a href="#">Sports Items</a></li>
-        <li><a href="#">Festival Decorations</a></li>
-        <li><a href="#">Safety Equipment</a></li>
-        <li><a href="#">Local Fashion</a></li>
-        <li><a href="#">Digital Goods</a></li>
-      </ul>
-    </div>
+
+    <a href="#" class="category-card">
+      <img src="Electronics.png" alt="Electronics">
+      <span>Electronics</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="mobile category.jpg" alt="Mobiles">
+      <span>Mobiles</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="fashion.png" alt="Fashion">
+      <span>Fashion</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="Beauty & Personal Care.jpg" alt="Beauty">
+      <span>Beauty & Personal Care</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="Home & Kitchen.jpg" alt="Home">
+      <span>Home & Kitchen</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="Furniture.jpg" alt="Furniture">
+      <span>Furniture</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="Grocery & Food.jpg" alt="Grocery">
+      <span>Grocery & Food</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="Books & Stationery.jpg" alt="Books">
+      <span>Books & Stationery</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="istockphoto-1072351298-612x612.jpg" alt="Toys">
+      <span>Toys & Games</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="Screenshot 2025-07-18 145106.png" alt="Baby">
+      <span>Baby Products</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="Automotive.jpg" alt="Automotive">
+      <span>Automotive</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="Health-and-Wellness-Industry-Statistics.jpg" alt="Health">
+      <span>Health & Wellness</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="Screenshot 2025-07-18 150622.png" alt="Sports">
+      <span>Sports & Fitness</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="collage-of-cute-funny-dog-and-different-pet-accessories-on-white-background-2E9HX3W.jpg" alt="Pet">
+      <span>Pet Supplies</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="1000_F_169383607_RurbEtn9R4GsWI4jx0p0J723jWW6FNbX.jpg" alt="Tools">
+      <span>Tools & DIY</span>
+    </a>
+
+    <a href="#" class="category-card">
+      <img src="Screenshot 2025-07-18 151502.png" alt="Others">
+      <span>Other Categories</span>
+    </a>
+
   </div>
+  <!-- 🌐 সোশ্যাল মিডিয়া -->
+<section class="social">
+  <h2>Let’s Stay in Touch</h2>
+  <div class="icons">
+    <a href="https://web.facebook.com/orgRobiulislam" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/robiulislam_org/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/robiulislam-org/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://x.com/robiulislam_org" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.youtube.com/@RobiulIslam-org" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</section>
+<footer>
+    <p>&copy; 2025 মোঃ রবিউল ইসলাম | All rights reserved</p>
+  </footer>
+
 </body>
 </html>
