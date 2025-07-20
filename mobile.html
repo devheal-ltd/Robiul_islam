@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      padding: 20px;
+      background: #1e88e5;
+      color: #fff;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .product h2 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .product .price {
+      font-weight: bold;
+      color: #1e88e5;
+      margin-bottom: 10px;
+    }
+    .product a {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #1e88e5;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .product a:hover {
+      background: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Top Products</h1>
+
+  <div class="product-grid">
+
+    <!-- 🔁 Repeat this product block for more products -->
+    <div class="product">
+      <img src="61CmIlFRMjL._AC_SX679_.jpg" alt="Product Image">
+      <h2>Samsung Galaxy S25 Ultra</h2>
+      <p class="price">$1,099</p>
+      <a href="https://amzn.to/451lIud" target="_blank">Buy Now</a>
+    </div>
+    <!-- 🔁 Repeat ends -->
+
+  </div>
+
+</body>
+</html>
