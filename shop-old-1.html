@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Deals, Best Destination</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Hind Siliguri (as a fallback) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', 'Hind Siliguri', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        /* Animation for revealing elements on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        /* This class will be added by JS when the element is visible */
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header id="header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-blue-600">Welcome</a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Home</a>
+                    <a href="#why-us" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Why Us</a>
+                    <a href="#categories" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Categories</a>
+                    <a href="#deals" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Deals</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white border-t">
+            <a href="#" class="block text-gray-600 hover:text-blue-600">Home</a>
+            <a href="#why-us" class="block text-gray-600 hover:text-blue-600">Why Us</a>
+            <a href="#categories" class="block text-gray-600 hover:text-blue-600">Categories</a>
+            <a href="#deals" class="block text-gray-600 hover:text-blue-600">Deals</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Why Us Section -->
+        <section id="why-us" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Image Side -->
+                    <div class="reveal">
+                        <img src="Newfolder/image/bannar.jpg" alt="Smart Shopping" class="rounded-lg shadow-xl w-full h-full object-cover">
+                    </div>
+                    <!-- Text Side -->
+                    <div class="reveal" style="transition-delay: 150ms;">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Shop Through Us?</h2>
+                        <p class="text-lg text-gray-600 mb-8">We don't sell products directly. Instead, we bring you the best-curated items from top online marketplaces. When you shop through us, you get:</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span><strong class="text-gray-800">Best Deals on Top Products:</strong> Easily find the best deals, handpicked from thousands of products.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span><strong class="text-gray-800">Trusted Sellers:</strong> We only share links from trusted and popular e-commerce sites.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span><strong class="text-gray-800">Save Time and Money:</strong> Save your valuable time and money by finding the best offers.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Categories Section -->
+        <section id="categories" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Explore Categories</h2>
+                    <p class="mt-4 text-lg text-gray-600">All the products you need, now under one roof.</p>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 md:gap-6">
+                    <!-- Categories will be populated here. Replace # with your category page link and image src with your image path. -->
+                    <a href="women-fashion.html" class="reveal category-card"><img src="image/category-image/women-catagory.jpg" alt="Electronics"><span>Women Fashion</span></a>
+                    <a href="men-fashion.html" class="reveal category-card" style="transition-delay: 50ms;"><img src="Newfolder/image/man/men-fashion-catagory.png" alt="men-fashion"><span>Men Fashion</span></a>
+                    <!--
+                    <a href="#" class="reveal category-card" style="transition-delay: 100ms;"><img src="https://placehold.co/200x200/ec4899/ffffff?text=Fashion" alt="Fashion"><span>Kids Fashion</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 150ms;"><img src="https://placehold.co/200x200/8b5cf6/ffffff?text=Beauty" alt="Beauty"><span>Beauty & Care</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 200ms;"><img src="https://placehold.co/200x200/14b8a6/ffffff?text=Home" alt="Home"><span>Home & Kitchen</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 250ms;"><img src="https://placehold.co/200x200/65a30d/ffffff?text=Furniture" alt="Furniture"><span>Furniture</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 300ms;"><img src="https://placehold.co/200x200/f59e0b/ffffff?text=Grocery" alt="Grocery"><span>Grocery & Food</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 350ms;"><img src="https://placehold.co/200x200/0ea5e9/ffffff?text=Books" alt="Books"><span>Books & Stationery</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 400ms;"><img src="https://placehold.co/200x200/ef4444/ffffff?text=Toys" alt="Toys"><span>Toys & Games</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 450ms;"><img src="https://placehold.co/200x200/f97316/ffffff?text=Baby" alt="Baby"><span>Baby Products</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 500ms;"><img src="https://placehold.co/200x200/ec4899/ffffff?text=Automotive" alt="Automotive"><span>Automotive</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 550ms;"><img src="https://placehold.co/200x200/8b5cf6/ffffff?text=Health" alt="Health"><span>Health & Wellness</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 600ms;"><img src="https://placehold.co/200x200/14b8a6/ffffff?text=Sports" alt="Sports"><span>Sports & Fitness</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 650ms;"><img src="https://placehold.co/200x200/65a30d/ffffff?text=Pet" alt="Pet"><span>Pet Supplies</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 700ms;"><img src="https://placehold.co/200x200/f59e0b/ffffff?text=Tools" alt="Tools"><span>Tools & DIY</span></a>
+                    <a href="#" class="reveal category-card" style="transition-delay: 750ms;"><img src="https://placehold.co/200x200/0ea5e9/ffffff?text=Others" alt="Others"><span>Other</span></a>
+                    -->
+                    
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Popular Deals Section -->
+        <section id="deals" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Popular Deals & Offers</h2>
+                    <p class="mt-4 text-lg text-gray-600">Check out our handpicked selection of the best deals.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Affiliate Product Card 1 -->
+                    <div class="reveal bg-white rounded-lg shadow-md overflow-hidden group flex flex-col">
+                        <img src="Newfolder/image/women/Sneaker1.jpg" alt="Product" class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="font-semibold text-lg text-gray-800">Skechers Girl's Uno Gen1 Sneaker</h3>
+                            <p class="text-gray-600 mt-2 text-sm flex-grow">Soft, flexible & built for all-day comfort.</p>
+                            <div class="mt-4">
+                                <a href="https://amzn.to/40zkLb5" target="_blank" class="w-full block text-center bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                                    See Deal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Affiliate Product Card 2 -->
+                    <div class="reveal bg-white rounded-lg shadow-md overflow-hidden group flex flex-col" style="transition-delay: 100ms;">
+                        <img src="Newfolder/image/elect/elect1.jpg" alt="Product" class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="font-semibold text-lg text-gray-800">MERACH Smart Pedal Exerciser – Quiet & Easy Leg Workout</h3>
+                            <p class="text-gray-600 mt-2 text-sm flex-grow">Stay active while you sit! 🦵✨ With remote control, 12 speeds & ultra-quiet motion, this under-desk bike is perfect for seniors or anyone wanting a gentle, seated leg workout—right from the comfort of home! 🛋️💪</p>
+                            <div class="mt-4">
+                                <a href="https://amzn.to/40AZ2zz" target="_blank" class="w-full block text-center bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                                    Get Offer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Affiliate Product Card 3 -->
+                     <div class="reveal bg-white rounded-lg shadow-md overflow-hidden group flex flex-col" style="transition-delay: 200ms;">
+                        <img src="Newfolder/image/elect/elect.jpg" alt="Product" class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="font-semibold text-lg text-gray-800">Echo Spot – Smart Clock with Alexa</h3>
+                            <p class="text-gray-600 mt-2 text-sm flex-grow">Cute & clever! ⏰ Wake up with vibrant sound, smart routines, and Alexa’s help—perfect for your nightstand or cozy kitchen corner. 💡🎵</p>
+                            <div class="mt-4">
+                                <a href="https://amzn.to/46YkceE" target="_blank" class="w-full block text-center bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                                    Shop Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Affiliate Product Card 4 -->
+                     <div class="reveal bg-white rounded-lg shadow-md overflow-hidden group flex flex-col" style="transition-delay: 300ms;">
+                        <img src="Newfolder/image/book/book.jpg" alt="Product" class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="font-semibold text-lg text-gray-800">The 48 Laws of Power</h3>
+                            <p class="text-gray-600 mt-2 text-sm flex-grow">Bold, smart & dangerously insightful! 📘 The 48 Laws of Power is your ultimate guide to mastering strategy, control, and influence—one law at a time. 💼⚡</p>
+                            <div class="mt-4">
+                                <a href="https://amzn.to/4kTJhLa" target="_blank" class="w-full block text-center bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                                    See Deal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Affiliate Product Card 5 -->
+                     <div class="reveal bg-white rounded-lg shadow-md overflow-hidden group flex flex-col" style="transition-delay: 200ms;">
+                        <img src="Newfolder/image/elect/laptop-m1.jpg" alt="Product" class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="font-semibold text-lg text-gray-800">MacBook Air M1 – 13.3" | 16GB RAM | 256GB SSD</h3>
+                            <p class="text-gray-600 mt-2 text-sm flex-grow">Super sleek, super fast! 🚀 With Apple’s M1 chip, 16GB RAM & Retina Display, this MacBook Air is perfect for work, creativity, or everyday use—power meets elegance. 🍏💻</p>
+                            <div class="mt-4">
+                                <a href="https://amzn.to/3H2zhRS" target="_blank" class="w-full block text-center bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                                    Shop Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Affiliate Product Card 6 -->
+                     <div class="reveal bg-white rounded-lg shadow-md overflow-hidden group flex flex-col" style="transition-delay: 300ms;">
+                        <img src="Newfolder/image/elect/airpods.jpg" alt="Product" class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="font-semibold text-lg text-gray-800">AirPods Max – Premium Over-Ear Wireless Headphones 🎧</h3>
+                            <p class="text-gray-600 mt-2 text-sm flex-grow">Pure sound, zero distractions. 🎶 With Active Noise Cancelling, Spatial Audio & sleek Apple design, AirPods Max makes every moment feel magical. 💫✨</p>
+                            <div class="mt-4">
+                                <a href="https://amzn.to/44PElCk" target="_blank" class="w-full block text-center bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                                    Get Offer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Affiliate Product Card 7 -->
+                     <div class="reveal bg-white rounded-lg shadow-md overflow-hidden group flex flex-col" style="transition-delay: 400ms;">
+                        <img src="Newfolder/image/elect/macM2.jpg" alt="Product" class="w-full h-56 object-cover">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="font-semibold text-lg text-gray-800">Mac Studio M2 Max – 12-Core CPU | 32GB RAM | 512GB SSD ⚡</h3>
+                            <p class="text-gray-600 mt-2 text-sm flex-grow">Powerhouse for pros! 🚀 With Apple’s M2 Max chip, 38-core GPU & 32GB RAM, this compact beast handles video editing, design & pro workflows like a dream. 🎬💼</p>
+                            <div class="mt-4">
+                                <a href="https://amzn.to/4f50a4e" target="_blank" class="w-full block text-center bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                                    Shop Now
+                                </a>
+                            </div>
+                        </div>
+                     </div>
+                    <!-- Affiliate Product Card 8 -->
+                        <div class="reveal bg-white rounded-lg shadow-md overflow-hidden group flex flex-col" style="transition-delay: 500ms;">
+                            <img src="Newfolder/image/elect/cable.jpg" alt="Product" class="w-full h-56 object-cover">
+                            <div class="p-5 flex flex-col flex-grow">
+                                <h3 class="font-semibold text-lg text-gray-800">4-in-1 240W Fast Charging Cable – USB A/C to Lightning & USB-C (10ft)</h3>
+                                <p class="text-gray-600 mt-2 text-sm flex-grow">One cable, all devices! ⚡ Charge your iPhone, Android, MacBook & more with this powerful 4-in-1 braided cable—supports 240W fast charging & 480Mbps data transfer. Tangle-free & travel-ready! 🔌📱💻</p>
+                                <div class="mt-4">
+                                    <a href="https://amzn.to/416w5eS" target="_blank" class="w-full block text-center bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                                        See Deal
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">Let’s Stay in Touch</h2>
+                <p class="text-gray-600 mb-8">Follow us on social media for the latest deals and offers.</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://web.facebook.com/orgRobiulislam" target="_blank" class="text-gray-600 hover:text-blue-600 transition-transform duration-300 hover:scale-125"><i class="fab fa-facebook-f fa-2x"></i></a>
+                    <a href="https://www.instagram.com/robiulislam_org/" target="_blank" class="text-gray-600 hover:text-pink-500 transition-transform duration-300 hover:scale-125"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/in/robiulislam-org/" target="_blank" class="text-gray-600 hover:text-blue-700 transition-transform duration-300 hover:scale-125"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                    <a href="https://x.com/robiulislam_org" target="_blank" class="text-gray-600 hover:text-black transition-transform duration-300 hover:scale-125"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="https://www.youtube.com/@RobiulIslam-org" target="_blank" class="text-gray-600 hover:text-red-600 transition-transform duration-300 hover:scale-125"><i class="fab fa-youtube fa-2x"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p>&copy; <span id="year"></span> Md. Robiul Islam | All rights reserved.</p>
+            <p class="text-sm mt-2"></p>
+        </div>
+    </footer>
+
+    <style>
+    /* Additional custom styles for category cards */
+    .category-card {
+        background: #fff;
+        padding: 10px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-decoration: none;
+        color: #333;
+        display: block;
+    }
+    .category-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .category-card img {
+        width: 100%;
+        height: 100px;
+        object-fit: contain;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    .category-card span {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Scroll Reveal Animation ---
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- Dynamic Year in Footer ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+    });
+    </script>
+
+</body>
+</html>
