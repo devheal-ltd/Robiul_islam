@@ -2,59 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="robiul Islam official website">
+  <meta name="description" content="Official website of Robiul Islam – Personal Mind Training, Coaching, Motivation, Study Techniques, and Life Skills Development.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhammad Robiul Islam</title>
+
+  <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome CDN for social icons -->
+
+  <link rel="icon" type="image/svg+xml" href="image/logo-image/favico1.svg">
+
+
+  <!-- Font Awesome CDN (For Social Icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="xmiGRotmYXxCMAWypOofrtmpEvfBlQEdhER-VagVQj8" />
 </head>
 <body>
 
-  <header>
-    <h1>Robiul Islam</h1>
-    <p><em>Strong Mind, Healthy Body & Modern Skills – All in One Place.</em></p>
-  </header>
-
+  <!-- 🌐 NAVBAR -->
   <nav>
-    <a href="#">CV</a>
-    <a href="#">Service</a>
-    <a href="#">Contact</a>
+    <!-- Logo & Name -->
+    <div class="logo">
+      <img src="image/logo-image/logo1.svg" alt="Robiul Islam Logo">
+      <span>Robiul Islam</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#services">Service</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#review">Review</a></li>
+      <li class="book-btn"><a href="tel:+8801733017521">Book A Call</a></li>
+    </ul>
+
+    <!-- Mobile Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
-  <img src="" alt="">
-  <!-- 🖼️ একক ব্যানার -->
-<section class="banner">
-  <img src="Services I Offer cover.svg" alt="Banner Image">
-</section>
 
-<!-- 📺 ইউটিউব ভিডিও -->
-<section class="video">
-  <h2>📺</h2>
-  <iframe width="100%" height="315"
-  src="https://www.youtube.com/embed/-ctp83vSs9A"
-  title="YouTube video"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
+  <!-- 🖼️ HERO / BANNER -->
+  <section class="banner">
+    <img src="Services I Offer cover.svg" alt="Services I Offer - Personal Mind Training Coaching Banner">
+  </section>
 
-</section>
+  <!-- 💡 COACHING SECTION -->
+  <section id="services" class="coaching-section">
+    <div class="coaching-container">
 
-<!-- 🌐 সোশ্যাল মিডিয়া -->
-<section class="social">
-  <h2>Let’s Stay in Touch</h2>
-  <div class="icons">
-    <a href="https://web.facebook.com/orgRobiulislam" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.instagram.com/robiulislam_org/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.linkedin.com/in/robiulislam-org/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://x.com/robiulislam_org" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.youtube.com/@RobiulIslam-org" target="_blank"><i class="fab fa-youtube"></i></a>
-  </div>
-</section>
-<footer>
-    <p>&copy; 2025 Robiul Islam | All rights reserved</p>
+      <!-- Headline -->
+      <h1 class="headline">
+        Transform Your Life with 
+        <span class="highlight">Strong Mind, Healthy Body & Practical Skills</span>
+        <br>
+        <span class="subheadline">One-to-one tuition-style guidance for Students & Young Professionals in Bangla & English — practical, clear, and result-driven.</span>
+      </h1>
+
+      <!-- Services List -->
+      <ul class="services-list">
+        <li><span class="icon">🧠</span> <b>Mind Training</b> – Support for Motivation, Confidence, Stress Management, Time Management, and Personal Development.</li>
+        <li><span class="icon">📖</span> <b>Qur’an Learning</b> – Step-by-step guidance from the very basics to correct and fluent recitation, including Tajweed.</li>
+        <li><span class="icon">🗣️</span> <b>English Speaking</b> – Practical conversation-based training in fluency, grammar, vocabulary, and public speaking.</li>
+        <li><span class="icon">💪</span> <b>Personal Exercise Training</b> – Personalized guidance on simple fitness routines, posture & flexibility, and healthy habits.</li>
+        <li><span class="icon">📱</span> <b>Digital Marketing </b>– Practical, tuition-style learning on social media, online branding, and modern growth strategies.</li>
+        <li><span class="icon">💻</span> <b>Programming </b>– Master HTML, CSS, and JavaScript through project-based coding for real-world skills.</li>
+      </ul>
+
+      <!-- Description -->
+      <p class="description">
+        ✨ <strong>Building Strong Minds, Healthy Bodies & Skilled Futures, guided by Robiul Islam</strong>
+      </p>
+
+      <!-- Call to Action -->
+      <div class="cta">
+        <a href="tel:+8801733017521" class="cta-button">📞 Book A 15-Min Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📺 YOUTUBE VIDEO -->
+  <section class="video">
+    <h2>🎥</h2>
+    <iframe width="100%" height="315"
+      src="https://www.youtube.com/embed/-ctp83vSs9A"
+      title="Robiul Islam Coaching Video"
+      style="border: none;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </section>
+
+  <!-- 🌐 SOCIAL MEDIA -->
+  <section class="social">
+    <h2>Let’s Stay in Touch</h2>
+    <div class="icons">
+      <a href="https://web.facebook.com/orgRobiulislam" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/robiulislam_org/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/robiulislam-org/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://x.com/robiulislam_org" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/@RobiulIslam-org" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </section>
+
+  <!-- 📌 FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Robiul Islam | All rights reserved</p>
+    </div>
   </footer>
+
+  <!-- 🔽 SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
