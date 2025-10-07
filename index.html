@@ -19,29 +19,30 @@
   <meta name="google-site-verification" content="xmiGRotmYXxCMAWypOofrtmpEvfBlQEdhER-VagVQj8" />
 </head>
 <body>
+<!-- Animated Background -->
+  <div class="bg-animation" id="particles"></div>
 
   <!-- 🌐 NAVBAR -->
-  <nav>
-    <!-- Logo & Name -->
-    <div class="logo">
-      <img src="image/logo-image/logo1.svg" alt="Robiul Islam Logo">
-      <span>Robiul Islam</span>
-    </div>
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="image/logo-image/logo1.svg" alt="Robiul Islam Logo">
+        <span>Robiul Islam</span>
+      </div>
 
-    <!-- Navigation Links -->
-    <ul class="nav-links">
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#services">Service</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#review">Review</a></li>
-      <li class="book-btn"><a href="tel:+8801733017521">Book A Call</a></li>
-    </ul>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#services">Service</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#review">Review</a></li>
+        <li class="book-btn"><a href="tel:+8801733017521">Book A Call</a></li>
+      </ul>
 
-    <!-- Mobile Hamburger -->
-    <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 
@@ -65,7 +66,7 @@
       <!-- Services List -->
       <ul class="services-list">
         <li><span class="icon">🧠</span> <b>Mind Training</b> – Support for Motivation, Confidence, Stress Management, Time Management, and Personal Development.</li>
-        <li><span class="icon">📖</span> <b>Qur’an Learning</b> – Step-by-step guidance from the very basics to correct and fluent recitation, including Tajweed.</li>
+        <li><span class="icon">📖</span> <b>Qur'an Learning</b> – Step-by-step guidance from the very basics to correct and fluent recitation, including Tajweed.</li>
         <li><span class="icon">🗣️</span> <b>English Speaking</b> – Practical conversation-based training in fluency, grammar, vocabulary, and public speaking.</li>
         <li><span class="icon">💪</span> <b>Personal Exercise Training</b> – Personalized guidance on simple fitness routines, posture & flexibility, and healthy habits.</li>
         <li><span class="icon">📱</span> <b>Digital Marketing </b>– Practical, tuition-style learning on social media, online branding, and modern growth strategies.</li>
@@ -96,9 +97,161 @@
     </iframe>
   </section>
 
+  <!-- 🎯 PROCESS SECTION -->
+  <section id="process" class="process-section">
+    <div class="process-container">
+      
+      <!-- Header with Icon Animation -->
+      <div class="section-header">
+        <div class="header-icon">🌿</div>
+        <h2 class="process-title">My Teaching Approach</h2>
+        <p class="process-subtitle">Rooted in Islamic Values, Driven by Compassion & Care</p>
+      </div>
+
+      <!-- Intro Box with Modern Design -->
+      <div class="process-intro">
+        <div class="intro-content">
+          <p>আমার শিক্ষাদান পদ্ধতি সম্পূর্ণভাবে <strong>কুরআন ও হাদিসের আলোকে</strong> পরিচালিত হয়। আমি বিশ্বাস করি — প্রকৃত শিক্ষা আসে আন্তরিকতা, ধৈর্য ও ভালোবাসা থেকে, কখনোই ভয় বা কঠোরতা থেকে নয়।</p>
+        </div>
+      </div>
+
+      <!-- Teaching Principles Grid -->
+      <div class="process-grid">
+        <div class="process-card card-1">
+          <div class="card-glow"></div>
+          <div class="process-icon">📖</div>
+          <h3>Qur'an & Hadith Based</h3>
+          <p>প্রতিটি পাঠ কুরআন ও হাদিসের আলোকে প্রদান করা হয়। ইসলামিক নৈতিকতা, সততা এবং উত্তম চরিত্র গঠনে বিশেষ গুরুত্ব দেওয়া হয়।</p>
+        </div>
+
+        <div class="process-card card-2">
+          <div class="card-glow"></div>
+          <div class="process-icon">❤️</div>
+          <h3>Compassionate & Patient</h3>
+          <p>প্রতিটি শিক্ষার্থীকে আন্তরিকভাবে বোঝার চেষ্টা করি। ধৈর্যের সঙ্গে তাদের নিজস্ব গতিতে শেখানো হয়।</p>
+        </div>
+
+        <div class="process-card card-3">
+          <div class="card-glow"></div>
+          <div class="process-icon">🚫</div>
+          <h3>No Fear, No Punishment</h3>
+          <p>শিক্ষার পরিবেশ সর্বদা থাকবে নিরাপদ, উৎসাহব্যঞ্জক ও ইতিবাচক। আমি কখনোই ভয় বা শাস্তির মাধ্যমে শিক্ষা প্রদান করি না।</p>
+        </div>
+
+        <div class="process-card card-4">
+          <div class="card-glow"></div>
+          <div class="process-icon">🎯</div>
+          <h3>Personalized Learning</h3>
+          <p>প্রতিটি শিক্ষার্থী আলাদা। তাদের শেখার ধরণ, গতি ও প্রয়োজন অনুযায়ী ব্যক্তিগত শিক্ষার পরিকল্পনা তৈরি করা হয়।</p>
+        </div>
+
+        <div class="process-card card-5">
+          <div class="card-glow"></div>
+          <div class="process-icon">🤲</div>
+          <h3>Dua & Spiritual Support</h3>
+          <p>শুধু শিক্ষাদান নয় — প্রতিটি শিক্ষার্থীর জন্য দোয়া করি এবং তাদের আধ্যাত্মিক উন্নতিতে সহায়তা করি।</p>
+        </div>
+
+        <div class="process-card card-6">
+          <div class="card-glow"></div>
+          <div class="process-icon">🌱</div>
+          <h3>Holistic Development</h3>
+          <p>শিক্ষার্থীদের শুধু একাডেমিক নয় — মানসিক, শারীরিক ও আধ্যাত্মিকভাবে উন্নত করতে কাজ করি।</p>
+        </div>
+      </div>
+
+      <!-- Commitment Section with Special Design -->
+      <div class="commitment-section">
+        <div class="commitment-header">
+          <div class="commitment-icon">🤝</div>
+          <h3>My Commitment to You</h3>
+        </div>
+        <div class="commitment-quote">
+          <div class="quote-mark">"</div>
+          <p>আমার লক্ষ্য শুধু শেখানো নয় — বরং প্রতিটি শিক্ষার্থীকে তাদের সেরা সংস্করণে পরিণত করতে সাহায্য করা, আল্লাহর সন্তুষ্টির উদ্দেশ্যে।</p>
+          <div class="quote-mark closing">"</div>
+        </div>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="process-final-cta">
+        <div class="cta-icon">📞</div>
+        <h3>Book a 15-Min Call</h3>
+        <p>চলুন, কথা বলি — আপনার বা আপনার সন্তানের শেখার যাত্রা নিয়ে।</p>
+        <a href="tel:+8801733017521" class="cta-button">Start Your Journey</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⭐ REVIEW SECTION -->
+  <section id="review" class="review-section">
+    <div class="review-container">
+      <div class="experience-stats">
+        <div class="stat-box">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">600+</div>
+          <div class="stat-label">Students Taught</div>
+        </div>
+      </div>
+
+      <h2 class="review-title">What Parents & Students Say</h2>
+      <p class="review-subtitle">Real feedback from those who experienced the transformation</p>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">"আমার ছেলে Robiul ভাইয়ের কাছে ৬ মাস ধরে ইংলিশ এবং মাইন্ড ট্রেনিং নিচ্ছে। এখন তার কনফিডেন্স অনেক বেড়েছে এবং পড়াশোনায় মনোযোগ দিতে পারছে। খুবই ধৈর্য সহকারে পড়ান এবং বাচ্চাদের বুঝিয়ে শেখান।"</p>
+          <div class="reviewer">
+            <strong>মিসেস নাজমা আক্তার</strong>
+            <span>Guardian, Dhaka (Online Student)</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">"Initially I was skeptical about online coaching, but Robiul bhai proved me wrong. My daughter's English speaking skills have improved significantly in just 3 months. He makes learning fun and practical. Highly recommended!"</p>
+          <div class="reviewer">
+            <strong>Mr. Shahidul Islam</strong>
+            <span>Guardian, Chittagong (Online Student)</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">"আমার মেয়ে কুরআন পড়তে পারত না। Robiul ভাইয়ের কাছে ৪ মাস শেখার পর এখন সে তাজউইদ সহ সুন্দরভাবে কুরআন পড়তে পারে। তার পড়ানোর স্টাইল খুবই সহজ এবং কার্যকর।"</p>
+          <div class="reviewer">
+            <strong>মিসেস রুমানা বেগম</strong>
+            <span>Guardian, Faridpur (Offline Student)</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">"My son was struggling with motivation and time management during his HSC preparation. Robiul bhai's mind training sessions really helped him overcome stress and stay focused. He scored A+ in HSC! Thank you so much."</p>
+          <div class="reviewer">
+            <strong>Mr. Kamal Hossain</strong>
+            <span>Guardian, Sylhet (Online Student)</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">"আমি নিজে ডিজিটাল মার্কেটিং শিখতে চেয়েছিলাম। Robiul ভাইয়ের প্র্যাকটিক্যাল এপ্রোচ এবং রিয়েল লাইফ এক্সাম্পল আমাকে অনেক হেল্প করেছে। এখন আমি ফ্রিল্যান্সিং শুরু করেছি এবং ইনকাম করছি।"</p>
+          <div class="reviewer">
+            <strong>Abdullah Al Mamun</strong>
+            <span>Young Professional, Chittagong (Online Student)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 🌐 SOCIAL MEDIA -->
   <section class="social">
-    <h2>Let’s Stay in Touch</h2>
+    <h2>Let's Stay in Touch</h2>
     <div class="icons">
       <a href="https://web.facebook.com/orgRobiulislam" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/robiulislam_org/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -117,8 +270,84 @@
 
   <!-- 🔽 SCRIPT -->
   <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Particle animation
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 50;
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      
+      const size = Math.random() * 4 + 1;
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      const duration = Math.random() * 20 + 10;
+      const delay = Math.random() * 5;
+      
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.left = x + '%';
+      particle.style.top = y + '%';
+      particle.style.background = `rgba(0, 212, 255, ${Math.random() * 0.5})`;
+      particle.style.animation = `float ${duration}s ${delay}s infinite ease-in-out`;
+      
+      particlesContainer.appendChild(particle);
+    }
+
+    // Add float animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes float {
+        0%, 100% { transform: translateY(0) translateX(0); }
+        25% { transform: translateY(-20px) translateX(10px); }
+        50% { transform: translateY(-40px) translateX(-10px); }
+        75% { transform: translateY(-20px) translateX(10px); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Toggle menu function for inline onclick
     function toggleMenu() {
-      document.querySelector(".nav-links").classList.toggle("active");
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
     }
   </script>
 
