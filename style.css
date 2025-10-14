@@ -670,16 +670,45 @@
 
     /* Footer */
     footer {
-      padding: 3rem 5%;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.3);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
+  padding: 2.5rem 5%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
 
-    .footer-container p {
-      color: #94a3b8;
-      font-size: 1rem;
-    }
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-container p {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #38bdf8; /* light blue hover */
+  transform: translateY(-2px);
+}
+
 
     /* Animations */
     @keyframes fadeInUp {
