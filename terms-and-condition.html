@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - robiulislam.org</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .islamic-pattern {
+            font-size: 40px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .last-updated {
+            font-size: 0.95em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #2a5298;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .section p {
+            color: #555;
+            margin-bottom: 12px;
+            padding-left: 45px;
+        }
+
+        .section ul {
+            padding-left: 70px;
+            margin-bottom: 12px;
+        }
+
+        .section li {
+            color: #555;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .section li::before {
+            content: '✓';
+            position: absolute;
+            left: -25px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .highlight-box p {
+            padding-left: 0;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        .contact-icon {
+            font-size: 1.3em;
+        }
+
+        .footer-note {
+            background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 5px solid #4caf50;
+        }
+
+        .footer-note p {
+            color: #2c3e50;
+            font-style: italic;
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .note-icon {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 25px;
+            }
+
+            .section h2 {
+                font-size: 1.3em;
+            }
+
+            .section p, .section li {
+                padding-left: 0;
+            }
+
+            .section ul {
+                padding-left: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="islamic-pattern">☪</div>
+                <h1>Terms & Conditions</h1>
+                <p class="last-updated">Last Updated: October 15, 2025</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <p><strong>Welcome to robiulislam.org.</strong></p>
+                <p>By accessing or using this website, you agree to comply with the following Terms and Conditions.</p>
+                <p>Please read them carefully before using our services.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">1</span> General Overview</h2>
+                <p>This website provides educational and Quran learning services designed to help students learn effectively through online guidance and Offline personal instruction.</p>
+                <p>By registering or joining any class, you agree to these terms.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">2</span> Eligibility</h2>
+                <p>Our services are open to all students regardless of age, ability, or background.</p>
+                <p>However, if the student is a minor, parental consent is required for enrollment.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">3</span> Teaching Style & Learning Commitment</h2>
+                <p>We provide personalized learning support and believe that every student can learn the Qur'an and other subjects successfully, in shaa Allah.</p>
+                <p><strong>Students are expected to:</strong></p>
+                <ul>
+                    <li>Attend classes on time.</li>
+                    <li>Maintain respectful behavior toward the teacher.</li>
+                    <li>Avoid any misuse of class materials or recordings.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">4</span> Free Trial & Refund Policy</h2>
+                <p>We offer a <strong>3-day free trial</strong> for new students and a <strong>7-day satisfaction guarantee</strong> for paid enrollments.</p>
+                <div class="highlight-box">
+                    <p>If you are not satisfied within the first 7 days, you may cancel and receive a full refund.</p>
+                    <p>After 7 days, no refunds will be provided.</p>
+                </div>
+                <p>(For details, please see our Return & Refund Policy page.)</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">5</span> Payment Terms</h2>
+                <p>All payments must be made through the approved methods mentioned on the website.</p>
+                <p>Late or incomplete payments may result in suspension of services until the balance is cleared.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">6</span> Prohibited Activities</h2>
+                <p><strong>You agree not to:</strong></p>
+                <ul>
+                    <li>Copy, record, or redistribute class content without permission.</li>
+                    <li>Use the website for illegal, abusive, or harmful activities.</li>
+                    <li>Share your class login or content access with others.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">7</span> Intellectual Property</h2>
+                <p>All materials, lessons, videos, and written content on robiulislam.org are the intellectual property of Robiul Islam.</p>
+                <p>Unauthorized copying, reproduction, or commercial use of these materials is strictly prohibited.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">8</span> Limitation of Liability</h2>
+                <p>We strive to provide accurate and beneficial education.</p>
+                <p>However, robiulislam.org is not liable for any personal, academic, or technical issues that may arise from the use of our website or materials.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">9</span> Termination of Service</h2>
+                <p>We reserve the right to suspend or terminate access to any user who violates these terms or engages in misconduct.</p>
+                <p>You may also discontinue classes at any time under the conditions stated in our refund policy.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">10</span> Changes to Terms</h2>
+                <p>We may update or revise these Terms and Conditions from time to time.</p>
+                <p>All changes will be posted on this page with the updated date.</p>
+                <p>By continuing to use the site, you agree to the updated terms.</p>
+            </div>
+
+            <div class="contact-section">
+                <h2><span class="section-number">11</span> Contact Information</h2>
+                <p style="margin-bottom: 20px; padding-left: 0;">If you have any questions about these Terms and Conditions, please contact us at:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>org.robiulislam@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+8801733017521</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-note">
+                <div class="note-icon">🌿</div>
+                <p><strong>Note:</strong> These Terms & Conditions are written to ensure transparency, respect, and mutual trust between teacher and student — maintaining a safe and productive learning environment for everyone.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

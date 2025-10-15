@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - robiulislam.org</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: movePattern 20s linear infinite;
+        }
+
+        @keyframes movePattern {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 30px); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            backdrop-filter: blur(10px);
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .section:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left-color: #667eea;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.1em;
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section p, .section ul {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .section ul {
+            padding-left: 25px;
+        }
+
+        .section li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .section li::before {
+            content: '✓';
+            position: absolute;
+            left: -15px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .contact-box h2 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.02);
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .icon {
+            font-size: 1.3em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            .section h2 {
+                font-size: 1.3em;
+            }
+
+            .section-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>🔒 Privacy Policy</h1>
+                <p class="subtitle">Your Privacy Matters to Us</p>
+                <div class="last-updated">Last Updated: October 15, 2025</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                Welcome to <strong>robiulislam.org</strong> — a platform dedicated to teaching and personal development through offline learning resources. Your privacy is very important to us. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website.
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">1</span> Information We Collect</h2>
+                <p>We may collect the following information:</p>
+                <ul>
+                    <li><strong>Personal Information:</strong> such as your name, email address, or phone number (only when you voluntarily provide it through forms or messages).</li>
+                    <li><strong>Usage Data:</strong> including your browser type, device information, and pages you visit on our site.</li>
+                    <li><strong>Cookies:</strong> small data files stored on your device to improve user experience and site functionality.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">2</span> How We Use Your Information</h2>
+                <p>We use the collected data to:</p>
+                <ul>
+                    <li>Provide and improve our educational content and user experience.</li>
+                    <li>Respond to your messages, comments, or support requests.</li>
+                    <li>Send updates, newsletters, or learning materials (only if you subscribe).</li>
+                    <li>Monitor website performance and improve security.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">3</span> Data Protection</h2>
+                <p>We value your trust. Your information is stored securely and never shared with any third party unless required by law.</p>
+                <p>We use secure protocols (such as HTTPS) to protect your data during transmission.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">4</span> Cookies Policy</h2>
+                <p>Cookies help us understand how visitors use our website and allow us to personalize content.</p>
+                <p>You can disable cookies in your browser settings if you prefer not to share this data.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">5</span> Third-Party Links</h2>
+                <p>Our website may contain links to external sites (e.g., YouTube, Facebook, or other educational platforms).</p>
+                <p>We are not responsible for the privacy practices of those websites. Please review their privacy policies separately.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">6</span> Your Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Request access to your personal information.</li>
+                    <li>Request correction or deletion of your data.</li>
+                    <li>Unsubscribe from our email list at any time.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">7</span> Updates to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. The updated version will always be available on this page with the date of the latest revision.</p>
+            </div>
+
+            <div class="contact-box">
+                <h2><span class="icon">📬</span> Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        <a href="mailto:org.robiulislam@gmail.com">org.robiulislam@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📱</span>
+                        <a href="tel:+8801733017521">+880 1733-017521</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 robiulislam.org. All rights reserved.</p>
+            <p>Committed to protecting your privacy and data security.</p>
+        </div>
+    </div>
+</body>
+</html>

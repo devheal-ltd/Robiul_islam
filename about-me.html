@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Robiul Islam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .profile-section {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 30px;
+        }
+
+        .profile-image-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            position: relative;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 6px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image-container:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f0f0f0;
+            border: 4px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .greeting {
+            font-size: 1.3em;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        .section-content {
+            font-size: 1.1em;
+            color: #555;
+            text-align: justify;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .highlights {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .highlight-item {
+            padding: 12px 0;
+            display: flex;
+            align-items: start;
+            color: #444;
+        }
+
+        .highlight-item::before {
+            content: '✓';
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .contact-section .section-title {
+            color: white;
+        }
+
+        .contact-section .section-title::after {
+            background: white;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, background 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .contact-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+            border: 3px solid #667eea;
+        }
+
+        .quote-text {
+            font-size: 1.4em;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .quote-author {
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Decorative Elements */
+        .leaf-icon {
+            color: #667eea;
+            font-size: 1.5em;
+            margin: 0 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 25px;
+            }
+
+            .name {
+                font-size: 2.2em;
+            }
+
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            .content-section {
+                padding: 35px 25px;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .profile-image-container {
+                width: 160px;
+                height: 160px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quote-text {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <div class="profile-image">
+                        <!-- আপনার ছবি এখানে বসান -->
+                        <!-- উদাহরণ: <img src="your-photo.jpg" alt="Robiul Islam" class="profile-image"> -->
+                         <img src="image/logo-image/logo1.svg" alt="Robiul Islam" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="greeting">Assalamu Alaikum!</div>
+                <h1 class="name">Robiul Islam</h1>
+                <p class="tagline">
+                    <span class="leaf-icon">🌿</span>
+                    A platform where learning meets purpose
+                    <span class="leaf-icon">🌿</span>
+                </p>
+            </div>
+            <p class="intro">
+                I am an educator, learner, and mentor with a passion for helping people grow — in knowledge, character, and faith. Through this platform, I teach students with care, patience, and a personalized method that ensures every learner — no matter how weak or shy — can achieve success, <strong>in shaa Allah</strong>.
+            </p>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="content-section">
+            <h2 class="section-title">My Mission</h2>
+            <div class="section-content">
+                <p>My goal is simple:</p>
+                <p><strong>To make learning the Qur'an, Islamic knowledge, and general education easier, structured, and enjoyable for everyone.</strong></p>
+                <p>I believe education should not only make someone knowledgeable — it should make them a better human being with strong values, honesty, and discipline.</p>
+            </div>
+        </div>
+
+        <!-- Teaching Approach -->
+        <div class="content-section">
+            <h2 class="section-title">My Teaching Approach</h2>
+            <div class="section-content">
+                <p>I follow a student-friendly and heart-centered teaching method where:</p>
+                <div class="highlights">
+                    <div class="highlight-item">The first 3 days are completely free — so students can learn without pressure.</div>
+                    <div class="highlight-item">Within the first 7 days, if the student is not satisfied, I offer a full refund — because trust matters more than money.</div>
+                    <div class="highlight-item">I focus on slow, clear, and effective teaching, ensuring that even the weakest learner can understand and improve.</div>
+                    <div class="highlight-item">Many of my students join to learn the Qur'an with correct pronunciation, and they continue to grow spiritually and academically with confidence.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Students Trust Me -->
+        <div class="content-section">
+            <h2 class="section-title">Why Students Trust Me</h2>
+            <div class="highlights">
+                <div class="highlight-item">Personalized one-to-one attention.</div>
+                <div class="highlight-item">Flexible learning times.</div>
+                <div class="highlight-item">Honest feedback and continuous support.</div>
+                <div class="highlight-item">Affordable fees and special discounts for Qur'an learners.</div>
+                <div class="highlight-item">A belief that every child can learn, no matter their ability.</div>
+            </div>
+            <div class="section-content" style="margin-top: 20px;">
+                <p style="font-weight: 600; color: #667eea;">My promise: I will teach with sincerity, effort, and the intention to please Allah — not just to complete a class.</p>
+            </div>
+        </div>
+
+        <!-- Beyond Teaching -->
+        <div class="content-section">
+            <h2 class="section-title">Beyond Teaching</h2>
+            <div class="section-content">
+                <p>Apart from teaching, I also work on personal development, digital education, and motivational Islamic content through my Facebook and YouTube platforms — encouraging people to live with integrity and purpose.</p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2 class="section-title">Let's Learn Together</h2>
+            <p style="font-size: 1.15em; margin-bottom: 30px;">
+                If you wish to start your learning journey or enroll your child for Qur'an or academic guidance, you can contact me anytime:
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-label">📧 Email</div>
+                    <div class="contact-value">org.robiulislam@gmail.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">📱 Phone</div>
+                    <div class="contact-value">+880 1733-017521</div>
+                </div>
+            </div>
+            <p style="font-size: 1.1em; margin-top: 30px;">
+                Together, let's learn, grow, and become better — in both deen and dunya, <strong>in shaa Allah</strong>.
+            </p>
+        </div>
+
+        <!-- Quote Section -->
+        <div class="quote-section">
+            <div class="quote-text">
+                "Education is not just about gaining knowledge — it's about building character, faith, and confidence."
+            </div>
+            <div class="quote-author">— Robiul Islam</div>
+        </div>
+    </div>
+</body>
+</html>

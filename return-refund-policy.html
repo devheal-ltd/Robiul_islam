@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return & Refund Policy - robiulislam.org</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .last-updated {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9ff;
+            color: #666;
+            font-size: 0.95em;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .intro {
+            padding: 40px 30px;
+            text-align: center;
+            color: #444;
+            font-size: 1.1em;
+            background: linear-gradient(to bottom, #f8f9ff, white);
+        }
+
+        .content {
+            padding: 20px 30px 50px;
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9ff;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .policy-section:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .policy-section h2 {
+            color: #667eea;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .policy-section p {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .highlight-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #f8f9ff, #e8ebff);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin: 40px 30px;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+            color: #555;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 10px;
+            min-width: 300px;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .icon {
+            font-size: 1.3em;
+        }
+
+        .note-section {
+            background: linear-gradient(135deg, #fff9e6, #ffe6cc);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 30px;
+            border-left: 5px solid #ffa500;
+        }
+
+        .note-section p {
+            color: #666;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .note-icon {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .policy-section {
+                padding: 20px;
+            }
+
+            .contact-item {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .content {
+                padding: 20px 15px 30px;
+            }
+
+            .highlight-box, .contact-section, .note-section {
+                margin: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Return & Refund Policy</h1>
+            <p class="subtitle">robiulislam.org</p>
+        </div>
+
+        <div class="last-updated">
+            Last Updated: October 15, 2025
+        </div>
+
+        <div class="intro">
+            <p>At <strong>robiulislam.org</strong>, we value honesty, transparency, and student satisfaction. Our goal is to ensure that every learner gains meaningful benefit from our teaching — especially in Qur'an learning and other educational programs.</p>
+        </div>
+
+        <div class="content">
+            <div class="policy-section">
+                <h2><span class="section-number">1</span> Free Trial Period</h2>
+                <p>We offer a <strong>3-day free trial</strong> for all new students. During this period, you can attend classes, understand our teaching method, and decide whether to continue. No payment or commitment is required during this time.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><span class="section-number">2</span> 7-Day Satisfaction Guarantee</h2>
+                <p>After the free trial, if you decide to enroll and make payment, you still have a <strong>7-day satisfaction guarantee</strong>. If you feel that the teaching style or experience does not meet your expectations within the first 7 days, you can cancel your enrollment, and we will refund <strong>100% of your payment</strong> — no questions asked.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><span class="section-number">3</span> No Refund After the First Week</h2>
+                <p>If you continue classes beyond the first 7 days, it means you are satisfied with the service. After that period, refunds will no longer be available, even if you decide to stop later in the month.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><span class="section-number">4</span> Voluntary Cancellation</h2>
+                <p>You may choose to stop taking classes at any time. If you cancel within the first week, you will receive a full refund. If you cancel after the first week, you may still discontinue classes — but no refund will be issued.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><span class="section-number">5</span> Teaching Commitment</h2>
+                <p>We teach the Qur'an and other subjects with a special discount and a firm belief that every student can learn, regardless of their ability level. We provide personal attention and guaranteed effort to ensure that each learner succeeds, <em>in shaa Allah</em>.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>🌟 Our Promise to You</h3>
+            <p>We teach with dedication and care. Try our classes risk-free, and experience quality education that transforms lives.</p>
+        </div>
+
+        <div class="contact-section">
+            <h3>Contact for Refund or Cancellation</h3>
+            <p style="margin-bottom: 20px; color: #666;">If you wish to request a refund or cancel your enrollment, please contact:</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📧</span>
+                    <span>org.robiulislam@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📱</span>
+                    <span>+8801733017521</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">💬</span>
+                    <span>Website Contact Form</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="policy-section">
+                <h2><span class="section-number">7</span> Policy Updates</h2>
+                <p>This policy may be updated from time to time to improve our service quality. All changes will be reflected on this page with the updated date.</p>
+            </div>
+        </div>
+
+        <div class="note-section">
+            <div class="note-icon">🌿</div>
+            <p><strong>Note:</strong> We believe in fair treatment for both teacher and student. Our refund and cancellation policy is designed to maintain honesty, trust, and satisfaction for everyone involved.</p>
+        </div>
+    </div>
+</body>
+</html>
