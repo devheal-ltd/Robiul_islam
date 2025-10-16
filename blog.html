@@ -3,11 +3,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="style-blog.css">
+    
+    <!-- Primary Meta Tags -->
+    <title>Blog - Robiul Islam | Educational Articles on Quran, English & Islamic Studies | Gulshan 2, Dhaka</title>
+    <meta name="title" content="Blog - Robiul Islam | Educational Articles & Learning Tips">
+    <meta name="description" content="Read educational articles, learning tips, and Islamic guidance from Robiul Islam, professional home tutor in Gulshan 2, Dhaka. Topics: Quran learning, English language, mind training, personal development and more.">
+    <meta name="keywords" content="Robiul Islam blog, Quran learning tips, English learning articles, Islamic education blog, home tutor blog Dhaka, educational articles Bangladesh, mind training tips, personal development blog">
+    <meta name="author" content="Robiul Islam">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://robiulislam.org/blog">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://robiulislam.org/blog">
+    <meta property="og:title" content="Blog - Robiul Islam | Educational Articles & Learning Tips">
+    <meta property="og:description" content="Educational articles on Quran learning, English language, Islamic studies and personal development by professional home tutor Robiul Islam.">
+    <meta property="og:image" content="https://robiulislam.org/image/logo-image/logo1.svg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Robiul Islam Blog",
+        "description": "Educational articles and learning tips from professional home tutor Robiul Islam",
+        "url": "https://robiulislam.org/blog",
+        "author": {
+            "@type": "Person",
+            "name": "Robiul Islam"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Robiul Islam"
+        }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/image/logo-image/logo1.svg">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #764ba2;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        h1.page-title {
+            font-size: 3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .page-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Blog Card */
+        .blog-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .blog-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .blog-title:hover {
+            color: #667eea;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-read-time {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* No Posts Message */
+        .no-posts {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .no-posts-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .no-posts h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .no-posts p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* Categories Filter */
+        .categories-filter {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .categories-filter h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .category-tag {
+            padding: 8px 20px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .category-tag:hover,
+        .category-tag.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1.page-title {
+                font-size: 2.2em;
+            }
+
+            .page-header {
+                padding: 40px 25px;
+            }
+
+            .breadcrumb {
+                padding: 15px 20px;
+            }
+
+            .blog-content {
+                padding: 20px;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-card {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
 </head>
 <body>
-<H2><a href="blog/blog1.html">কুরআন তিলাওয়াতের পূর্ব প্রস্তুতি</a></H2>
-    
+    <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="https://robiulislam.org">Home</a> / <span>Blog</span>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="page-header-content">
+                <div class="page-icon">📚</div>
+                <h1 class="page-title">Educational Blog</h1>
+                <p class="page-subtitle">Insights, tips and guidance on Quran learning, English language, Islamic studies and personal development</p>
+            </div>
+        </header>
+
+        <!-- Categories Filter -->
+        <section class="categories-filter">
+            <h3>📑 Filter by Category</h3>
+            <div class="category-tags">
+                <span class="category-tag active" data-category="all">All Posts</span>
+                <span class="category-tag" data-category="quran">Quran Learning</span>
+                <span class="category-tag" data-category="english">English Language</span>
+                <span class="category-tag" data-category="islamic">Islamic Studies</span>
+                <span class="category-tag" data-category="mind">Mind Training</span>
+                <span class="category-tag" data-category="personal">Personal Development</span>
+                <span class="category-tag" data-category="tips">Study Tips</span>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <main class="blog-grid" id="blogGrid">
+            <!-- Blog Card Example 1 -->
+            <article class="blog-card" data-category="quran">
+                <img src="https://via.placeholder.com/400x220/667eea/ffffff?text=Quran+Learning+Tips" alt="5 Essential Tips for Learning Quran with Tajweed" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Quran Learning</span>
+                    <h2 class="blog-title">5 Essential Tips for Learning Quran with Tajweed</h2>
+                    <p class="blog-excerpt">Discover practical methods to improve your Quran recitation with proper Tajweed rules. Learn how to make your Quran learning journey easier and more effective...</p>
+                    <a href="blog-post-1.html" class="read-more-btn">Read More →</a>
+                    <div class="blog-meta">
+                        <span class="blog-date">📅 Oct 15, 2025</span>
+                        <span class="blog-read-time">⏱️ 5 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Card Example 2 -->
+            <article class="blog-card" data-category="english">
+                <img src="https://via.placeholder.com/400x220/764ba2/ffffff?text=English+Speaking" alt="How to Improve English Speaking Skills at Home" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">English Language</span>
+                    <h2 class="blog-title">How to Improve English Speaking Skills at Home</h2>
+                    <p class="blog-excerpt">Simple and effective techniques to practice English speaking daily without leaving your home. Build confidence and fluency step by step...</p>
+                    <a href="blog-post-2.html" class="read-more-btn">Read More →</a>
+                    <div class="blog-meta">
+                        <span class="blog-date">📅 Oct 12, 2025</span>
+                        <span class="blog-read-time">⏱️ 7 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Card Example 3 -->
+            <article class="blog-card" data-category="mind">
+                <img src="https://via.placeholder.com/400x220/2a5298/ffffff?text=Mind+Training" alt="Mind Training Techniques for Better Focus" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Mind Training</span>
+                    <h2 class="blog-title">Mind Training Techniques for Better Focus</h2>
+                    <p class="blog-excerpt">Learn powerful mental exercises to improve concentration, memory and study performance. Transform your mind for academic success...</p>
+                    <a href="blog-post-3.html" class="read-more-btn">Read More →</a>
+                    <div class="blog-meta">
+                        <span class="blog-date">📅 Oct 10, 2025</span>
+                        <span class="blog-read-time">⏱️ 6 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Card Example 4 -->
+            <article class="blog-card" data-category="islamic">
+                <img src="https://via.placeholder.com/400x220/28a745/ffffff?text=Islamic+Studies" alt="Teaching Islamic Values to Children" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Islamic Studies</span>
+                    <h2 class="blog-title">Teaching Islamic Values to Children: A Parent's Guide</h2>
+                    <p class="blog-excerpt">Practical advice for parents on how to instill Islamic morals, ethics and character in children from an early age with love and patience...</p>
+                    <a href="blog-post-4.html" class="read-more-btn">Read More →</a>
+                    <div class="blog-meta">
+                        <span class="blog-date">📅 Oct 8, 2025</span>
+                        <span class="blog-read-time">⏱️ 8 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Card Example 5 -->
+            <article class="blog-card" data-category="tips">
+                <img src="https://via.placeholder.com/400x220/ff6b6b/ffffff?text=Study+Tips" alt="Effective Study Techniques for Students" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Study Tips</span>
+                    <h2 class="blog-title">10 Effective Study Techniques Every Student Should Know</h2>
+                    <p class="blog-excerpt">Science-backed study methods that actually work. Learn how to study smarter, not harder, and achieve better results in less time...</p>
+                    <a href="blog-post-5.html" class="read-more-btn">Read More →</a>
+                    <div class="blog-meta">
+                        <span class="blog-date">📅 Oct 5, 2025</span>
+                        <span class="blog-read-time">⏱️ 10 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Card Example 6 -->
+            <article class="blog-card" data-category="personal">
+                <img src="https://via.placeholder.com/400x220/667eea/ffffff?text=Personal+Development" alt="Building Self-Confidence in Young Students" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Personal Development</span>
+                    <h2 class="blog-title">Building Self-Confidence in Young Students</h2>
+                    <p class="blog-excerpt">Discover how to help students overcome shyness, fear of failure and build lasting confidence for success in academics and life...</p>
+                    <a href="blog-post-6.html" class="read-more-btn">Read More →</a>
+                    <div class="blog-meta">
+                        <span class="blog-date">📅 Oct 3, 2025</span>
+                        <span class="blog-read-time">⏱️ 6 min read</span>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- No Posts Message (Hidden by default, show when no posts) -->
+        <!-- <div class="no-posts">
+            <div class="no-posts-icon">📝</div>
+            <h2>Coming Soon!</h2>
+            <p>New educational articles and blog posts are on the way. Stay tuned for valuable insights on Quran learning, English language, and personal development.</p>
+        </div> -->
+
+    </div>
+
+    <!-- JavaScript for Category Filter -->
+    <script>
+        // Category Filter Functionality
+        const categoryTags = document.querySelectorAll('.category-tag');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        categoryTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                // Remove active class from all tags
+                categoryTags.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tag
+                this.classList.add('active');
+
+                const selectedCategory = this.getAttribute('data-category');
+
+                // Filter blog cards
+                blogCards.forEach(card => {
+                    if (selectedCategory === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.getAttribute('data-category') === selectedCategory) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
