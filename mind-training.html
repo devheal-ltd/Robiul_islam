@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="মোঃ রবিউল ইসলামের ৪ সপ্তাহের মাইন্ড ট্রেনিং প্র্যাকটিকাল কোর্স। মনের শক্তি, মনোযোগ, আত্মবিশ্বাস ও আবেগ নিয়ন্ত্রণ শিখুন হোম টিউশন স্টাইলে।">
+    <meta name="keywords" content="মাইন্ড ট্রেনিং, মনের শক্তি, ফোকাস, আত্মবিশ্বাস, আবেগ নিয়ন্ত্রণ, হোম টিউশন, মোঃ রবিউল ইসলাম">
+    <title>মাইন্ড ট্রেনিং প্র্যাকটিকাল কোর্স | রবিউল ইসলাম</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .instructor-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 25px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-box strong {
+            display: block;
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .info-box span {
+            font-size: 1.2em;
+        }
+
+        /* Overview Section */
+        .overview {
+            padding: 50px 40px;
+            background: linear-gradient(to right, #f8f9ff, #fff8f8);
+            border-bottom: 3px solid #667eea;
+        }
+
+        .overview h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .overview p {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Syllabus Content */
+        .content {
+            padding: 40px;
+        }
+
+        .week {
+            margin-bottom: 40px;
+            background: #f9f9f9;
+            border-left: 5px solid #667eea;
+            padding: 30px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .week:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+        }
+
+        .week h3 {
+            color: #667eea;
+            font-size: 1.6em;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .day {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .day-title {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .day-content {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        .day-content ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .day-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Teaching Method */
+        .teaching-method {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            margin: 40px;
+            border-radius: 10px;
+        }
+
+        .teaching-method h3 {
+            font-size: 1.5em;
+            margin-bottom: 25px;
+        }
+
+        .method-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .method-table th,
+        .method-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .method-table th {
+            background: rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+        }
+
+        .method-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Special Note */
+        .special-note {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            padding: 30px 40px;
+            margin: 40px;
+            border-radius: 10px;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .special-note h3 {
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .special-note p {
+            color: white;
+            font-size: 1.05em;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 50px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05em;
+            transition: all 0.3s ease;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .instructor-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .content,
+            .overview,
+            .teaching-method,
+            .special-note {
+                padding: 20px;
+            }
+
+            .week {
+                padding: 20px;
+            }
+
+            .method-table th,
+            .method-table td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* Emoji styling */
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🧠 মাইন্ড ট্রেনিং প্র্যাকটিকাল সিলেবাস</h1>
+            <p>আপনার মনের শক্তি, মনোযোগ এবং আত্মবিশ্বাস বিকাশের সম্পূর্ণ গাইড</p>
+            <div class="instructor-info">
+                <div class="info-box">
+                    <strong>প্রশিক্ষক</strong>
+                    <span>মোঃ রবিউল ইসলাম</span>
+                </div>
+                <div class="info-box">
+                    <strong>পদ্ধতি</strong>
+                    <span>হোম টিউশন স্টাইল</span>
+                </div>
+                <div class="info-box">
+                    <strong>সময়কাল</strong>
+                    <span>৪ সপ্তাহ</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overview -->
+        <div class="overview">
+            <h2>📌 কোর্স পরিচয়</h2>
+            <p>এই কোর্সে শিক্ষার্থী নিজের মনের শক্তি, চিন্তার দিকনির্দেশনা, মনোযোগ, আত্মবিশ্বাস ও আবেগ নিয়ন্ত্রণ শিখবে—সম্পূর্ণ প্র্যাকটিকাল অনুশীলনের মাধ্যমে। প্রতিটি ক্লাসে শুধু আলোচনা নয়, বাস্তব অনুশীলন ও পরিবর্তনের সরাসরি অভিজ্ঞতা থাকবে।</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Week 1 -->
+            <div class="week">
+                <h3><span class="emoji">📅</span> সপ্তাহ ১: মন-সচেতনতা ও ফোকাস নিয়ন্ত্রণ</h3>
+                
+                <div class="day">
+                    <div class="day-title">🔹 দিন ১ – আপনার মন বোঝা</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>মন কীভাবে কাজ করে</li>
+                            <li>চিন্তার ধরণ চেনার কৌশল</li>
+                            <li>প্র্যাকটিস: ৫ মিনিট "Silent Mind Observation"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ২ – নেতিবাচক চিন্তা শনাক্তকরণ</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>নেতিবাচক চিন্তা শনাক্ত ও থামানোর কৌশল</li>
+                            <li>প্র্যাকটিস: Thought replacement exercise</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৩ – ফোকাস ড্রিল</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>মনোযোগ বাড়ানোর প্র্যাকটিকাল গেম (এক বিন্দুতে ১ মিনিট ফোকাস)</li>
+                            <li>শ্বাস-প্রশ্বাস নিয়ন্ত্রণ অনুশীলন</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৪ – বিক্ষিপ্ততা ভাঙা</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>মনোযোগ ভাঙা অভ্যাসগুলো চিনে ফেলা</li>
+                            <li>প্র্যাকটিস: "One Task Rule" (একসাথে একটি কাজ সম্পূর্ণ করা)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৫ – সাপ্তাহিক পর্যালোচনা</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>এই সপ্তাহে কী শেখা হলো</li>
+                            <li>দুর্বল জায়গা চিহ্নিত ও নতুন লক্ষ্য নির্ধারণ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 2 -->
+            <div class="week">
+                <h3><span class="emoji">📅</span> সপ্তাহ ২: আবেগ নিয়ন্ত্রণ ও ইতিবাচক চিন্তাভাবনা</h3>
+                
+                <div class="day">
+                    <div class="day-title">🔹 দিন ১ – আবেগ সচেতনতা</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>রাগ, ভয়, দুঃখ কীভাবে চিনতে হয়</li>
+                            <li>প্র্যাকটিস: Emotion diary লেখা</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ২ – শান্ত মন অনুশীলন</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>গভীর নিঃশ্বাস ও রিল্যাক্সেশন</li>
+                            <li>"5-second pause" টেকনিক</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৩ – ইতিবাচক মানসিকতা গঠন</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>প্রতিদিনের অ্যাফার্মেশন</li>
+                            <li>"I can & I will" অভ্যাস গঠন</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৪ – ভিজুয়ালাইজেশন কৌশল</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>চোখ বন্ধ করে সফলতার ছবি কল্পনা</li>
+                            <li>লক্ষ্য অর্জনের মানসিক রিহার্সাল</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৫ – সাপ্তাহিক পর্যালোচনা</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>পরিবর্তন মূল্যায়ন</li>
+                            <li>নতুন হোমওয়ার্ক নির্ধারণ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 3 -->
+            <div class="week">
+                <h3><span class="emoji">📅</span> সপ্তাহ ৩: আত্মবিশ্বাস ও আত্মশৃঙ্খলা</h3>
+                
+                <div class="day">
+                    <div class="day-title">🔹 দিন ১ – আত্ম-কথা সচেতনতা</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>নিজের সাথে ইতিবাচক কথা বলা শেখা</li>
+                            <li>Mirror exercise</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ২ – ভয় অতিক্রম করা</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>ভয় বিশ্লেষণ ও প্রতিরোধের অনুশীলন</li>
+                            <li>"Fear-to-Action" method</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৩ – আত্মশৃঙ্খলা গড়া</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>দৈনন্দিন রুটিন তৈরি</li>
+                            <li>"Do it Now" challenge</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৪ – লক্ষ্য অনুসরণ</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>ছোট লক্ষ্য নির্ধারণ ও পর্যবেক্ষণ</li>
+                            <li>প্র্যাকটিস: ২৪ ঘণ্টার Mind Plan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৫ – সাপ্তাহিক পর্যালোচনা</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>উন্নতির বিশ্লেষণ</li>
+                            <li>ব্যক্তিগত পরামর্শ ও পরবর্তী ধাপ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 4 -->
+            <div class="week">
+                <h3><span class="emoji">📅</span> সপ্তাহ ৪: মন দক্ষতা ও বাস্তব জীবন প্রয়োগ</h3>
+                
+                <div class="day">
+                    <div class="day-title">🔹 দিন ১ – দৈনন্দিন জীবনে মন শক্তি</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>পড়াশোনা, সম্পর্ক ও কাজে Mind Control কৌশল</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ২ – সিদ্ধান্ত গ্রহণ</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>সঠিক সিদ্ধান্ত নেওয়ার প্র্যাকটিস</li>
+                            <li>"Think → Feel → Act" বিশ্লেষণ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৩ – স্মৃতিশক্তি বৃদ্ধি</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>স্মৃতিশক্তি বাড়ানোর কৌশল</li>
+                            <li>Observation game</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৪ – মন প্রতিফলন</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>নিজেকে যাচাই করার প্র্যাকটিস</li>
+                            <li>১০ মিনিট "Silent Reflection"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">🔹 দিন ৫ – চূড়ান্ত পর্যালোচনা ও ভবিষ্যত পরিকল্পনা</div>
+                    <div class="day-content">
+                        <ul>
+                            <li>সম্পূর্ণ কোর্সের সারসংক্ষেপ</li>
+                            <li>ব্যক্তিগত উন্নতির দীর্ঘমেয়াদী পরিকল্পনা</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teaching Method -->
+        <div class="teaching-method">
+            <h3>🧭 শিক্ষণ পদ্ধতি</h3>
+            <table class="method-table">
+                <tr>
+                    <th>সময়কাল</th>
+                    <th>কার্যক্রম</th>
+                    <th>বিবরণ</th>
+                </tr>
+                <tr>
+                    <td>১০ মিনিট</td>
+                    <td>আলোচনা</td>
+                    <td>আজকের বিষয় বোঝানো</td>
+                </tr>
+                <tr>
+                    <td>৪০ মিনিট</td>
+                    <td>প্র্যাকটিকাল এক্সারসাইজ</td>
+                    <td>বাস্তব অনুশীলন</td>
+                </tr>
+                <tr>
+                    <td>১০ মিনিট</td>
+                    <td>পর্যালোচনা ও হোম টাস্ক</td>
+                    <td>দিনশেষে চিন্তা ও কাজ নির্ধারণ</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Special Note -->
+        <div class="special-note">
+            <h3>💡 বিশেষ নোট</h3>
+            <p>"প্রতিটি মানুষের মন এক নয়। তাই এই সিলেবাস হলো মূল কাঠামো। যদি কোনো শিক্ষার্থী আলাদা মানসিক ধরণের হয়—তাহলে আমি তার জন্য আলাদা রুটিন ও প্র্যাকটিস ডিজাইন করব, ইনশা'আল্লাহ।"</p>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>আপনার মন প্রশিক্ষণ শুরু করুন আজই</h2>
+            <p style="margin-bottom: 30px; font-size: 1.05em;">প্রফেশনাল গাইডেন্সের মাধ্যমে আপনার সম্পূর্ণ সম্ভাবনা আনলক করুন</p>
+            <button class="cta-button">যোগাযোগ করুন</button>
+            <button class="cta-button">আরও জানুন</button>
+        </div>
+    </div>
+</body>
+</html>
