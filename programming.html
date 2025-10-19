@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রোগ্রামিং কোর্স (HTML, CSS, JavaScript & AI) | মোঃ রবিউল ইসলাম | ঢাকা</title>
+    <meta name="description" content="HTML, CSS, JavaScript এবং AI ইন্টিগ্রেশন শিখুন। প্র্যাকটিক্যাল প্রজেক্ট-ভিত্তিক শিক্ষা। মোঃ রবিউল ইসলামের সাথে এক-টু-ওয়ান টিউশন।">
+    <meta name="keywords" content="প্রোগ্রামিং, HTML, CSS, JavaScript, ওয়েব ডেভেলপমেন্ট, AI, গুলশান, ঢাকা">
+    <meta name="author" content="মোঃ রবিউল ইসলাম">
+    <meta property="og:title" content="প্রোগ্রামিং কোর্স - HTML, CSS, JavaScript & AI">
+    <meta property="og:description" content="বাস্তব প্রজেক্ট দিয়ে প্রোগ্রামিং শিখুন এবং AI ব্যবহার করে দক্ষতা বাড়ান।">
+    <meta property="og:type" content="website">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1e40af;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --bg-light: #f8fafc;
+            --bg-lighter: #f1f5f9;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --code-bg: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Sans Bengali', Tahoma, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Highlight Cards */
+        .highlight-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .highlight-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary);
+            text-align: center;
+        }
+
+        .highlight-card.secondary {
+            border-top-color: var(--secondary);
+        }
+
+        .highlight-card.accent {
+            border-top-color: var(--accent);
+        }
+
+        .highlight-card h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .highlight-card.secondary h3 {
+            color: var(--secondary);
+        }
+
+        .highlight-card.accent h3 {
+            color: var(--accent);
+        }
+
+        .highlight-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Tabs */
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-bottom: 3px solid var(--border);
+            margin-bottom: 40px;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 14px 24px;
+            border: none;
+            background: none;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .tab-content {
+            display: none;
+            animation: slideIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .card p, .card ul {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .card ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+        }
+
+        /* Phase Timeline */
+        .phase-item {
+            background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+            border-left: 5px solid var(--primary);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .phase-number {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .phase-header h4 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .phase-topics {
+            list-style: none;
+            margin-left: 70px;
+        }
+
+        .phase-topics li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .phase-topics li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* AI Feature Box */
+        .ai-feature {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border: 2px solid var(--secondary);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .ai-feature h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ai-feature ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .ai-feature li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .ai-feature li::before {
+            content: '🤖';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid;
+        }
+
+        .info-box.primary {
+            background: #eff6ff;
+            border-left-color: var(--primary);
+        }
+
+        .info-box.success {
+            background: #f0fdf4;
+            border-left-color: var(--success);
+        }
+
+        .info-box.warning {
+            background: #fffbeb;
+            border-left-color: var(--warning);
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        /* Features List */
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Project Showcase */
+        .project-box {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 2px solid var(--border);
+        }
+
+        .project-box h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .project-box p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            color: white;
+            padding: 70px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 70px;
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);
+        }
+
+        .cta-section h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0 10px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: var(--bg-lighter);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--code-bg);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .tab-btn {
+                padding: 10px 14px;
+                font-size: 0.85rem;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .phase-topics {
+                margin-left: 40px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "প্রোগ্রামিং (HTML, CSS, JavaScript & AI)",
+      "description": "প্র্যাকটিক্যাল প্রজেক্ট-ভিত্তিক ওয়েব ডেভেলপমেন্ট এবং AI ইন্টিগ্রেশন শিক্ষা।",
+      "instructor": {
+        "@type": "Person",
+        "name": "মোঃ রবিউল ইসলাম"
+      },
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "প্রোগ্রামিং কোর্স",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "গুলশান-২",
+          "addressRegion": "ঢাকা",
+          "addressCountry": "BD"
+        }
+      }
+    }
+    </script>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">💻 এক-টু-ওয়ান প্র্যাকটিক্যাল প্রোগ্রামিং কোর্স</div>
+                <h1>প্রোগ্রামিং শিখুন (HTML, CSS, JavaScript & AI)</h1>
+                <p class="subtitle">রিয়েল প্রজেক্ট দিয়ে ওয়েব ডেভেলপমেন্ট এবং AI ইন্টিগ্রেশন মাস্টার করুন</p>
+                <div class="hero-meta">
+                    <span>👨‍💻 প্রশিক্ষক: মোঃ রবিউল ইসলাম</span>
+                    <span>📍 গুলশান-২, ঢাকা</span>
+                    <span>🤖 AI ইন্টিগ্রেশন অন্তর্ভুক্ত</span>
+                    <span>🎓 শিল্প-প্রস্তুত প্রকল্প</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Highlights -->
+        <section class="highlight-section">
+            <div class="highlight-card">
+                <h3>6️⃣</h3>
+                <p>সম্পূর্ণ পর্ব</p>
+            </div>
+            <div class="highlight-card secondary">
+                <h3>10+</h3>
+                <p>রিয়েল প্রজেক্ট</p>
+            </div>
+            <div class="highlight-card accent">
+                <h3>100%</h3>
+                <p>ব্যবহারিক শিক্ষা</p>
+            </div>
+            <div class="highlight-card">
+                <h3>🤖</h3>
+                <p>AI সহায়তা অন্তর্ভুক্ত</p>
+            </div>
+        </section>
+
+        <!-- Objective Section -->
+        <section class="section">
+            <h2 class="section-title">🎯 কোর্সের মূল উদ্দেশ্য</h2>
+            <p class="section-subtitle">এই কোর্সের লক্ষ্য হলো আপনাকে শুধুমাত্র HTML, CSS এবং JavaScript শেখানো নয়, বরং আপনাকে একজন পেশাদার ওয়েব ডেভেলপার তৈরি করা। আমরা প্রতিটি ধারণা প্র্যাকটিক্যাল প্রজেক্টের মাধ্যমে শেখাই এবং আধুনিক AI টুলস ব্যবহার করে আপনার কোডিং দক্ষতা বাড়াতে সাহায্য করি।</p>
+
+            <div class="ai-feature">
+                <h4>🤖 AI ইন্টিগ্রেশন - কেন এটি গুরুত্বপূর্ণ?</h4>
+                <ul class="features-list">
+                    <li>ChatGPT দিয়ে কোড ব্যাখ্যা এবং সাহায্য পাওয়া</li>
+                    <li>GitHub Copilot ব্যবহার করে দ্রুত কোডিং</li>
+                    <li>Bug ফিক্সিং এবং সমস্যা সমাধানে AI এর ব্যবহার</li>
+                    <li>ভবিষ্যতের জন্য AI-সচেতন ডেভেলপার হওয়া</li>
+                    <li>কাজের গতি এবং দক্ষতা ৫০% বৃদ্ধি করা</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Tabs -->
+        <div class="tabs-container">
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="switchTab('phases')">📅 কারিকুলাম</button>
+                <button class="tab-btn" onclick="switchTab('projects')">🎬 প্রজেক্ট</button>
+                <button class="tab-btn" onclick="switchTab('ai')">🤖 AI ব্যবহার</button>
+                <button class="tab-btn" onclick="switchTab('outcomes')">✨ ফলাফল</button>
+                <button class="tab-btn" onclick="switchTab('faq')">❓ FAQ</button>
+            </div>
+
+            <!-- Phase 1 -->
+            <div id="phases" class="tab-content active">
+                <section class="section">
+                    <h2 class="section-title">📅 ৬টি পর্বের সম্পূর্ণ কারিকুলাম</h2>
+
+                    <div class="phase-item">
+                        <div class="phase-header">
+                            <div class="phase-number">১</div>
+                            <h4>ওয়েব ডেভেলপমেন্ট এর ভিত্তি</h4>
+                        </div>
+                        <ul class="phase-topics">
+                            <li>ওয়েব এবং ইন্টারনেট কিভাবে কাজ করে?</li>
+                            <li>ফ্রন্টএন্ড vs ব্যাকএন্ড বোঝা</li>
+                            <li>VS Code সেটআপ এবং Live Server</li>
+                            <li>ফোল্ডার স্ট্রাকচার এবং ফাইল ম্যানেজমেন্ট</li>
+                            <li>প্রথম HTML পেজ তৈরি করা</li>
+                            <li><strong>প্রথম মিনি প্রজেক্ট:</strong> ব্যক্তিগত তথ্য পেজ তৈরি</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-item">
+                        <div class="phase-header">
+                            <div class="phase-number">२</div>
+                            <h4>HTML – ওয়েবের স্ট্রাকচার</h4>
+                        </div>
+                        <ul class="phase-topics">
+                            <li>সমস্ত HTML ট্যাগ এবং তাদের সঠিক ব্যবহার</li>
+                            <li>টেক্সট ফরম্যাটিং ট্যাগ (p, h1–h6, b, i, u)</li>
+                            <li>লিংক, ছবি, লিস্ট এবং টেবিল</li>
+                            <li>ফর্ম এবং ইনপুট এলিমেন্ট</li>
+                            <li>সিমান্টিক HTML ট্যাগ (header, section, article, footer)</li>
+                            <li><strong>বড় প্রজেক্ট:</strong> মাল্টি-পেজ পার্সোনাল পোর্টফোলিও ওয়েবসাইট</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-item">
+                        <div class="phase-header">
+                            <div class="phase-number">३</div>
+                            <h4>CSS – স্টাইলিং এবং লেআউট</h4>
+                        </div>
+                        <ul class="phase-topics">
+                            <li>CSS বেসিক্স (সিলেক্টর, রঙ, ফন্ট, বর্ডার, ব্যাকগ্রাউন্ড)</li>
+                            <li>Box Model (Margin, Padding, Border)</li>
+                            <li>Display Types (Block, Inline, Flex, Grid)</li>
+                            <li>রেসপন্সিভ ডিজাইন এবং মিডিয়া কোয়েরি</li>
+                            <li>Hover ইফেক্ট, ট্রানজিশন এবং এনিমেশন</li>
+                            <li><strong>প্রজেক্ট:</strong> "প্রোডাক্ট ল্যান্ডিং পেজ" (ই-কমার্স স্টাইল)</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-item">
+                        <div class="phase-header">
+                            <div class="phase-number">४</div>
+                            <h4>JavaScript – লজিক এবং ইন্টারঅ্যাকটিভিটি</h4>
+                        </div>
+                        <ul class="phase-topics">
+                            <li>JavaScript বেসিক্স (ভেরিয়েবল, অপারেটর, ডেটা টাইপ)</li>
+                            <li>ফাংশন, লুপ এবং কন্ডিশনাল</li>
+                            <li>DOM ম্যানিপুলেশন (ডাইনামিক কন্টেন্ট পরিবর্তন)</li>
+                            <li>ইভেন্ট এবং ইভেন্ট লিসেনার</li>
+                            <li>অ্যারে এবং অবজেক্ট</li>
+                            <li>বেসিক ফর্ম ভ্যালিডেশন এবং Local Storage</li>
+                            <li><strong>প্রজেক্ট:</strong> "To-Do List অ্যাপ" বা "ডিজিটাল ক্যালকুলেটর"</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-item">
+                        <div class="phase-header">
+                            <div class="phase-number">५</div>
+                            <h4>বাস্তব-বিশ্বের প্রজেক্ট</h4>
+                        </div>
+                        <ul class="phase-topics">
+                            <li>সম্পূর্ণ পার্সোনাল পোর্টফোলিও ওয়েবসাইট</li>
+                            <li>E-কমার্স প্রোডাক্ট পেজ</li>
+                            <li>সার্চ ফাংশনালিটি সহ ব্লগ লেআউট</li>
+                            <li>"বই বাজার BD" – পোস্ট এবং ডিসপ্লে সিস্টেম</li>
+                            <li>মিনি কুইজ অ্যাপ্লিকেশন</li>
+                            <li>AI-সহায়তায় সমস্ত প্রজেক্ট পরিমার্জন</li>
+                        </ul>
+                    </div>
+
+                    <div class="phase-item">
+                        <div class="phase-header">
+                            <div class="phase-number">६</div>
+                            <h4>প্রফেশনাল প্র্যাকটিস এবং ক্যারিয়ার</h4>
+                        </div>
+                        <ul class="phase-topics">
+                            <li>ফাইল অপটিমাইজেশন এবং SEO বেসিক্স</li>
+                            <li>Git এবং GitHub ভার্সন কন্ট্রোল</li>
+                            <li>ওয়েবসাইট হোস্টিং (ফ্রি এবং পেইড অপশন)</li>
+                            <li>অনলাইন পোর্টফোলিও বিল্ডিং এবং শেয়ারিং</li>
+                            <li>অ্যাডভান্সড টুলস পরিচয় (Tailwind, Bootstrap, React Overview)</li>
+                            <li>ফ্রিল্যান্সিং এবং জব রেডিনেস প্রস্তুতি</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Tab 2: Projects -->
+            <div id="projects" class="tab-content">
+                <section class="section">
+                    <h2 class="section-title">🎬 আপনি তৈরি করবেন এই প্রজেক্টগুলি</h2>
+                    <p class="section-subtitle">প্রতিটি প্রজেক্ট আপনার পোর্টফোলিওতে যুক্ত করতে পারবেন এবং ফ্রিল্যান্সিং এ ব্যবহার করতে পারবেন।</p>
+
+                    <div class="project-box">
+                        <h4>📄 প্রজেক্ট ১: ব্যক্তিগত তথ্য পেজ</h4>
+                        <p><strong>শিখবেন:</strong> HTML বেসিক্স, ছবি এবং লিংক | <strong>সময়:</strong> ১ সপ্তাহ</p>
+                    </div>
+
+                    <div class="project-box">
+                        <h4>💼 প্রজেক্ট ২: মাল্টি-পেজ পোর্টফোলিও ওয়েবসাইট</h4>
+                        <p><strong>শিখবেন:</strong> HTML সব ট্যাগ, সিমান্টিক HTML | <strong>সময়:</strong> ২-৩ সপ্তাহ</p>
+                    </div>
+
+                    <div class="project-box">
+                        <h4>🛍️ প্রজেক্ট ৩: প্রোডাক্ট ল্যান্ডিং পেজ</h4>
+                        <p><strong>শিখবেন:</strong> CSS সব প্রপার্টি, রেসপন্সিভ ডিজাইন, Flexbox | <strong>সময়:</strong> ২ সপ্তাহ</p>
+                    </div>
+
+                    <div class="project-box">
+                        <h4>✅ প্রজেক্ট ৪: To-Do List অ্যাপ্লিকেশন</h4>
+                        <p><strong>শিখবেন:</strong> JavaScript ডোম ম্যানিপুলেশন, ইভেন্ট, Local Storage | <strong>সময়:</strong> ২ সপ্তাহ</p>
+                    </div>
+
+                    <div class="project-box">
+                        <h4>🧮 প্রজেক্ট ৫: ডিজিটাল ক্যালকুলেটর</h4>
+                        <p><strong>শিখবেন:</strong> জাভাস্ক্রিপ্ট লজিক, অপারেশন এবং ডিসপ্লে | <strong>সময়:</strong> ১-২ সপ্তাহ</p>
+                    </div>
+
+                    <div class="project-box">
+                        <h4>📚 প্রজেক্ট ৬: বই বাজার BD - পোস্ট এবং ডিসপ্লে সিস্টেম</h4>
+                        <p><strong>শিখবেন:</strong> সব কিছু একসাথে - HTML + CSS + JavaScript | <strong>সময়:</strong> ৩-৪ সপ্তাহ</p>
+                    </div>
+
+                    <div class="project-box">
+                        <h4>🧠 প্রজেক্ট ৭: মিনি কুইজ অ্যাপ্লিকেশন</h4>
+                        <p><strong>শিখবেন:</strong> অ্যারে, স্কোর ক্যালকুলেশন, ডাইনামিক কন্টেন্ট | <strong>সময়:</strong> ২ সপ্তাহ</p>
+                    </div>
+
+                    <div class="info-box success" style="margin-top: 30px;">
+                        <strong>💡 গুরুত্বপূর্ণ:</strong> প্রতিটি প্রজেক্ট সম্পন্ন করার পরে আমরা সেটি GitHub তে আপলোড করব এবং আপনার পোর্টফোলিওর জন্য প্রস্তুত করব।
+                    </div>
+                </section>
+            </div>
+
+            <!-- Tab 3: AI -->
+            <div id="ai" class="tab-content">
+                <section class="section">
+                    <h2 class="section-title">🤖 AI দিয়ে কোডিং কিভাবে সহজ করবেন</h2>
+                    <p class="section-subtitle">আমরা আপনাকে শেখাব কিভাবে ChatGPT, GitHub Copilot এবং অন্যান্য AI টুলস ব্যবহার করে আপনার প্রোগ্রামিং দক্ষতা বাড়াতে হয়।</p>
+
+                    <div class="cards-grid">
+                        <div class="card">
+                            <h3>💬 ChatGPT ব্যবহার</h3>
+                            <ul class="features-list">
+                                <li>কোড ব্যাখ্যা করিয়ে নেওয়া</li>
+                                <li>এরর মেসেজ বুঝতে সাহায্য</li>
+                                <li>ভালো প্র্যাকটিস শিখা</li>
+                                <li>কোড অপটিমাইজেশন সাজেশন</li>
+                                <li>বাগ ফিক্সিং আইডিয়া পাওয়া</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>⚡ GitHub Copilot</h3>
+                            <ul class="features-list">
+                                <li>অটো-কমপ্লিট কোড সাজেশন</li>
+                                <li>সাধারণ ফাংশন দ্রুত লেখা</li>
+                                <li>পারফরম্যান্স বৃদ্ধি করা</li>
+                                <li>কোডিং গতি ৩-৫ গুণ বাড়ানো</li>
+                                <li>নতুন প্যাটার্ন শেখা</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>🔧 অন্যান্য AI টুলস</h3>
+                            <ul class="features-list">
+                                <li>VS Code AI Extensions</li>
+                                <li>Tabnine - আরও ভালো সাজেশন</li>
+                                <li>Replit AI - দ্রুত প্রটোটাইপিং</li>
+                                <li>Design to Code AI টুলস</li>
+                                <li>Debugging সহায়তা সেবা</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>📊 সেরা প্র্যাকটিস</h3>
+                            <ul class="features-list">
+                                <li>AI শুধু সাহায্য, প্রতিস্থাপন নয়</li>
+                                <li>কোড বুঝে কাজে লাগানো</li>
+                                <li>নিজের চিন্তাভাবনা ব্যবহার করা</li>
+                                <li>AI সাজেশন যাচাই করা</li>
+                                <li>শিক্ষায় ফোকাস রাখা</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ai-feature">
+                        <h4>🎓 আমাদের AI ক্লাসে কী শিখবেন?</h4>
+                        <ul class="features-list">
+                            <li>প্রতিটি সেশনে AI টুলস এর ব্যবহারিক ডেমো</li>
+                            <li>সঠিক প্রশ্ন জিজ্ঞাসা করার পদ্ধতি (Prompt Engineering)</li>
+                            <li>AI এর সাজেশন কিভাবে যাচাই করতে হয়</li>
+                            <li>সাধারণ ভুল এবং কিভাবে এড়াতে হয়</li>
+                            <li>দ্রুত শিখার কৌশল এবং ট্রিকস</li>
+                            <li>ভবিষ্যতের জন্য AI-সচেতন ডেভেলপার হওয়া</li>
+                        </ul>
+                    </div>
+
+                    <div class="testimonial">
+                        <p>"আমি ChatGPT এবং Copilot এর মাধ্যমে শিখে এখন আমার কোডিং স্পিড দ্বিগুণ হয়েছে। Robiul ভাইয়ের গাইডেন্স এ AI এর সঠিক ব্যবহার শিখেছি এবং এখন স্বাধীনভাবে প্রজেক্ট তৈরি করতে পারি।"</p>
+                        <div class="testimonial-author">— করিম আহমেদ, ওয়েব ডেভেলপার</div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Tab 4: Outcomes -->
+            <div id="outcomes" class="tab-content">
+                <section class="section">
+                    <h2 class="section-title">✨ কোর্স শেষে আপনি অর্জন করবেন</h2>
+
+                    <div class="cards-grid">
+                        <div class="card">
+                            <h3>✅ ফুল-স্ট্যাক দক্ষতা</h3>
+                            <p>HTML, CSS এবং JavaScript এর সম্পূর্ণ দক্ষতা যা পেশাদার ওয়েবসাইট তৈরিতে যথেষ্ট।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>✅ প্রজেক্ট পোর্টফোলিও</h3>
+                            <p>৭টি সম্পূর্ণ প্রজেক্ট যা আপনি নিয়োগকর্তা বা ক্লায়েন্টদের কাছে দেখাতে পারবেন।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>✅ AI-সচেতন ডেভেলপার</h3>
+                            <p>আধুনিক AI টুলস ব্যবহার করে দ্রুত এবং দক্ষ কোডিং করার ক্ষমতা।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>✅ ফ্রিল্যান্সিং প্রস্তুত</h3>
+                            <p>Fiverr, Upwork এর মতো প্ল্যাটফর্মে ক্লায়েন্ট খুঁজে প্রজেক্ট করার যোগ্যতা।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>✅ চাকরির সুযোগ</h3>
+                            <p>জুনিয়র ওয়েব ডেভেলপার হিসেবে চাকরি পাওয়ার জন্য প্রয়োজনীয় সব দক্ষতা।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>✅ দীর্ঘমেয়াদী জ্ঞান</h3>
+                            <p>শুধু প্রশিক্ষণ নয়, সারাজীবনের জন্য প্রযুক্তি এবং নতুন শেখার দক্ষতা।</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box success">
+                        <strong>💰 আয়ের সম্ভাবনা:</strong> কোর্স শেষ করার পর আপনি প্রতিটি ওয়েব ডেভেলপমেন্ট প্রজেক্টে ৫,০০০ - ৫০,০০০ টাকা পর্যন্ত আয় করতে পারবেন।
+                    </div>
+                </section>
+            </div>
+
+            <!-- Tab 5: FAQ -->
+            <div id="faq" class="tab-content">
+                <section class="section">
+                    <h2 class="section-title">❓ সাধারণ প্রশ্নাবলী</h2>
+
+                    <div style="display: grid; gap: 20px;">
+                        <div class="info-box primary">
+                            <strong>Q: আমি যদি সম্পূর্ণ নতুন হই তাহলে?</strong>
+                            <p>A: এই কোর্স শুরু থেকেই ডিজাইন করা হয়েছে নতুনদের জন্য। আমরা একদম বেসিক থেকে শুরু করি এবং পর্যায়ক্রমে এগিয়ে যাই।</p>
+                        </div>
+
+                        <div class="info-box primary">
+                            <strong>Q: কত সময়ে সমাপ্ত করতে পারব?</strong>
+                            <p>A: সাধারণত ৩-৬ মাসে। তবে আপনার গতি এবং সময়ের উপর নির্ভর করে এটি কম বা বেশি হতে পারে।</p>
+                        </div>
+
+                        <div class="info-box primary">
+                            <strong>Q: কি আমি কোর্সের মাঝখানে ফ্রিল্যান্সিং শুরু করতে পারব?</strong>
+                            <p>A: হ্যাঁ, ফেজ ৪ বা ৫ এর পরেই আপনি সহজ প্রজেক্ট নিয়ে শুরু করতে পারেন।</p>
+                        </div>
+
+                        <div class="info-box primary">
+                            <strong>Q: AI টুলস ব্যবহার করলে কি প্রকৃত শিক্ষা হবে না?</strong>
+                            <p>A: আমরা AI কে সাহায্যের মাধ্যম হিসেবে ব্যবহার করি, প্রতিস্থাপন হিসেবে নয়। আপনি প্রতিটি কোড বুঝবেন এবং শিখবেন।</p>
+                        </div>
+
+                        <div class="info-box primary">
+                            <strong>Q: আমি কি একসাথে একাধিক প্রজেক্ট করতে পারব?</strong>
+                            <p>A: হ্যাঁ, একবার আপনি মৌলিক বিষয়গুলি শিখলে, আপনি নিজস্ব প্রজেক্ট তৈরি করতে পারেন।</p>
+                        </div>
+
+                        <div class="info-box primary">
+                            <strong>Q: কোর্স শেষে কি সাপোর্ট থাকবে?</strong>
+                            <p>A: হ্যাঁ, কোর্স সম্পন্ন করার পরেও আমরা আপনার প্রশ্নের উত্তর দেব এবং গাইড করব।</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Why Choose Section -->
+        <section class="section" style="margin-top: 60px;">
+            <h2 class="section-title">💎 কেন আমাকে বেছে নেবেন?</h2>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>👨‍💻 অভিজ্ঞ প্রশিক্ষক</h3>
+                    <p>মোঃ রবিউল ইসলাম নিজেই ওয়েব ডেভেলপার এবং প্রতিনিয়ত নতুন প্রযুক্তি শিখছেন।</p>
+                </div>
+
+                <div class="card">
+                    <h3>🎬 প্র্যাকটিক্যাল ফোকাস</h3>
+                    <p>প্রতিটি ক্লাসে রিয়েল কোডিং, লাইভ ডেমো এবং ব্যবহারিক প্রজেক্ট কাজ।</p>
+                </div>
+
+                <div class="card">
+                    <h3>🤖 AI ইন্টিগ্রেশন</h3>
+                    <p>আধুনিক AI টুলস ব্যবহার করে দ্রুত এবং দক্ষ শিক্ষা পাওয়া।</p>
+                </div>
+
+                <div class="card">
+                    <h3>💼 ক্যারিয়ার রেডি</h3>
+                    <p>শুধু শিক্ষা নয়, ফ্রিল্যান্সিং এবং চাকরির জন্য সম্পূর্ণ প্রস্তুতি।</p>
+                </div>
+
+                <div class="card">
+                    <h3>📈 প্রমাণিত ফলাফল</h3>
+                    <p>আমাদের অনেক ছাত্র এখন পেশাদার ওয়েব ডেভেলপার হিসেবে কাজ করছে।</p>
+                </div>
+
+                <div class="card">
+                    <h3>🕐 নমনীয় সময়</h3>
+                    <p>আপনার সময়সূচী অনুযায়ী ক্লাস এবং কোর্স গতি সামঞ্জস্য করা যায়।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>🚀 এখনই শুরু করুন আপনার ওয়েব ডেভেলপমেন্ট যাত্রা</h2>
+            <p>সীমিত সময়ের অফার: প্রথম ১০ জন শিক্ষার্থীর জন্য ২০% ছাড় এবং ফ্রি AI টুলস সেটআপ গাইড</p>
+            <div>
+                <a href="https://robiulislam.org/contact" class="btn btn-primary">যোগাযোগ করুন</a>
+                <a href="https://robiulislam.org/demo" class="btn btn-secondary">ফ্রি ডেমো ক্লাস</a>
+            </div>
+            <p style="margin-top: 25px; font-size: 0.95rem; opacity: 0.9;">গুলশান-২, ঢাকা | হোম-ভিজিট এবং অনলাইন উভয় মোড</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">💻 প্রোগ্রামিং (HTML, CSS, JavaScript & AI)</p>
+        <p>মোঃ রবিউল ইসলাম | গুলশান-২, ঢাকা</p>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #94a3b8;">&copy; ২০২৫ সকল অধিকার সংরক্ষিত | <a href="https://robiulislam.org">robiulislam.org</a></p>
+    </footer>
+
+    <script>
+        function switchTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            const activeContent = document.getElementById(tabName);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+
+            event.target.classList.add('active');
+
+            setTimeout(() => {
+                document.querySelector('.tabs-container').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }, 100);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.tab-btn').classList.add('active');
+            document.querySelector('.tab-content').classList.add('active');
+        });
+    </script>
+</body>
+</html>
