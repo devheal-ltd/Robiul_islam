@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডিজিটাল মার্কেটিং প্রোগ্রাম | মোঃ রবিউল ইসলাম | ঢাকা</title>
+    <meta name="description" content="মোঃ রবিউল ইসলামের সাথে প্রফেশনাল ডিজিটাল মার্কেটিং টিউশন প্রোগ্রাম। ৩ মাসের কোর্স, এক-টু-ওয়ান পদ্ধতিতে ব্যবহারিক শিক্ষা। গুলশান-২, ঢাকা।">
+    <meta name="keywords" content="ডিজিটাল মার্কেটিং, SEO, সোশ্যাল মিডিয়া মার্কেটিং, ফেসবুক এডস, গুগল অ্যানালিটিক্স, ঢাকা">
+    <meta name="author" content="মোঃ রবিউল ইসলাম">
+    <meta property="og:title" content="ডিজিটাল মার্কেটিং প্রোগ্রাম | প্রফেশনাল টিউশন">
+    <meta property="og:description" content="বাস্তব অভিজ্ঞতার মাধ্যমে ডিজিটাল মার্কেটিং শিখুন এবং ফ্রিল্যান্সিং ক্যারিয়ার গড়ুন।">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #dc2626;
+            --primary-light: #ef4444;
+            --primary-dark: #b91c1c;
+            --secondary: #7c3aed;
+            --accent: #0891b2;
+            --bg-light: #f8fafc;
+            --bg-lighter: #f1f5f9;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --success: #059669;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Sans Bengali', Tahoma, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--secondary) 100%);
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            font-size: 0.95rem;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 18px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: white;
+            padding: 30px 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Tabs Navigation */
+        .tabs-container {
+            margin-bottom: 50px;
+        }
+
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 3px solid var(--border);
+            margin-bottom: 35px;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 14px 22px;
+            border: none;
+            background: none;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            border-top: 4px solid var(--primary);
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(220, 38, 38, 0.15);
+            border-top-color: var(--secondary);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .card p, .card ul {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .card ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+        }
+
+        /* Phase Timeline */
+        .phases-grid {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .phase-card {
+            background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+            border-left: 5px solid var(--primary);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .phase-number {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .phase-header h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .phase-topics {
+            list-style: none;
+            margin-left: 65px;
+        }
+
+        .phase-topics li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .phase-topics li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Features List */
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid;
+        }
+
+        .info-box.highlight {
+            background: #fef3c7;
+            border-left-color: #f59e0b;
+        }
+
+        .info-box.success {
+            background: #d1fae5;
+            border-left-color: var(--success);
+        }
+
+        .info-box.info {
+            background: #dbeafe;
+            border-left-color: var(--accent);
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 70px;
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.2);
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0 10px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+        }
+
+        /* Outcome Section */
+        .outcome-box {
+            background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+            padding: 35px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .outcome-box:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.1);
+        }
+
+        .outcome-box h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .outcome-box p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: var(--bg-lighter);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .stats-grid {
+                gap: 20px;
+            }
+
+            .stat-item h3 {
+                font-size: 1.5rem;
+            }
+
+            .tabs-nav {
+                gap: 5px;
+            }
+
+            .tab-btn {
+                padding: 10px 14px;
+                font-size: 0.85rem;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phase-topics {
+                margin-left: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Schema.org Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "ডিজিটাল মার্কেটিং - প্রফেশনাল টিউশন প্রোগ্রাম",
+      "description": "৩ মাসের ব্যবহারিক ডিজিটাল মার্কেটিং কোর্স যেখানে আপনি শিখবেন সোশ্যাল মিডিয়া মার্কেটিং, SEO, ফেসবুক এডস এবং আরও অনেক কিছু।",
+      "instructor": {
+        "@type": "Person",
+        "name": "মোঃ রবিউল ইসলাম"
+      },
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "ডিজিটাল মার্কেটিং প্রোগ্রাম",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "গুলশান-২",
+          "addressRegion": "ঢাকা",
+          "addressCountry": "BD"
+        }
+      },
+      "duration": "P3M",
+      "courseMode": "OneToOne"
+    }
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>📱 ডিজিটাল মার্কেটিং – প্রফেশনাল টিউশন প্রোগ্রাম</h1>
+                <p>বাস্তব অভিজ্ঞতার মাধ্যমে অনলাইনে ব্যবসা বৃদ্ধি করুন এবং ফ্রিল্যান্সিং ক্যারিয়ার গড়ুন</p>
+                <div class="hero-meta">
+                    <span>👨‍🏫 প্রশিক্ষক: মোঃ রবিউল ইসলাম</span>
+                    <span>📍 গুলশান-২, ঢাকা</span>
+                    <span>🕐 ৩ মাসের কোর্স</span>
+                    <span>💻 এক-টু-ওয়ান পদ্ধতি</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Stats Section -->
+        <section class="stats-bar">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>6️⃣</h3>
+                    <p>সম্পূর্ণ পর্ব</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>বিভিন্ন প্ল্যাটফর্ম</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>ব্যবহারিক শিক্ষা</p>
+                </div>
+                <div class="stat-item">
+                    <h3>♾️</h3>
+                    <p>ক্যারিয়ার সুযোগ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Objective -->
+        <section class="section">
+            <h2 class="section-title">🎯 প্রোগ্রামের উদ্দেশ্য</h2>
+            <p class="section-subtitle">এই কোর্সের মূল লক্ষ্য হলো আপনাকে বাস্তব অভিজ্ঞতার মাধ্যমে এমনভাবে ডিজিটাল মার্কেটিং শেখানো, যাতে আপনি নিজে অথবা অন্যের ব্যবসা অনলাইনে দক্ষতার সঙ্গে বৃদ্ধি করতে পারেন। প্রতিটি শিক্ষার্থীর সাথে আমরা কাজ করি একটি সম্পূর্ণ প্রজেক্ট-ভিত্তিক শেখার মাধ্যমে যাতে আপনি তাৎক্ষণিক ফলাফল দেখতে পান।</p>
+            
+            <div class="info-box highlight">
+                <strong>💡 আমাদের পদ্ধতি:</strong> আমরা শুধু তত্ত্ব শেখাই না। প্রতিটি ক্লাসে লাইভ প্র্যাকটিক্যাল কাজ, রিয়েল ক্যাম্পেইন পরিচালনা এবং হ্যান্ডস-অন প্রজেক্ট থাকে যাতে আপনি সত্যিকারের অভিজ্ঞতা অর্জন করেন।
+            </div>
+        </section>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-container">
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="switchTab('phases')">📅 ৬টি পর্ব</button>
+                <button class="tab-btn" onclick="switchTab('skills')">🎓 দক্ষতা</button>
+                <button class="tab-btn" onclick="switchTab('structure')">🏗️ কোর্স কাঠামো</button>
+                <button class="tab-btn" onclick="switchTab('outcomes')">✨ ফলাফল</button>
+                <button class="tab-btn" onclick="switchTab('bonus')">🎁 বোনাস</button>
+            </div>
+
+            <!-- Tab 1: Phases -->
+            <div id="phases" class="tab-content active">
+                <section class="section">
+                    <h2 class="section-title">📅 সম্পূর্ণ কারিকুলাম - ৬টি পর্ব</h2>
+
+                    <div class="phases-grid">
+                        <!-- Phase 1 -->
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-number">১</div>
+                                <h4>ডিজিটাল মার্কেটিং এর মূলভিত্তি</h4>
+                            </div>
+                            <ul class="phase-topics">
+                                <li>ডিজিটাল মার্কেটিং কী এবং এর বিস্তৃতি?</li>
+                                <li>ট্র্যাডিশনাল vs ডিজিটাল মার্কেটিং তুলনা</li>
+                                <li>প্রধান প্ল্যাটফর্ম এবং টুলসের পরিচয়</li>
+                                <li>অনলাইনে ভোক্তা মনোবিজ্ঞান বোঝা</li>
+                                <li>ব্যক্তিগত ব্র্যান্ডিং এর প্রাথমিকতা</li>
+                            </ul>
+                        </div>
+
+                        <!-- Phase 2 -->
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-number">২</div>
+                                <h4>সোশ্যাল মিডিয়া মার্কেটিং (SMM)</h4>
+                            </div>
+                            <ul class="phase-topics">
+                                <li>ফেসবুক পেজ তৈরি, অপটিমাইজ এবং স্ট্র্যাটেজি</li>
+                                <li>ইনস্টাগ্রাম বৃদ্ধি এবং ভিজ্যুয়াল ব্র্যান্ডিং</li>
+                                <li>ইউটিউব চ্যানেল সেটআপ এবং অর্গানিক রিচ</li>
+                                <li>টিকটক এবং শর্ট ভিডিও মার্কেটিং কৌশল</li>
+                                <li>দর্শক এনগেজমেন্ট এবং কমিউনিটি বিল্ডিং</li>
+                            </ul>
+                        </div>
+
+                        <!-- Phase 3 -->
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-number">৩</div>
+                                <h4>কন্টেন্ট ক্রিয়েশন এবং কপিরাইটিং</h4>
+                            </div>
+                            <ul class="phase-topics">
+                                <li>আকর্ষণীয় পোস্ট এবং এডস লেখা</li>
+                                <li>ভিজ্যুয়াল ডিজাইন বেসিক্স (Canva প্র্যাকটিক্যাল ক্লাস)</li>
+                                <li>রিলস এবং শর্ট ভিডিও স্ক্রিপ্ট লেখা</li>
+                                <li>ইমোশনাল ট্রিগার এবং পারসুয়েসিভ রাইটিং</li>
+                                <li>ভয়েস, স্টাইল এবং ব্র্যান্ড কনসিস্টেন্সি</li>
+                            </ul>
+                        </div>
+
+                        <!-- Phase 4 -->
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-number">৪</div>
+                                <h4>পেইড এডভার্টাইজিং ক্যাম্পেইন</h4>
+                            </div>
+                            <ul class="phase-topics">
+                                <li>ফেসবুক এডস ম্যানেজার ইন্ট্রোডাকশন</li>
+                                <li>বিভিন্ন এড টাইপ: রিচ, এনগেজমেন্ট, কনভার্শন</li>
+                                <li>বাজেট পরিকল্পনা এবং টার্গেট অডিয়েন্স সেটআপ</li>
+                                <li>A/B টেস্টিং এবং এড পারফরম্যান্স এনালাইসিস</li>
+                                <li>গুগল এডস বেসিক্স (সার্চ এবং ডিসপ্লে)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Phase 5 -->
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-number">৫</div>
+                                <h4>SEO এবং ওয়েবসাইট প্রমোশন</h4>
+                            </div>
+                            <ul class="phase-topics">
+                                <li>SEO কী এবং কেন এটি গুরুত্বপূর্ণ?</li>
+                                <li>অন-পেজ এবং অফ-পেজ SEO ফান্ডামেন্টালস</li>
+                                <li>কীওয়ার্ড রিসার্চ এবং কন্টেন্ট অপটিমাইজেশন</li>
+                                <li>Google Analytics দিয়ে ট্রাফিক এনালাইসিস</li>
+                                <li>অনলাইন পোর্টফোলিও বিল্ডিং</li>
+                            </ul>
+                        </div>
+
+                        <!-- Phase 6 -->
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <div class="phase-number">৬</div>
+                                <h4>স্ট্র্যাটেজি, ব্র্যান্ডিং এবং ক্যারিয়ার বৃদ্ধি</h4>
+                            </div>
+                            <ul class="phase-topics">
+                                <li>দীর্ঘমেয়াদী ডিজিটাল স্ট্র্যাটেজি তৈরি করা</li>
+                                <li>প্রফেশনাল অনলাইন আইডেন্টিটি তৈরি</li>
+                                <li>কনসিস্টেন্ট কন্টেন্টের মাধ্যমে পার্সোনাল ব্র্যান্ডিং</li>
+                                <li>ফ্রিল্যান্সিং প্ল্যাটফর্ম এবং আয়ের পদ্ধতি</li>
+                                <li>প্রজেক্ট উপস্থাপনা এবং পর্যালোচনা</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Tab 2: Skills -->
+            <div id="skills" class="tab-content">
+                <section class="section">
+                    <h2 class="section-title">🎓 আপনি শিখবেন এই দক্ষতাগুলি</h2>
+
+                    <div class="cards-grid">
+                        <div class="card">
+                            <h3>📊 এনালিটিক্স এবং ডেটা</h3>
+                            <ul class="features-list">
+                                <li>Google Analytics ব্যবহার করা</li>
+                                <li>ক্যাম্পেইন পারফরম্যান্স মেট্রিক্স</li>
+                                <li>ROI ক্যালকুলেশন এবং ট্র্যাকিং</li>
+                                <li>ডেটা-ড্রিভেন সিদ্ধান্ত নেওয়া</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>✍️ কন্টেন্ট এবং ক্রিয়েটিভিটি</h3>
+                            <ul class="features-list">
+                                <li>আকর্ষণীয় কপি লেখা</li>
+                                <li>Canva দিয়ে ডিজাইন তৈরি</li>
+                                <li>ভিডিও স্ক্রিপ্ট এবং এডিটিং</li>
+                                <li>ভাইরাল কন্টেন্ট তৈরির সূত্র</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>🎯 টার্গেটিং এবং সেগমেন্টেশন</h3>
+                            <ul class="features-list">
+                                <li>সঠিক অডিয়েন্স খুঁজে পাওয়া</li>
+                                <li>পার্সোনা তৈরি এবং বিশ্লেষণ</li>
+                                <li>কাস্টম অডিয়েন্স তৈরি করা</li>
+                                <li>অডিয়েন্স বিহেভিয়ার বোঝা</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>💰 বাজেট এবং অপটিমাইজেশন</h3>
+                            <ul class="features-list">
+                                <li>এড বাজেট পরিকল্পনা</li>
+                                <li>খরচ কমিয়ে ফলাফল বাড়ানো</li>
+                                <li>বিড স্ট্র্যাটেজি শিখা</li>
+                                <li>বাজেট বরাদ্দের সঠিক পদ্ধতি</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>🔍 SEO এবং সার্চ অপটিমাইজেশন</h3>
+                            <ul class="features-list">
+                                <li>কীওয়ার্ড রিসার্চ এবং বিশ্লেষণ</li>
+                                <li>অন-পেজ এবং অফ-পেজ কৌশল</li>
+                                <li>ব্যাকলিংক বিল্ডিং</li>
+                                <li>লোকাল SEO এবং র‍্যাঙ্কিং</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>🌐 ব্র্যান্ড এবং কমিউনিটি</h3>
+                            <ul class="features-list">
+                                <li>ব্র্যান্ড আইডেন্টিটি তৈরি</li>
+                                <li>কমিউনিটি ম্যানেজমেন্ট</li>
+                                <li>ইনফ্লুয়েন্সার মার্কেটিং বেসিক্স</li>
+                                <li>লয়্যালটি এবং এনগেজমেন্ট বাড়ানো</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Tab 3: Structure -->
+            <div id="structure" class="tab-content">
+                <section class="section">
+                    <h2 class="section-title">🏗️ কোর্স কাঠামো এবং সময়সূচী</h2>
+
+                    <div class="cards-grid">
+                        <div class="card">
+                            <h3>⏱️ সময়কাল</h3>
+                            <p><strong>মোট সময়:</strong> ৩ মাস</p>
+                            <p style="margin-top: 12px;"><strong>প্রতি সপ্তাহে:</strong> ২-৩ সেশন</p>
+                            <p style="margin-top: 12px;"><strong>প্রতি সেশন:</strong> ৬০-৯০ মিনিট</p>
+                            <p style="margin-top: 12px; color: var(--text-dark); font-size: 0.9rem;">শিক্ষার্থীর অগ্রগতি অনুযায়ী নমনীয়।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>📍 প্রশিক্ষণ পদ্ধতি</h3>
+                            <p><strong>স্টাইল:</strong> এক-টু-ওয়ান (১:১)</p>
+                            <p style="margin-top: 12px;"><strong>স্থান:</strong> হোম-ভিজিট / অনলাইন</p>
+                            <p style="margin-top: 12px;"><strong>পদ্ধতি:</strong> সম্পূর্ণ ব্যবহারিক</p>
+                            <p style="margin-top: 12px; color: var(--text-dark); font-size: 0.9rem;">লাইভ প্রজেক্ট এবং রিয়েল ক্যাম্পেইন।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>🎯 পাঠ্যক্রম পদ্ধতি</h3>
+                            <p><strong>প্রতিটি ক্লাসে:</strong></p>
+                            <ul style="margin-left: 20px; margin-top: 12px;">
+                                <li>টিউটোরিয়াল এবং ডেমো</li>
+                                <li>হ্যান্ডস-অন প্র্যাকটিস</li>
+                                <li>প্রজেক্ট কাজ</li>
+                                <li>ফিডব্যাক এবং আলোচনা</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3>📚 লার্নিং ম্যাটেরিয়াল</h3>
+                            <p><strong>আপনি পাবেন:</strong></p>
+                            <ul style="margin-left: 20px; margin-top: 12px;">
+                                <li>সম্পূর্ণ নোটস এবং গাইড</li>
+                                <li>টেমপ্লেট এবং চেকলিস্ট</li>
+                                <li>টুলস এবং রিসোর্স লিংক</li>
+                                <li>ক্লাস রেকর্ডিং (যেখানে প্রযোজ্য)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-box info">
+                        <strong>📝 ব্যক্তিগতকৃত শিক্ষা সামঞ্জস্য:</strong> যদি কোনো শিক্ষার্থীর শেখার গতি, আগ্রহ বা পটভূমি ভিন্ন হয় — তাহলে তার জন্য কাস্টম রুটিন বা বিশেষ ব্যবহারিক প্রোগ্রাম তৈরি করা হয়।
+                    </div>
+                </section>
+            </div>
+
+            <!-- Tab 4: Outcomes -->
+            <div id="outcomes" class="tab-content">
+                <section class="section">
+                    <h2 class="section-title">✨ কোর্স শেষে আপনি যা অর্জন করবেন</h2>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                        <div class="outcome-box">
+                            <h4>✅ স্বাধীন ক্যাম্পেইন পরিচালনা</h4>
+                            <p>নিজে থেকে সম্পূর্ণ সোশ্যাল মিডিয়া ক্যাম্পেইন পরিকল্পনা, বাস্তবায়ন এবং অপটিমাইজ করতে পারবেন।</p>
+                        </div>
+
+                        <div class="outcome-box">
+                            <h4>✅ ব্র্যান্ড তৈরির দক্ষতা</h4>
+                            <p>ব্যবসা বা ব্যক্তিগত ব্র্যান্ডের জন্য শক্তিশালী অনলাইন পরিচয় তৈরি করতে সক্ষম হবেন।</p>
+                        </div>
+
+                        <div class="outcome-box">
+                            <h4>✅ পেশাদার কন্টেন্ট তৈরি</h4>
+                            <p>উচ্চমানের কপি, ডিজাইন এবং ভিডিও কন্টেন্ট তৈরি এবং প্রচার করার সম্পূর্ণ জ্ঞান।</p>
+                        </div>
+
+                        <div class="outcome-box">
+                            <h4>✅ ফ্রিল্যান্সিং সুযোগ</h4>
+                            <p>Fiverr, Upwork এর মতো প্ল্যাটফর্মে ক্লায়েন্ট খুঁজে পেতে এবং আয় করতে প্রস্তুত।</p>
+                        </div>
+
+                        <div class="outcome-box">
+                            <h4>✅ ডেটা-চালিত চিন্তাভাবনা</h4>
+                            <p>এনালিটিক্স এবং ডেটার মাধ্যমে সঠিক মার্কেটিং সিদ্ধান্ত নেওয়ার ক্ষমতা।</p>
+                        </div>
+
+                        <div class="outcome-box">
+                            <h4>✅ দীর্ঘমেয়াদী কর্মজীবন পথ</h4>
+                            <p>ডিজিটাল মার্কেটিং এ স্থায়ী এবং লাভজনক ক্যারিয়ার গড়ার রোডম্যাপ পাবেন।</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box success" style="margin-top: 40px;">
+                        <strong>💡 বাস্তব উদাহরণ:</strong> আমাদের একজন ছাত্র এই কোর্স করার ৩ মাস পর Fiverr এ প্রথম ক্লায়েন্ট পেয়েছেন এবং এখন মাসে ৫০,০০০ টাকা আয় করছেন।
+                    </div>
+                </section>
+            </div>
+
+            <!-- Tab 5: Bonus -->
+            <div id="bonus" class="tab-content">
+                <section class="section">
+                    <h2 class="section-title">🎁 বোনাস এবং অতিরিক্ত সুবিধা</h2>
+
+                    <div class="cards-grid">
+                        <div class="card">
+                            <h3>📋 ব্যবহারিক অ্যাসাইনমেন্ট</h3>
+                            <p>প্রতি সপ্তাহে হাতে-কলমে প্রজেক্ট যা আপনার পোর্টফোলিও তৈরিতে সাহায্য করবে।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>🎬 রিয়েল প্রজেক্ট ওয়ার্ক</h3>
+                            <p>প্রশিক্ষণ দেওয়ার সময় প্রকৃত ব্যবসায়ের জন্য ক্যাম্পেইন চালানোর অভিজ্ঞতা।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>📞 ক্রমাগত সহায়তা</h3>
+                            <p>কোর্স শেষ হওয়ার পরেও প্রশ্ন এবং সমস্যার জন্য সাহায্য পাবেন।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>🏆 সার্টিফিকেট</h3>
+                            <p>কোর্স সম্পন্ন করার পর একটি প্রফেশনাল সার্টিফিকেট যা আপনার পোর্টফোলিওতে যুক্ত করতে পারবেন।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>🤝 নেটওয়ার্কিং</h3>
+                            <p>অন্যান্য শিক্ষার্থী এবং ডিজিটাল মার্কেটিং প্রফেশনালদের সাথে যুক্ত হওয়ার সুযোগ।</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>🔄 আপডেট এবং নতুন কন্টেন্ট</h3>
+                            <p>নতুন ফিচার এবং ট্রেন্ড সম্পর্কে নিয়মিত আপডেট এবং টিপস শেয়ারিং।</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <p>"Robiul ভাইয়ের কাছে ডিজিটাল মার্কেটিং শিখে আমার জীবন বদলে গেছে। আমি এখন নিজের ব্যবসা বৃদ্ধি করছি এবং অন্যদেরও সাহায্য করছি। তার ব্যবহারিক পদ্ধতি সত্যিই কার্যকর এবং সহজবোধ্য।"</p>
+                        <div class="testimonial-author">— আমিনা খাতুন, ই-কমার্স বিজনেস ওনার</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Why Choose Section -->
+        <section class="section" style="margin-top: 60px;">
+            <h2 class="section-title">💎 কেন আমাকে বেছে নেবেন?</h2>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>👨‍💼 ইন্ডাস্ট্রি অভিজ্ঞতা</h3>
+                    <p>মোঃ রবিউল ইসলাম সরাসরি ডিজিটাল মার্কেটিং এ কাজ করেন এবং তার নিজের ব্যবসা অনলাইনে বৃদ্ধি করেছেন।</p>
+                </div>
+
+                <div class="card">
+                    <h3>🎯 প্র্যাকটিক্যাল ফোকাস</h3>
+                    <p>শুধু তত্ত্ব নয়, প্রতিটি ক্লাসে লাইভ টুলস ব্যবহার এবং রিয়েল ক্যাম্পেইন কাজ করা হয়।</p>
+                </div>
+
+                <div class="card">
+                    <h3>📈 প্রমাণিত ফলাফল</h3>
+                    <p>তার অনেক শিক্ষার্থী ফ্রিল্যান্সিং শুরু করেছে এবং মাসিক আয় করছে।</p>
+                </div>
+
+                <div class="card">
+                    <h3>🕐 নমনীয় সময়সূচী</h3>
+                    <p>আপনার সুবিধা অনুযায়ী ক্লাস সময় নির্ধারণ এবং কোর্স গতি সামঞ্জস্য করা হয়।</p>
+                </div>
+
+                <div class="card">
+                    <h3>💡 সাশ্রয়ী মূল্য</h3>
+                    <p>প্রফেশনাল প্রশিক্ষণ সাশ্রয়ী মূল্যে এবং পেমেন্ট প্ল্যানের সুবিধা উপলব্ধ।</p>
+                </div>
+
+                <div class="card">
+                    <h3>🌟 সম্পূর্ণ সহায়তা</h3>
+                    <p>পোর্টফোলিও বিল্ডিং, ফ্রিল্যান্সিং প্ল্যাটফর্মে রেজিস্ট্রেশন এবং প্রথম ক্লায়েন্ট খুঁজে পেতে সাহায্য।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <h2 class="section-title">❓ সাধারণ প্রশ্নাবলী</h2>
+
+            <div style="display: grid; gap: 20px;">
+                <div style="background: var(--bg-lighter); padding: 25px; border-radius: 10px; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 10px; font-weight: 700;">Q: আমি যদি সম্পূর্ণ নতুন হই তাহলে?</h4>
+                    <p style="color: var(--text-light);">A: কোনো সমস্যা নেই। এই কোর্স শুরু থেকেই শেখানো হয় এবং আমরা সব ধারণা সহজ ভাষায় ব্যাখ্যা করি।</p>
+                </div>
+
+                <div style="background: var(--bg-lighter); padding: 25px; border-radius: 10px; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 10px; font-weight: 700;">Q: কোর্স শেষে কি সত্যিই ফ্রিল্যান্সিং শুরু করতে পারব?</h4>
+                    <p style="color: var(--text-light);">A: হ্যাঁ, আপনার প্রথম ফ্রিল্যান্সিং ক্লায়েন্ট খুঁজে পেতে আমরা সাহায্য করব এবং প্রথম প্রজেক্ট সম্পন্ন করতে গাইড করব।</p>
+                </div>
+
+                <div style="background: var(--bg-lighter); padding: 25px; border-radius: 10px; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 10px; font-weight: 700;">Q: কত দ্রুত আমি প্রথম আয় শুরু করতে পারব?</h4>
+                    <p style="color: var(--text-light);">A: কোর্সের ২ মাসের মধ্যেই আপনি ফ্রিল্যান্সিং প্ল্যাটফর্মে প্রস্তুত হবেন এবং ক্লায়েন্ট খুঁজতে শুরু করতে পারবেন।</p>
+                </div>
+
+                <div style="background: var(--bg-lighter); padding: 25px; border-radius: 10px; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 10px; font-weight: 700;">Q: অনলাইন এবং হোম ভিজিট উভয়ই সম্ভব?</h4>
+                    <p style="color: var(--text-light);">A: হ্যাঁ, আপনি চাইলে সম্পূর্ণ অনলাইনে অথবা হোম ভিজিটে বা মিশ্রিত পদ্ধতিতে পড়তে পারবেন।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2>🚀 আপনার ডিজিটাল মার্কেটিং ক্যারিয়ার শুরু করুন আজই</h2>
+            <p>সীমিত সময়ের অফার: প্রথম ৫ জন শিক্ষার্থীর জন্য বিশেষ ছাড় এবং অতিরিক্ত বোনাস সেশন</p>
+            <div>
+                <a href="https://robiulislam.org/contact" class="btn btn-primary">এখনই যোগাযোগ করুন</a>
+                <a href="https://robiulislam.org/book-demo" class="btn btn-secondary">ফ্রি ডেমো ক্লাস বুক করুন</a>
+            </div>
+            <p style="margin-top: 25px; font-size: 0.95rem; opacity: 0.9;">গুলশান-২, ঢাকা | হোম-ভিজিট এবং অনলাইন উভয় মোড উপলব্ধ</p>
+        </section>
+
+        <!-- Footer -->
+        <footer style="background: var(--bg-lighter); padding: 50px 20px; margin-top: 70px; text-align: center; color: var(--text-light); border-top: 2px solid var(--border);">
+            <div style="margin-bottom: 20px;">
+                <p style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 10px;">📱 ডিজিটাল মার্কেটিং - প্রফেশনাল টিউশন প্রোগ্রাম</p>
+                <p>মোঃ রবিউল ইসলাম | গুলশান-২, ঢাকা</p>
+            </div>
+            <p>&copy; ২০২৫ সকল অধিকার সংরক্ষিত | <a href="https://robiulislam.org" style="color: var(--primary); text-decoration: none;">robiulislam.org</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected tab
+            const activeContent = document.getElementById(tabName);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            // Scroll to tab
+            setTimeout(() => {
+                document.querySelector('.tabs-container').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }, 100);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.tab-btn').classList.add('active');
+            document.querySelector('.tab-content').classList.add('active');
+        });
+    </script>
+</body>
+</html>
