@@ -1,1113 +1,12 @@
-<strong>Object</strong> হল প্রপার্টি এবং মেথডের একটি সংগ্রহ। এটি রিয়েল-ওয়ার্ল্ড জিনিসকে প্রতিনিধিত্ব করে এবং ডেটা সংগঠিত করে।
-                </div>
-
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <div class="concept-name">🎁 অবজেক্ট তৈরি করা</div>
-                        <div class="concept-desc">প্রপার্টি এবং মূল্য নিয়ে অবজেক্ট তৈরি করুন।</div>
-                        <div class="code-block">const person = {
-  name: "রবিউল",
-  age: 25,
-  city: "ঢাকা",
-  email: "robiul@email.com"
-};
-
-console.log(person.name);  // রবিউল
-console.log(person["age"]); // 25</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">➕ প্রপার্টি যোগ করা</div>
-                        <div class="concept-desc">নতুন প্রপার্টি যোগ করুন।</div>
-                        <div class="code-block">const person = {name: "রবিউল"};
-
-person.age = 25;
-person["city"] = "ঢাকা";
-
-console.log(person);
-// {name: "রবিউল", age: 25, ...}</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">⚙️ অবজেক্ট মেথড</div>
-                        <div class="concept-desc">অবজেক্টে ফাংশন যোগ করুন।</div>
-                        <div class="code-block">const person = {
-  name: "রবিউল",
-  age: 25,
-  greet: function() {
-    console.log("হ্যালো, " + this.name);
-  }
-};
-
-person.greet(); 
-// "হ্যালো, রবিউল"</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔄 for-in Loop</div>
-                        <div class="concept-desc">অবজেক্ট লুপ করুন।</div>
-                        <div class="code-block">const person = {
-  name: "রবিউল",
-  age: 25,
-  city: "ঢাকা"
-};
-
-for (let key in person) {
-  console.log(key + ": " + person[key]);
-}</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔑 Object Methods</div>
-                        <div class="concept-desc">Object এর বিল্ট-ইন মেথড।</div>
-                        <div class="code-block">const person = {name: "রবিউল", age: 25};
-
-const keys = Object.keys(person);
-console.log(keys); // ["name", "age"]
-
-const values = Object.values(person);
-console.log(values); // ["রবিউল", 25]</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🎯 Destructuring</div>
-                        <div class="concept-desc">অবজেক্ট থেকে মূল্য বের করুন।</div>
-                        <div class="code-block">const person = {
-  name: "রবিউল",
-  age: 25
-};
-
-const { name, age } = person;
-console.log(name); // রবিউল
-console.log(age);  // 25</div>
-                        <span class="badge advanced">অ্যাডভান্সড</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🌊 Spread Operator</div>
-                        <div class="concept-desc">অবজেক্ট প্রসারিত করুন।</div>
-                        <div class="code-block">const obj1 = {name: "রবিউল"};
-const obj2 = {...obj1, age: 25};
-console.log(obj2);
-// {name: "রবিউল", age: 25}
-
-const copy = {...obj1};</div>
-                        <span class="badge advanced">অ্যাডভান্সড</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🏗️ Nested Objects</div>
-                        <div class="concept-desc">অবজেক্টের মধ্যে অবজেক্ট।</div>
-                        <div class="code-block">const person = {
-  name: "রবিউল",
-  address: {
-    city: "ঢাকা",
-    zip: "1200"
-  }
-};
-
-console.log(person.address.city);</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h4>💻 অবজেক্ট ডেমো</h4>
-                    <button class="demo-button" onclick="demoObjects()">▶ Run Code</button>
-                    <button class="demo-button" onclick="clearOutput()">🔄 Clear</button>
-                    <div class="output-box" id="output"></div>
-                </div>
-            </div>
-
-            <!-- Advanced -->
-            <div id="advanced" class="section">
-                <div class="section-header">
-                    <span class="section-icon">⚡</span>
-                    <h2>অ্যাডভান্সড জাভাস্ক্রিপ্ট বৈশিষ্ট্য</h2>
-                </div>
-
-                <div class="intro-text">
-                    এই সেকশনে আমরা শিখব আরও শক্তিশালী এবং আধুনিক JavaScript বৈশিষ্ট্য যা প্রফেশনাল ডেভেলপমেন্টে অপরিহার্য।
-                </div>
-
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <div class="concept-name">📦 JSON ডেটা ফরম্যাট</div>
-                        <div class="concept-desc">ডেটা ফরম্যাট এবং কনভার্সন।</div>
-                        <div class="code-block">const person = {
-  name: "রবিউল",
-  age: 25,
-  hobbies: ["পড়া", "কোডিং"]
-};
-
-// অবজেক্ট → JSON
-const jsonStr = JSON.stringify(person);
-console.log(jsonStr);
-
-// JSON → অবজেক্ট
-const parsed = JSON.parse(jsonStr);</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">⏱️ setTimeout()</div>
-                        <div class="concept-desc">নির্দিষ্ট সময় পর কোড চালান।</div>
-                        <div class="code-block">// 2 সেকেন্ড পর চালান
-setTimeout(() => {
-  console.log("২ সেকেন্ড পরে");
-}, 2000);
-
-// আইডি সংরক্ষণ করুন
-const id = setTimeout(() => {
-  console.log("করা হবে");
-}, 3000);
-
-// বাতিল করুন
-clearTimeout(id);</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔁 setInterval()</div>
-                        <div class="concept-desc">বারবার চালান।</div>
-                        <div class="code-block">// প্রতি ১ সেকেন্ডে চালান
-const id = setInterval(() => {
-  console.log("বারবার");
-}, 1000);
-
-// ৫ সেকেন্ড পর বন্ধ করুন
-setTimeout(() => {
-  clearInterval(id);
-}, 5000);</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">💾 localStorage</div>
-                        <div class="concept-desc">ব্রাউজারে ডেটা সংরক্ষণ করুন।</div>
-                        <div class="code-block">// সংরক্ষণ করুন
-localStorage.setItem("name", "রবিউল");
-localStorage.setItem("age", "25");
-
-// পড়ুন
-const name = localStorage.getItem("name");
-console.log(name); // "রবিউল"
-
-// সরান
-localStorage.removeItem("name");
-localStorage.clear();</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🛡️ try-catch এরর হ্যান্ডলিং</div>
-                        <div class="concept-desc">ত্রুটি পরিচালনা করুন।</div>
-                        <div class="code-block">try {
-  // ঝুঁকিপূর্ণ কোড
-  const result = riskyFunction();
-  console.log(result);
-} catch (error) {
-  // ত্রুটি ধরুন
-  console.log("ত্রুটি:", error.message);
-} finally {
-  // সবসময় চালান
-  console.log("শেষ");
-}</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔮 Promises</div>
-                        <div class="concept-desc">ভবিষ্যতের মূল্য পরিচালনা করুন।</div>
-                        <div class="code-block">const promise = new Promise((resolve, reject) => {
-  let success = true;
-  
-  if (success) {
-    resolve("সফল!");
-  } else {
-    reject("ব্যর্থ!");
-  }
-});
-
-promise
-  .then(result => console.log(result))
-  .catch(error => console.log(error));</div>
-                        <span class="badge advanced">অ্যাডভান্সড</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🌐 Fetch API</div>
-                        <div class="concept-desc">সার্ভার থেকে ডেটা আনুন।</div>
-                        <div class="code-block">// API থেকে ডেটা আনুন
-fetch("https://api.example.com/data")
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.log("Error:", error);
-  });</div>
-                        <span class="badge advanced">অ্যাডভান্সড</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">⚙️ async এবং await</div>
-                        <div class="concept-desc">Promises সহজভাবে পরিচালনা করুন।</div>
-                        <div class="code-block">async function getData() {
-  try {
-    const response = await fetch(
-      "https://api.example.com/data"
-    );
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.log("Error:", error);
-  }
-}
-
-getData();</div>
-                        <span class="badge advanced">অ্যাডভান্সড</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🏗️ Classes</div>
-                        <div class="concept-desc">অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং।</div>
-                        <div class="code-block">class Student {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-  
-  greet() {
-    return `আমার নাম ${this.name}`;
-  }
-}
-
-const student = new Student("রবিউল", 25);
-console.log(student.greet());</div>
-                        <span class="badge advanced">অ্যাডভান্সড</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🌊 Spread Operator (...)</div>
-                        <div class="concept-desc">অ্যারে এবং অবজেক্ট প্রসারিত করুন।</div>
-                        <div class="code-block">// অ্যারে স্প্রেড
-const arr1 = [1, 2, 3];
-const arr2 = [...arr1, 4, 5];
-console.log(arr2); // [1,2,3,4,5]
-
-// অবজেক্ট স্প্রেড
-const obj1 = {name: "রবিউল"};
-const obj2 = {...obj1, age: 25};</div>
-                        <span class="badge advanced">অ্যাডভান্সড</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔤 Template Literals</div>
-                        <div class="concept-desc">স্ট্রিংয়ে ভেরিয়েবল যোগ করুন।</div>
-                        <div class="code-block">const name = "রবিউল";
-const age = 25;
-
-// পুরানো উপায়
-const msg1 = "আমার নাম " + name;
-
-// নতুন উপায়
-const msg2 = `আমার নাম ${name}`;
-const msg3 = `আমি ${age} বছর বয়সী`;
-
-console.log(msg2);</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-                </div>
-
-                <div class="tips-box">
-                    <h3>✅ JavaScript বেস্ট প্র্যাকটিস এবং টিপস</h3>
-                    <p><strong>১. সর্বদা const ব্যবহার করুন:</strong> ডিফল্টভাবে const, প্রয়োজনে let ব্যবহার করুন। var কখনও এড়িয়ে চলুন।</p>
-                    <p><strong>२. === ব্যবহার করুন:</strong> == এর পরিবর্তে === ব্যবহার করুন যা সঠিক টাইপ চেক করে।</p>
-                    <p><strong>३. কমেন্ট লিখুন:</strong> জটিল কোডের জন্য মন্তব্য যোগ করুন যাতে অন্যরা বুঝতে পারে।</p>
-                    <p><strong>४. কনসোল ডিবাগ করুন:</strong> console.log() দিয়ে কোড টেস্ট করুন এবং এরর খুঁজুন।</p>
-                    <p><strong>५. DRY নীতি:</strong> একই কোড বারবার না লিখে ফাংশন ব্যবহার করুন।</p>
-                    <p><strong>६. এরর হ্যান্ডলিং:</strong> try-catch দিয়ে সম্ভাব্য এরর ধরুন এবং পরিচালনা করুন।</p>
-                </div>
-
-                <div class="demo-section">
-                    <h4>💻 অ্যাডভান্সড ডেমো</h4>
-                    <button class="demo-button" onclick="demoAdvanced()">▶ Run Code</button>
-                    <button class="demo-button" onclick="clearOutput()">🔄 Clear</button>
-                    <div class="output-box" id="output"></div>
-                </div>
-            </div>
-
-            <!-- Learning Path -->
-            <div class="learning-path">
-                <h3>🧭 শিক্ষার্থীদের জন্য সুপারিশকৃত শেখার পথ</h3>
-                <div class="path-steps">
-                    <div class="step">
-                        <div class="step-number">1️⃣</div>
-                        <div class="step-title">বেসিক সিনট্যাক্স</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2️⃣</div>
-                        <div class="step-title">ভেরিয়েবল এবং টাইপ</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3️⃣</div>
-                        <div class="step-title">অপারেটর এবং শর্ত</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4️⃣</div>
-                        <div class="step-title">লুপ এবং পুনরাবৃত্তি</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">5️⃣</div>
-                        <div class="step-title">ফাংশন এবং স্কোপ</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">6️⃣</div>
-                        <div class="step-title">অ্যারে এবং মেথড</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">7️⃣</div>
-                        <div class="step-title">অবজেক্ট এবং ডেটা</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">8️⃣</div>
-                        <div class="step-title">DOM এবং ইভেন্ট</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">9️⃣</div>
-                        <div class="step-title">API এবং ডেটা</div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">🔟</div>
-                        <div class="step-title">প্রজেক্ট তৈরি করুন</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p style="font-size: 1.3em;"><strong>⚡ JavaScript Complete Reference Guide</strong></p>
-            <p>এই সম্পূর্ণ গাইড আপনার জাভাস্ক্রিপ্ট যাত্রায় সাহায্য করার জন্য বিশেষভাবে ডিজাইন করা হয়েছে।</p>
-            <p style="margin-top: 20px; font-size: 1.05em;">
-                আরও শিখুন এবং প্র্যাকটিস করুন: <a href="https://robiulislam.org" target="_blank">🌐 robiulislam.org</a>
-            </p>
-            <p style="margin-top: 15px; font-size: 0.95em; color: #ccc;">
-                💡 প্রতিদিন নতুন কিছু শিখুন এবং ছোট প্রজেক্ট তৈরি করুন | Made with ❤️ for Students
-            </p>
-        </footer>
-    </div>
-
-    <script>
-        let output = [];
-
-        function log(msg) {
-            output.push(msg);
-            document.getElementById('output').innerText = output.join('\n');
-            document.getElementById('output').scrollTop = document.getElementById('output').scrollHeight;
-        }
-
-        function clearOutput() {
-            output = [];
-            document.getElementById('output').innerText = 'Output এখানে দেখা যাবে...';
-        }
-
-        function demoIntro() {
-            clearOutput();
-            log('=== JavaScript ইন্ট্রো ডেমো ===');
-            log('✅ হ্যালো জাভাস্ক্রিপ্ট!');
-            log('✅ আমরা কনসোলে কাজ করছি');
-            log('✅ এটি অত্যন্ত শক্তিশালী এবং মজাদার!');
-        }
-
-        function demoVariables() {
-            clearOutput();
-            log('=== ভেরিয়েবল ডেমো ===');
-            let name = "রবিউল";
-            const age = 25;
-            log('Name (let): ' + name);
-            log('Age (const): ' + age);
-            name = "করিম";
-            log('Name পরিবর্তিত: ' + name);
-        }
-
-        function demoDataTypes() {
-            clearOutput();
-            log('=== ডেটা টাইপ ডেমো ===');
-            const str = "জাভাস্ক্রিপ্ট";
-            const num = 42;
-            const bool = true;
-            const arr = [1, 2, 3];
-            log('String: ' + typeof str);
-            log('Number: ' + typeof num);
-            log('Boolean: ' + typeof bool);
-            log('Array: ' + typeof arr);
-        }
-
-        function demoOperators() {
-            clearOutput();
-            log('=== অপারেটর ডেমো ===');
-            let a = 10, b = 3;
-            log('যোগ: ' + a + ' + ' + b + ' = ' + (a + b));
-            log('বিয়োগ: ' + a + ' - ' + b + ' = ' + (a - b));
-            log('গুণ: ' + a + ' * ' + b + ' = ' + (a * b));
-            log('ভাগ: ' + a + ' / ' + b + ' = ' + (a / b).toFixed(2));
-        }
-
-        function demoConditions() {
-            clearOutput();
-            log('=== গ্রেড ক্যালকুলেটর ===');
-            const marks = [45, 65, 82, 95];
-            marks.forEach(function(m) {
-                let grade = m >= 90 ? "A+" : m >= 80 ? "A" : m >= 70 ? "B" : "F";
-                log(m + ' → ' + grade);
-            });
-        }
-
-        function demoLoops() {
-            clearOutput();
-            log('=== লুপ ডেমো ===');
-            log('1 থেকে 5 পর্যন্ত:');
-            for (let i = 1; i <= 5; i++) {
-                log('  ' + i);
-            }
-        }
-
-        function demoFunctions() {
-            clearOutput();
-            log('=== ফাংশন ডেমো ===');
-            function add(a, b) { return a + b; }
-            const multiply = (a, b) => a * b;
-            log('5 + 3 = ' + add(5, 3));
-            log('5 × 3 = ' + multiply(5, 3));
-        }
-
-        function demoArrays() {
-            clearOutput();
-            log('=== অ্যারে ডেমো ===');
-            const numbers = [1, 2, 3, 4, 5];
-            const doubled = numbers.map(n => n * 2);
-            const even = numbers.filter(n => n % 2 === 0);
-            const sum = numbers.reduce((a, n) => a + n, 0);
-            log('দ্বিগুণ: [' + doubled + ']');
-            log('জোড়: [' + even + ']');
-            log('যোগফল: ' + sum);
-        }
-
-        function demoObjects() {
-            clearOutput();
-            log('=== অবজেক্ট ডেমো ===');
-            const person = {name: "রবিউল", age: 25, city: "ঢাকা"};
-            log('নাম: ' + person.name);
-            log('বয়স: ' + person.age);
-            log('শহর: ' + person.city);
-        }
-
-        function demoAdvanced() {
-            clearOutput();
-            log('=== অ্যাডভান্সড ডেমো ===');
-            const obj = {name: "রবিউল", age: 25};
-            const json = JSON.stringify(obj);
-            log('JSON: ' + json);
-            const parsed = JSON.parse(json);
-            log('পার্সড: ' + parsed.name);
-        }
-
-        // Navigation
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-                this.classList.add('active');
-                document.getElementById(this.dataset.section).classList.add('active');
-                clearOutput();
-                window.scrollTo(0, 0);
-            });
-        });
-    </script>
-</body>
-</html>                    <div class="concept-card">
-                        <div class="concept-name">✅ Boolean - সত্য/মিথ্যা</div>
-                        <div class="concept-desc">শুধুমাত্র true বা false দুটি মূল্য।</div>
-                        <div class="code-block">const isStudent = true;
-const isPassed = false;
-const isAdult = 18 >= 18; // true</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">📚 Array - তালিকা</div>
-                        <div class="concept-desc">একাধিক আইটেমের একটি সংগ্রহ।</div>
-                        <div class="code-block">const arr = [1, 2, 3];
-const mixed = [1, "টেক্সট", true];
-console.log(arr[0]); // 1
-console.log(arr.length); // 3</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🎁 Object - অবজেক্ট</div>
-                        <div class="concept-desc">প্রপার্টি এবং মূল্যের সংগ্রহ।</div>
-                        <div class="code-block">const person = {
-  name: "রবিউল",
-  age: 25,
-  city: "ঢাকা"
-};
-console.log(person.name);</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔍 typeof - টাইপ জানুন</div>
-                        <div class="concept-desc">কোনো ডেটার ধরন খুঁজে বের করুন।</div>
-                        <div class="code-block">typeof "টেক্সট"; // "string"
-typeof 25; // "number"
-typeof true; // "boolean"
-typeof []; // "object"</div>
-                        <span class="badge">উপকারী</span>
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h4>💻 ডেটা টাইপ ডেমো</h4>
-                    <button class="demo-button" onclick="demoDataTypes()">▶ Run Code</button>
-                    <button class="demo-button" onclick="clearOutput()">🔄 Clear</button>
-                    <div class="output-box" id="output"></div>
-                </div>
-            </div>
-
-            <!-- Operators -->
-            <div id="operators" class="section">
-                <div class="section-header">
-                    <span class="section-icon">🧮</span>
-                    <h2>অপারেটর এবং গণনা</h2>
-                </div>
-
-                <div class="intro-text">
-                    <strong>অপারেটর</strong> হল বিশেষ চিহ্ন যা আমাদের ডেটা নিয়ে কাজ করতে সাহায্য করে। যোগ, বিয়োগ, তুলনা এবং আরও অনেক কিছু।
-                </div>
-
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <div class="concept-name">➕ গণিত অপারেটর</div>
-                        <div class="concept-desc">যোগ, বিয়োগ, গুণ, ভাগ ইত্যাদি।</div>
-                        <div class="code-block">let a = 10, b = 3;
-console.log(a + b); // 13
-console.log(a - b); // 7
-console.log(a * b); // 30
-console.log(a / b); // 3.33
-console.log(a % b); // 1</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔀 তুলনা অপারেটর</div>
-                        <div class="concept-desc">দুটি মূল্য তুলনা করে true/false দেয়।</div>
-                        <div class="code-block">console.log(5 > 3);    // true
-console.log(5 < 3);    // false
-console.log(5 >= 5);   // true
-console.log(5 === 5);  // true
-console.log(5 == "5"); // true</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔗 লজিক্যাল অপারেটর</div>
-                        <div class="concept-desc">এবং (&&), অথবা (||), না (!)।</div>
-                        <div class="code-block">console.log(true && false); // false
-console.log(true || false); // true
-console.log(!true); // false
-
-if (age >= 18 && hasLicense) {
-  console.log("গাড়ি চালাতে পারেন");
-}</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">📝 নির্ধারণ অপারেটর</div>
-                        <div class="concept-desc">মূল্য নির্ধারণ করা এবং পরিবর্তন।</div>
-                        <div class="code-block">let x = 10;
-x += 5;  // x = x + 5 = 15
-x -= 3;  // x = x - 3 = 12
-x *= 2;  // x = x * 2 = 24
-x /= 4;  // x = x / 4 = 6</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">❓ Ternary অপারেটর</div>
-                        <div class="concept-desc">if-else এর একলাইন ভার্সন।</div>
-                        <div class="code-block">const age = 20;
-const status = age >= 18 
-  ? "বয়স্ক" 
-  : "শিশু";
-console.log(status);</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">📌 স্ট্রিং যুক্ত করা</div>
-                        <div class="concept-desc">টেক্সট এক সাথে করা।</div>
-                        <div class="code-block">const name = "রবিউল";
-const msg = "হ্যালো " + name;
-
-// ভাল উপায়:
-const msg2 = `হ্যালো ${name}!`;
-console.log(msg2);</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h4>💻 অপারেটর ডেমো</h4>
-                    <button class="demo-button" onclick="demoOperators()">▶ Run Code</button>
-                    <button class="demo-button" onclick="clearOutput()">🔄 Clear</button>
-                    <div class="output-box" id="output"></div>
-                </div>
-            </div>
-
-            <!-- Conditions -->
-            <div id="conditions" class="section">
-                <div class="section-header">
-                    <span class="section-icon">🧠</span>
-                    <h2>শর্ত এবং সিদ্ধান্ত গ্রহণ</h2>
-                </div>
-
-                <div class="intro-text">
-                    <strong>Conditional statements</strong> দিয়ে আমরা বিভিন্ন পরিস্থিতিতে বিভিন্ন ক্রিয়া করতে পারি। এটি প্রোগ্রামকে স্মার্ট এবং নমনীয় করে তোলে।
-                </div>
-
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <div class="concept-name">✔️ if Statement</div>
-                        <div class="concept-desc">শর্ত সত্য হলে কোড চালান।</div>
-                        <div class="code-block">const age = 20;
-if (age >= 18) {
-  console.log("আপনি বয়স্ক");
-}</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">✔️❌ if-else Statement</div>
-                        <div class="concept-desc">সত্য এবং মিথ্যা দুটি ক্ষেত্রে।</div>
-                        <div class="code-block">const age = 15;
-if (age >= 18) {
-  console.log("বয়স্ক");
-} else {
-  console.log("শিশু");
-}</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">📊 if-else if-else</div>
-                        <div class="concept-desc">একাধিক শর্ত পরীক্ষা করুন।</div>
-                        <div class="code-block">const marks = 85;
-if (marks >= 90) {
-  console.log("A+");
-} else if (marks >= 80) {
-  console.log("A");
-} else {
-  console.log("ফেইল");
-}</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔀 switch Statement</div>
-                        <div class="concept-desc">একটি মূল্যের উপর ভিত্তি করে কাজ করুন।</div>
-                        <div class="code-block">const day = 3;
-switch(day) {
-  case 1: console.log("সোমবার"); break;
-  case 2: console.log("মঙ্গলবার"); break;
-  case 3: console.log("বুধবার"); break;
-}</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔗 Logical Operators</div>
-                        <div class="concept-desc">একাধিক শর্ত যুক্ত করুন।</div>
-                        <div class="code-block">const age = 20;
-const hasLicense = true;
-
-if (age >= 18 && hasLicense) {
-  console.log("গাড়ি চালাতে পারেন");
-}</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🏗️ Nested Conditions</div>
-                        <div class="concept-desc">শর্তের মধ্যে শর্ত রাখুন।</div>
-                        <div class="code-block">if (age >= 18) {
-  if (hasLicense) {
-    console.log("গাড়ি চালাতে পারেন");
-  } else {
-    console.log("লাইসেন্স নিন");
-  }
-}</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h4>💻 শর্ত ডেমো - গ্রেড ক্যালকুলেটর</h4>
-                    <button class="demo-button" onclick="demoConditions()">▶ Run Code</button>
-                    <button class="demo-button" onclick="clearOutput()">🔄 Clear</button>
-                    <div class="output-box" id="output"></div>
-                </div>
-            </div>
-
-            <!-- Loops -->
-            <div id="loops" class="section">
-                <div class="section-header">
-                    <span class="section-icon">🔁</span>
-                    <h2>লুপ এবং পুনরাবৃত্তি</h2>
-                </div>
-
-                <div class="intro-text">
-                    <strong>Loops</strong> দিয়ে আমরা একই কোড বারবার চালাতে পারি। এটি সময় বাঁচায় এবং কোড পরিচ্ছন্ন রাখে।
-                </div>
-
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <div class="concept-name">🔢 for Loop</div>
-                        <div class="concept-desc">নির্দিষ্ট সংখ্যক বার চালান।</div>
-                        <div class="code-block">for (let i = 1; i <= 5; i++) {
-  console.log(i);
-}
-// Output: 1 2 3 4 5
-
-for (let i = 10; i >= 1; i--) {
-  console.log(i);
-}</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">⏰ while Loop</div>
-                        <div class="concept-desc">শর্ত সত্য থাকা পর্যন্ত চালান।</div>
-                        <div class="code-block">let n = 1;
-while (n <= 5) {
-  console.log(n);
-  n++;
-}
-// Output: 1 2 3 4 5</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">📍 for-of Loop</div>
-                        <div class="concept-desc">অ্যারের প্রতিটি আইটেম নিয়ে কাজ করুন।</div>
-                        <div class="code-block">const fruits = ["আম", "কলা", "আনার"];
-for (let fruit of fruits) {
-  console.log(fruit);
-}
-
-const numbers = [10, 20, 30];
-for (let num of numbers) {
-  console.log(num);
-}</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔑 for-in Loop</div>
-                        <div class="concept-desc">অবজেক্টের প্রপার্টি নিয়ে কাজ করুন।</div>
-                        <div class="code-block">const person = {
-  name: "রবিউল",
-  age: 25,
-  city: "ঢাকা"
-};
-for (let key in person) {
-  console.log(key + ": " + person[key]);
-}</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">⛔ break এবং continue</div>
-                        <div class="concept-desc">লুপ নিয়ন্ত্রণ করুন।</div>
-                        <div class="code-block">// break - লুপ বন্ধ করুন
-for (let i = 1; i <= 10; i++) {
-  if (i === 5) break;
-  console.log(i);
-}
-
-// continue - এই পালক এড়িয়ে যান
-for (let i = 1; i <= 5; i++) {
-  if (i === 3) continue;
-  console.log(i);
-}</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔄 do-while Loop</div>
-                        <div class="concept-desc">প্রথমে চালান, তারপর শর্ত চেক করুন।</div>
-                        <div class="code-block">let n = 1;
-do {
-  console.log(n);
-  n++;
-} while (n <= 3);
-// প্রথমেই একবার চলে</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h4>💻 লুপ ডেমো</h4>
-                    <button class="demo-button" onclick="demoLoops()">▶ Run Code</button>
-                    <button class="demo-button" onclick="clearOutput()">🔄 Clear</button>
-                    <div class="output-box" id="output"></div>
-                </div>
-            </div>
-
-            <!-- Functions -->
-            <div id="functions" class="section">
-                <div class="section-header">
-                    <span class="section-icon">🧩</span>
-                    <h2>ফাংশন এবং পুনঃব্যবহার</h2>
-                </div>
-
-                <div class="intro-text">
-                    <strong>Function</strong> হল কোডের একটি পুনঃব্যবহারযোগ্য ব্লক যা একটি নির্দিষ্ট কাজ করে। একবার লিখে বারবার ব্যবহার করতে পারি।
-                </div>
-
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <div class="concept-name">📞 Function Declaration</div>
-                        <div class="concept-desc">ফাংশন সংজ্ঞায়িত করা এবং কল করা।</div>
-                        <div class="code-block">function greet() {
-  console.log("আস্সালামু আলাইকুম!");
-}
-
-greet(); // ফাংশন কল করুন</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">📤 Parameters - প্যারামিটার</div>
-                        <div class="concept-desc">ফাংশনে তথ্য পাঠান।</div>
-                        <div class="code-block">function add(a, b) {
-  console.log(a + b);
-}
-
-add(5, 3);    // 8
-add(10, 20);  // 30</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">📥 Return Statement</div>
-                        <div class="concept-desc">ফাংশন থেকে মূল্য রিটার্ন করুন।</div>
-                        <div class="code-block">function multiply(a, b) {
-  return a * b;
-}
-
-const result = multiply(5, 3);
-console.log(result); // 15</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">⚡ Arrow Function</div>
-                        <div class="concept-desc">আধুনিক এবং ছোট ফাংশন।</div>
-                        <div class="code-block">const add = (a, b) => a + b;
-
-const square = x => x * x;
-
-const greet = () => "হ্যালো!";
-
-console.log(add(5, 3)); // 8</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">📝 Function Expression</div>
-                        <div class="concept-desc">ভেরিয়েবলে ফাংশন রাখুন।</div>
-                        <div class="code-block">const greet = function() {
-  console.log("হ্যালো!");
-};
-
-greet();
-
-const divide = function(a, b) {
-  return a / b;
-};</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🎯 Default Parameters</div>
-                        <div class="concept-desc">ডিফল্ট প্যারামিটার মূল্য নির্ধারণ করুন।</div>
-                        <div class="code-block">function greet(name = "বন্ধু") {
-  console.log("হ্যালো, " + name);
-}
-
-greet();           // "হ্যালো, বন্ধু"
-greet("রবিউল");  // "হ্যালো, রবিউল"</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h4>💻 ফাংশন ডেমো</h4>
-                    <button class="demo-button" onclick="demoFunctions()">▶ Run Code</button>
-                    <button class="demo-button" onclick="clearOutput()">🔄 Clear</button>
-                    <div class="output-box" id="output"></div>
-                </div>
-            </div>
-
-            <!-- Arrays -->
-            <div id="arrays" class="section">
-                <div class="section-header">
-                    <span class="section-icon">📋</span>
-                    <h2>অ্যারে এবং শক্তিশালী মেথডস</h2>
-                </div>
-
-                <div class="intro-text">
-                    <strong>Array</strong> হল একাধিক মূল্যের একটি অর্ডারড সংগ্রহ। প্রতিটি আইটেমের একটি ইন্ডেক্স (অবস্থান) থাকে যা 0 থেকে শুরু হয়।
-                </div>
-
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <div class="concept-name">📍 অ্যারে এবং ইন্ডেক্স</div>
-                        <div class="concept-desc">অ্যারে তৈরি এবং ব্যবহার করুন।</div>
-                        <div class="code-block">const fruits = ["আম", "কলা", "আনার"];
-const numbers = [10, 20, 30, 40];
-
-console.log(fruits[0]); // "আম"
-console.log(fruits.length); // 3
-console.log(fruits[fruits.length - 1]);</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">➕ push এবং pop</div>
-                        <div class="concept-desc">শেষে যোগ এবং সরান।</div>
-                        <div class="code-block">const arr = [1, 2, 3];
-arr.push(4);
-arr.push(5, 6);
-
-const last = arr.pop();
-console.log(arr); // [1,2,3,4,5]</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🗺️ map() মেথড</div>
-                        <div class="concept-desc">প্রতিটি এলিমেন্টে ফাংশন চালান।</div>
-                        <div class="code-block">const numbers = [1, 2, 3, 4];
-const doubled = numbers.map(n => n * 2);
-console.log(doubled); 
-// [2, 4, 6, 8]</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔍 filter() মেথড</div>
-                        <div class="concept-desc">শর্ত অনুযায়ী বাছাই করুন।</div>
-                        <div class="code-block">const numbers = [1, 2, 3, 4, 5];
-const even = numbers.filter(n => n % 2 === 0);
-console.log(even); // [2, 4]</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔄 forEach() মেথড</div>
-                        <div class="concept-desc">প্রতিটি এলিমেন্টে কাজ করুন।</div>
-                        <div class="code-block">const fruits = ["আম", "কলা"];
-fruits.forEach(fruit => {
-  console.log(fruit);
-});
-
-numbers.forEach((num, index) => {
-  console.log(index + ": " + num);
-});</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🎯 find এবং findIndex</div>
-                        <div class="concept-desc">শর্ত অনুযায়ী খুঁজে পান।</div>
-                        <div class="code-block">const numbers = [10, 20, 30, 40];
-const found = numbers.find(n => n > 25);
-console.log(found); // 30
-
-const index = numbers.findIndex(n => n > 25);
-console.log(index); // 2</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">➗ reduce() মেথড</div>
-                        <div class="concept-desc">অ্যারেকে একটি মূল্যে পরিণত করুন।</div>
-                        <div class="code-block">const numbers = [1, 2, 3, 4, 5];
-const sum = numbers.reduce((acc, num) => 
-  acc + num, 0
-);
-console.log(sum); // 15</div>
-                        <span class="badge advanced">অ্যাডভান্সড</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔀 sort এবং reverse</div>
-                        <div class="concept-desc">অ্যারে সাজান এবং বিপরীত করুন।</div>
-                        <div class="code-block">const numbers = [3, 1, 4, 1, 5];
-numbers.sort((a, b) => a - b);
-// [1, 1, 3, 4, 5]
-
-numbers.reverse();
-// [5, 4, 3, 1, 1]</div>
-                        <span class="badge intermediate">মাঝারি</span>
-                    </div>
-
-                    <div class="concept-card">
-                        <div class="concept-name">🔗 join() মেথড</div>
-                        <div class="concept-desc">অ্যারেকে স্ট্রিং-এ রূপান্তর করুন।</div>
-                        <div class="code-block">const fruits = ["আম", "কলা", "আনার"];
-console.log(fruits.join(", ")); 
-// "আম, কলা, আনার"
-
-console.log(fruits.join(" - "));
-// "আম - কলা - আনার"</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
-                </div>
-
-                <div class="demo-section">
-                    <h4>💻 অ্যারে মেথড ডেমো</h4>
-                    <button class="demo-button" onclick="demoArrays()">▶ Run Code</button>
-                    <button class="demo-button" onclick="clearOutput()">🔄 Clear</button>
-                    <div class="output-box" id="output"></div>
-                </div>
-            </div>
-
-            <!-- Objects -->
-            <div id="objects" class="section">
-                <div class="section-header">
-                    <span class="section-icon">🧱</span>
-                    <h2>অবজেক্ট এবং ডেটা সংগঠন</h2>
-                </div>
-
-                <div class="intro-text">
-                    <strong>Object</strong> হল প্রপার্টি এবং মেথডের একটি সংগ্রহ। এটি রিয়েল-ওয<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript সম্পূর্ণ রেফারেন্স গাইড - বিগিনার থেকে অ্যাডভান্সড পর্যন্ত। প্রফেশনাল এবং ইন্টারঅ্যাক্টিভ।">
-    <meta name="keywords" content="JavaScript, JavaScript tutorial, programming, web development, বাংলা টিউটোরিয়াল">
-    <title>⚡ JavaScript Complete Reference - robiulislam.org</title>
+    <meta name="description" content="JavaScript সম্পূর্ণ রেফারেন্স গাইড - শূন্য থেকে হিরো পর্যন্ত। সব JavaScript কনসেপ্ট, মেথড এবং উদাহরণ একটি জায়গায়।">
+    <meta name="keywords" content="JavaScript tutorial, JavaScript reference, JavaScript guide, web development, programming, বাংলা টিউটোরিয়াল, DOM manipulation, ES6, async javascript">
+    <meta name="author" content="Robiul Islam">
+    <title>JavaScript Complete Reference Guide | robiulislam.org</title>
     <style>
         * {
             margin: 0;
@@ -1120,30 +19,29 @@ console.log(fruits.join(" - "));
             --primary-dark: #222;
             --secondary: #764ba2;
             --accent: #FF6B6B;
-            --text: #2d3748;
+            --text-dark: #2d3748;
             --text-light: #718096;
-            --bg: #f7fafc;
+            --bg-light: #f7fafc;
             --border: #e2e8f0;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --success: #48BB78;
+            --warning: #ED8936;
+            --error: #F56565;
         }
 
         body {
-            font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #F7DF1E 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
-            color: var(--text);
+            color: var(--text-dark);
         }
 
-        .wrapper {
+        .container {
             max-width: 1500px;
             margin: 0 auto;
             background: white;
-            border-radius: 30px;
-            box-shadow: 0 30px 120px rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            box-shadow: 0 25px 100px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
 
@@ -1152,6 +50,7 @@ console.log(fruits.join(" - "));
             color: white;
             padding: 100px 40px;
             text-align: center;
+            animation: slideDown 0.8s ease;
             position: relative;
             overflow: hidden;
         }
@@ -1159,8 +58,8 @@ console.log(fruits.join(" - "));
         header::before {
             content: '';
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             top: -100px;
@@ -1168,28 +67,47 @@ console.log(fruits.join(" - "));
             animation: float 6s ease-in-out infinite;
         }
 
+        @keyframes slideDown {
+            from { transform: translateY(-60px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-30px); }
+            50% { transform: translateY(-20px); }
         }
 
         header h1 {
             font-size: 4em;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 2px;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         header p {
             font-size: 1.4em;
             opacity: 0.95;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             line-height: 1.8;
             position: relative;
-            z-index: 1;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 15px 40px;
+            font-size: 0.9em;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
         }
 
         nav {
@@ -1199,91 +117,70 @@ console.log(fruits.join(" - "));
             flex-wrap: wrap;
             gap: 12px;
             justify-content: flex-start;
-            border-bottom: 4px solid var(--primary);
+            overflow-x: auto;
+            border-bottom: 3px solid var(--primary);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            overflow-x: auto;
-        }
-
-        nav::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        nav::-webkit-scrollbar-track {
-            background: var(--bg);
-        }
-
-        nav::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 3px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         nav button {
-            padding: 12px 24px;
+            padding: 11px 20px;
             border: 2px solid var(--primary);
             background: white;
             color: var(--primary-dark);
-            border-radius: 30px;
+            border-radius: 25px;
             cursor: pointer;
             font-size: 0.95em;
             font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             white-space: nowrap;
-            box-shadow: 0 4px 10px rgba(247, 223, 30, 0.2);
+            box-shadow: 0 2px 8px rgba(247, 223, 30, 0.2);
         }
 
         nav button:hover {
-            background: linear-gradient(135deg, #F7DF1E 0%, #FFE066 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(247, 223, 30, 0.4);
+            background: #fff9e6;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(247, 223, 30, 0.4);
         }
 
         nav button.active {
-            background: linear-gradient(135deg, #F7DF1E 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 12px 30px rgba(247, 223, 30, 0.5);
-            transform: scale(1.05);
+            background: var(--primary);
+            color: var(--primary-dark);
+            box-shadow: 0 8px 20px rgba(247, 223, 30, 0.5);
         }
 
         .content {
             padding: 60px 40px;
-            min-height: 600px;
         }
 
         .section {
             display: none;
-            animation: slideIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeIn 0.6s ease;
         }
 
         .section.active {
             display: block;
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .section-header {
             display: flex;
             align-items: center;
-            gap: 25px;
             margin-bottom: 50px;
             padding-bottom: 25px;
             border-bottom: 4px solid var(--primary);
+            gap: 20px;
         }
 
         .section-icon {
-            font-size: 4em;
-            animation: bounce 2s ease-in-out infinite;
+            font-size: 3.5em;
+            animation: bounce 2s infinite;
         }
 
         @keyframes bounce {
@@ -1292,37 +189,26 @@ console.log(fruits.join(" - "));
         }
 
         .section-header h2 {
-            font-size: 3em;
+            font-size: 2.8em;
             color: var(--primary-dark);
             margin: 0;
         }
 
-        .intro-text {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid var(--primary);
-            font-size: 1.05em;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(247, 223, 30, 0.2);
-        }
-
         .concept-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 28px;
             margin-bottom: 50px;
         }
 
         .concept-card {
-            background: linear-gradient(135deg, #fff9e6 0%, #ffe6f0 100%);
+            background: linear-gradient(135deg, #fff9e6 0%, #f0e6ff 100%);
             border-radius: 18px;
             padding: 30px;
-            border: 2px solid transparent;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 5px solid var(--primary);
+            transition: all 0.4s ease;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
         }
@@ -1330,27 +216,27 @@ console.log(fruits.join(" - "));
         .concept-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .concept-card:hover::before {
-            left: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            top: 0;
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
         }
 
         .concept-card:hover {
             transform: translateY(-12px);
-            box-shadow: 0 20px 50px rgba(247, 223, 30, 0.3);
-            border-color: var(--primary);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+            border-left-color: var(--secondary);
+        }
+
+        .concept-card:hover::before {
+            transform: scaleX(1);
         }
 
         .concept-name {
-            font-family: 'Courier New', monospace;
-            font-size: 1.3em;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 1.35em;
             font-weight: bold;
             color: var(--primary-dark);
             margin-bottom: 12px;
@@ -1365,60 +251,105 @@ console.log(fruits.join(" - "));
         }
 
         .code-block {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: #1a1a1a;
             color: #a8ff60;
             padding: 18px;
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
+            border-radius: 12px;
+            font-family: 'Monaco', monospace;
             font-size: 0.85em;
             overflow-x: auto;
             line-height: 1.6;
-            border: 1px solid var(--primary);
+            border: 2px solid var(--primary);
         }
 
-        .code-block::-webkit-scrollbar {
-            height: 6px;
+        .code-section {
+            background: #1a1a1a;
+            color: #a8ff60;
+            padding: 35px;
+            border-radius: 15px;
+            overflow-x: auto;
+            margin: 35px 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.92em;
+            line-height: 1.8;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .code-block::-webkit-scrollbar-thumb {
-            background: var(--primary);
+        .interactive-demo {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px solid var(--border);
+            border-left: 5px solid var(--success);
+        }
+
+        .interactive-demo h4 {
+            color: var(--success);
+            margin-bottom: 15px;
+            font-size: 1.15em;
+        }
+
+        .demo-button {
+            background: var(--success);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .demo-button:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+        }
+
+        .output-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid var(--border);
+            font-family: monospace;
+            min-height: 50px;
+            color: var(--primary-dark);
         }
 
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 40px 0;
+            gap: 35px;
+            margin: 35px 0;
         }
 
         .column-box {
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            background: var(--bg-light);
             padding: 30px;
             border-radius: 15px;
             border: 2px solid var(--border);
             border-left: 5px solid var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .column-box:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
         }
 
         .column-box h4 {
             color: var(--primary-dark);
-            margin-bottom: 20px;
-            font-size: 1.3em;
+            margin-bottom: 18px;
+            font-size: 1.25em;
         }
 
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 30px 0;
+            margin: 35px 0;
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .comparison-table th {
@@ -1427,128 +358,65 @@ console.log(fruits.join(" - "));
             padding: 18px;
             text-align: left;
             font-weight: 600;
-            font-size: 1em;
+            font-size: 1.05em;
         }
 
         .comparison-table td {
             padding: 16px 18px;
             border-bottom: 1px solid var(--border);
-            font-family: 'Courier New', monospace;
+            font-family: 'Monaco', monospace;
             font-size: 0.95em;
         }
 
         .comparison-table tr:nth-child(even) {
-            background: var(--bg);
+            background: var(--bg-light);
         }
 
         .comparison-table tr:hover {
-            background: linear-gradient(90deg, var(--bg) 0%, #fff9e6 100%);
+            background: #fff9e6;
         }
 
-        .demo-section {
-            background: linear-gradient(135deg, #e0f2f1 0%, #f1f8e9 100%);
+        .tip-box {
+            background: linear-gradient(135deg, #FFF5E1 0%, #FFE8CC 100%);
             padding: 35px;
             border-radius: 15px;
-            margin: 40px 0;
-            border: 2px solid #4db6ac;
-            box-shadow: 0 10px 30px rgba(77, 182, 172, 0.2);
+            margin: 45px 0;
+            border-left: 5px solid var(--warning);
+            box-shadow: 0 10px 30px rgba(237, 137, 54, 0.2);
         }
 
-        .demo-section h4 {
-            color: #00695c;
-            margin-bottom: 20px;
-            font-size: 1.2em;
-            font-weight: 700;
-        }
-
-        .demo-button {
-            background: linear-gradient(135deg, #00796b 0%, #004d40 100%);
-            color: white;
-            padding: 13px 28px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-right: 12px;
+        .tip-box h3 {
+            color: #c05621;
             margin-bottom: 15px;
-            box-shadow: 0 6px 20px rgba(0, 121, 107, 0.3);
+            font-size: 1.4em;
         }
 
-        .demo-button:hover {
-            background: linear-gradient(135deg, #004d40 0%, #00251a 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 121, 107, 0.5);
-        }
-
-        .output-box {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-            border: 2px solid #4db6ac;
-            font-family: 'Courier New', monospace;
-            min-height: 80px;
-            color: var(--primary-dark);
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            line-height: 1.6;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .output-box::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .output-box::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, #FFD54F 100%);
-            color: var(--primary-dark);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 700;
-            margin-top: 12px;
-            box-shadow: 0 4px 10px rgba(247, 223, 30, 0.3);
-        }
-
-        .badge.intermediate {
-            background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
-            color: white;
-        }
-
-        .badge.advanced {
-            background: linear-gradient(135deg, var(--secondary) 0%, #512da8 100%);
-            color: white;
+        .tip-box p {
+            color: #92400e;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-size: 0.98em;
         }
 
         .learning-path {
-            background: linear-gradient(135deg, #c8e6c9 0%, #b2dfdb 100%);
-            padding: 50px;
+            background: linear-gradient(135deg, #c3f0ca 0%, #dbeafe 100%);
+            padding: 45px;
             border-radius: 18px;
             margin: 50px 0;
-            border: 3px solid #4caf50;
-            box-shadow: 0 15px 50px rgba(76, 175, 80, 0.2);
+            border-left: 5px solid var(--success);
         }
 
         .learning-path h3 {
-            color: #1b5e20;
-            margin-bottom: 35px;
-            font-size: 1.8em;
+            color: #065f46;
+            margin-bottom: 30px;
+            font-size: 1.6em;
             text-align: center;
-            font-weight: 700;
         }
 
         .path-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
         }
 
         .step {
@@ -1556,78 +424,107 @@ console.log(fruits.join(" - "));
             padding: 25px;
             border-radius: 12px;
             text-align: center;
-            border: 3px solid #4caf50;
+            border: 2px solid var(--success);
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.15);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.1);
         }
 
         .step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.3);
-            background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(72, 187, 120, 0.2);
         }
 
         .step-number {
             font-size: 2.2em;
-            color: #4caf50;
+            color: var(--success);
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         .step-title {
-            color: var(--text);
+            color: var(--text-dark);
             font-weight: 600;
-            font-size: 0.98em;
-            line-height: 1.5;
+            font-size: 1em;
+            line-height: 1.4;
         }
 
-        .tips-box {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--primary-dark);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-top: 12px;
+        }
+
+        .badge.intermediate {
+            background: var(--warning);
+            color: white;
+        }
+
+        .badge.advanced {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .best-practices {
+            background: linear-gradient(135deg, #FFE8E8 0%, #FFE0E0 100%);
             padding: 35px;
             border-radius: 15px;
-            margin: 40px 0;
-            border-left: 5px solid #ff9800;
-            box-shadow: 0 10px 30px rgba(255, 152, 0, 0.2);
+            margin: 45px 0;
+            border-left: 5px solid var(--error);
         }
 
-        .tips-box h3 {
-            color: #e65100;
-            margin-bottom: 20px;
-            font-size: 1.4em;
-            font-weight: 700;
-        }
-
-        .tips-box p {
-            color: #bf360c;
-            line-height: 1.8;
+        .best-practices h3 {
+            color: #742a2a;
             margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .best-practices p {
+            color: #975555;
+            line-height: 1.8;
+            margin-bottom: 12px;
             font-size: 0.98em;
         }
 
         footer {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: var(--primary-dark);
             color: white;
-            padding: 50px;
+            padding: 45px 40px;
             text-align: center;
-            border-top: 4px solid var(--primary);
+            border-top: 5px solid var(--primary);
         }
 
         footer p {
-            margin-bottom: 15px;
-            line-height: 1.8;
+            margin-bottom: 12px;
+            line-height: 1.7;
             font-size: 0.98em;
         }
 
-        footer a {
+        .footer-link {
             color: var(--primary);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
-        footer a:hover {
-            color: #FFD54F;
+        .footer-link:hover {
+            color: var(--secondary);
             text-decoration: underline;
+        }
+
+        .feature-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 22px;
+            border-left: 4px solid var(--primary);
+            border-radius: 10px;
+            margin: 20px 0;
+            color: var(--text-dark);
+            line-height: 1.7;
         }
 
         @media (max-width: 1024px) {
@@ -1640,13 +537,13 @@ console.log(fruits.join(" - "));
             }
 
             .section-header h2 {
-                font-size: 2.2em;
+                font-size: 2em;
             }
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 50px 25px;
+                padding: 50px 20px;
             }
 
             header h1 {
@@ -1654,7 +551,7 @@ console.log(fruits.join(" - "));
             }
 
             header p {
-                font-size: 1.1em;
+                font-size: 1em;
             }
 
             nav {
@@ -1663,8 +560,8 @@ console.log(fruits.join(" - "));
             }
 
             nav button {
-                padding: 10px 16px;
-                font-size: 0.85em;
+                padding: 8px 12px;
+                font-size: 0.8em;
             }
 
             .content {
@@ -1681,27 +578,44 @@ console.log(fruits.join(" - "));
             }
 
             .section-icon {
-                font-size: 3em;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .comparison-table {
+                font-size: 0.9em;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px;
             }
 
             .path-steps {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .code-block {
-                font-size: 0.75em;
+            .code-block,
+            .code-section {
+                font-size: 0.8em;
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="container">
         <header>
             <h1>⚡ JavaScript Complete Reference</h1>
-            <p>শূন্য থেকে হিরো পর্যন্ত - সম্পূর্ণ জাভাস্ক্রিপ্ট গাইড</p>
+            <p>শূন্য থেকে হিরো পর্যন্ত - সম্পূর্ণ JavaScript গাইড</p>
         </header>
 
-        <nav id="navbar">
+        <div class="breadcrumb">
+            <span>📍 </span>
+            <a href="https://robiulislam.org">robiulislam.org</a> › JavaScript Tutorial › Complete Reference
+        </div>
+
+        <nav>
             <button class="nav-btn active" data-section="intro">📚 ইন্ট্রো</button>
             <button class="nav-btn" data-section="variables">📦 ভেরিয়েবল</button>
             <button class="nav-btn" data-section="datatypes">🔢 ডেটা টাইপ</button>
@@ -1711,138 +625,171 @@ console.log(fruits.join(" - "));
             <button class="nav-btn" data-section="functions">🧩 ফাংশন</button>
             <button class="nav-btn" data-section="arrays">📋 অ্যারে</button>
             <button class="nav-btn" data-section="objects">🧱 অবজেক্ট</button>
+            <button class="nav-btn" data-section="dom">📢 DOM</button>
+            <button class="nav-btn" data-section="events">🕹️ ইভেন্ট</button>
+            <button class="nav-btn" data-section="strings">📝 স্ট্রিং</button>
             <button class="nav-btn" data-section="advanced">⚡ অ্যাডভান্সড</button>
         </nav>
 
         <div class="content">
-            <!-- Introduction -->
+            <!-- Introduction Section -->
             <div id="intro" class="section active">
                 <div class="section-header">
                     <span class="section-icon">📚</span>
                     <h2>JavaScript ইন্ট্রোডাকশন</h2>
                 </div>
 
-                <div class="intro-text">
-                    <strong>JavaScript</strong> একটি অত্যন্ত শক্তিশালী প্রোগ্রামিং ভাষা যা ওয়েব পেজগুলিকে ইন্টারঅ্যাক্টিভ এবং গতিশীল করে তোলে। এটি ব্রাউজারে চলে এবং ব্যবহারকারীর সাথে রিয়েল-টাইমে সরাসরি যোগাযোগ করতে পারে।
+                <div class="feature-box">
+                    <strong>JavaScript</strong> একটি শক্তিশালী প্রোগ্রামিং ভাষা যা ওয়েব পেজগুলিকে ইন্টারঅ্যাক্টিভ করে তোলে। HTML এবং CSS এর সাথে মিলে JavaScript ওয়েব ডেভেলপমেন্টের ভিত্তি।
                 </div>
 
                 <div class="two-column">
                     <div class="column-box">
-                        <h4>🔧 JavaScript লেখার উপায়</h4>
-                        <div class="code-block">&lt;!-- 1. Inline Method --&gt;
+                        <h4>JavaScript কোথায় লিখবেন?</h4>
+                        <div class="code-section">/* 1. Inline - HTML এর মধ্যে */
 &lt;button onclick="alert('হ্যালো!')"&gt;
   ক্লিক করুন
 &lt;/button&gt;
 
-&lt;!-- 2. Internal Method --&gt;
+/* 2. Internal - &lt;script&gt; ট্যাগ */
 &lt;script&gt;
-  console.log("হ্যালো JavaScript!");
+  console.log("হ্যালো জাভাস্ক্রিপ্ট!");
 &lt;/script&gt;</div>
                     </div>
                     <div class="column-box">
-                        <h4>✨ সেরা পদ্ধতি: External File</h4>
-                        <div class="code-block">&lt;!-- 3. External Method --&gt;
+                        <h4>সেরা উপায়: External File</h4>
+                        <div class="code-section">/* 3. External - আলাদা ফাইল */
 &lt;script src="script.js"&gt;&lt;/script&gt;
 
-// script.js তে:
-console.log("আমি একটি বাহ্যিক ফাইল");
-alert("এটি পারফেক্ট কাজ করছে!");</div>
+// script.js ফাইলে:
+console.log("বাহ্যিক ফাইল");
+alert("এটি কাজ করছে!");</div>
                     </div>
                 </div>
 
-                <div class="demo-section">
-                    <h4>💻 লাইভ ডেমো</h4>
-                    <button class="demo-button" onclick="demoIntro()">▶ Run Code</button>
-                    <button class="demo-button" onclick="clearOutput()">🔄 Clear</button>
+                <div class="interactive-demo">
+                    <h4>🎯 লাইভ ডেমো: আপনার প্রথম JavaScript</h4>
+                    <button class="demo-button" onclick="demoIntro()">Run Code</button>
+                    <button class="demo-button" onclick="clearOutput()">Clear Output</button>
                     <div class="output-box" id="output">Output এখানে দেখা যাবে...</div>
                 </div>
 
-                <div class="tips-box">
-                    <h3>💡 গুরুত্বপূর্ণ টিপস</h3>
-                    <p><strong>🎯 Console ব্যবহার করুন:</strong> ব্রাউজারে F12 চাপুন, Console ট্যাবে গিয়ে যেকোনো JavaScript কোড লিখতে পারবেন।</p>
-                    <p><strong>📚 ছোট থেকে শুরু করুন:</strong> প্রথমে console.log() দিয়ে শুরু করুন এবং ধীরে ধীরে জটিল বিষয় শিখুন।</p>
+                <div class="tip-box">
+                    <h3>💡 শুরু করার আগে জানুন</h3>
+                    <p><strong>Console ব্যবহার করুন:</strong> ব্রাউজারে F12 চাপুন এবং Console ট্যাবে যান। এখানে কোড লিখে ফলাফল দেখতে পারবেন।</p>
+                    <p><strong>ছোট থেকে শুরু করুন:</strong> প্রথমে console.log() দিয়ে শুরু করুন এবং ধীরে ধীরে জটিল জিনিস শিখুন।</p>
                 </div>
             </div>
 
-            <!-- Variables -->
+            <!-- Variables Section -->
             <div id="variables" class="section">
                 <div class="section-header">
                     <span class="section-icon">📦</span>
-                    <h2>ভেরিয়েবল এবং ডেটা স্টোরেজ</h2>
+                    <h2>ভেরিয়েবল এবং Scope</h2>
                 </div>
 
-                <div class="intro-text">
-                    <strong>ভেরিয়েবল</strong> হল ডেটা সংরক্ষণের জন্য একটি নামযুক্ত বাক্স। এতে আমরা মূল্য রাখি এবং প্রয়োজনে ব্যবহার করি।
+                <div class="feature-box">
+                    <strong>ভেরিয়েবল</strong> হল ডেটা সংরক্ষণের জন্য একটি নাম। এটি একটি বাক্সের মতো যেখানে আমরা মূল্য সংরক্ষণ করি।
                 </div>
 
                 <div class="concept-grid">
                     <div class="concept-card">
-                        <div class="concept-name">var (পুরানো পদ্ধতি)</div>
-                        <div class="concept-desc">এটি পুরানো এবং সমস্যাযুক্ত। এড়িয়ে চলাই ভাল।</div>
+                        <div class="concept-name">var (পুরানো)</div>
+                        <div class="concept-desc">এটি পুরানো উপায়। এড়িয়ে চলুন।</div>
                         <div class="code-block">var name = "রবিউল";
 var age = 25;
 var city;</div>
-                        <span class="badge">⚠️ এড়িয়ে চলুন</span>
+                        <span class="badge">শেখা দরকার</span>
                     </div>
 
                     <div class="concept-card">
-                        <div class="concept-name">let (আধুনিক পদ্ধতি)</div>
-                        <div class="concept-desc">পরিবর্তনযোগ্য মূল্য। বেশিরভাগ সময় এটি ব্যবহার করুন।</div>
+                        <div class="concept-name">let (আধুনিক)</div>
+                        <div class="concept-desc">পরিবর্তনযোগ্য মূল্য। সবসময় এটি ব্যবহার করুন।</div>
                         <div class="code-block">let name = "রবিউল";
 let age = 25;
-name = "করিম"; // পরিবর্তন যায়</div>
-                        <span class="badge">✅ সুপারিশকৃত</span>
+name = "করিম"; // পরিবর্তন করা যায়</div>
+                        <span class="badge">সুপারিশকৃত</span>
                     </div>
 
                     <div class="concept-card">
-                        <div class="concept-name">const (ধ্রুবক মূল্য)</div>
-                        <div class="concept-desc">অপরিবর্তনীয় মূল্য। একবার নির্ধারণ করলে বদলানো যায় না।</div>
+                        <div class="concept-name">const (ধ্রুবক)</div>
+                        <div class="concept-desc">অপরিবর্তনীয় মূল্য। একবার নির্ধারণ করলে পরে বদলানো যায় না।</div>
                         <div class="code-block">const PI = 3.14159;
-const COUNTRY = "বাংলাদেশ";
+const country = "বাংলাদেশ";
 // const age = 25;
 // age = 30; ❌ Error!</div>
-                        <span class="badge">🌟 প্রথম পছন্দ</span>
+                        <span class="badge">সুপারিশকৃত</span>
                     </div>
                 </div>
 
-                <div class="demo-section">
-                    <h4>💻 ভেরিয়েবল ডেমো</h4>
-                    <button class="demo-button" onclick="demoVariables()">▶ Run Code</button>
-                    <button class="demo-button" onclick="clearOutput()">🔄 Clear</button>
+                <div class="comparison-table">
+                    <tr>
+                        <th>ভেরিয়েবল</th>
+                        <th>পরিবর্তনযোগ্য</th>
+                        <th>Scope</th>
+                        <th>সুপারিশ</th>
+                    </tr>
+                    <tr>
+                        <td>var</td>
+                        <td>✅ হ্যাঁ</td>
+                        <td>Function scoped</td>
+                        <td>❌ এড়িয়ে চলুন</td>
+                    </tr>
+                    <tr>
+                        <td>let</td>
+                        <td>✅ হ্যাঁ</td>
+                        <td>Block scoped</td>
+                        <td>✅ ব্যবহার করুন</td>
+                    </tr>
+                    <tr>
+                        <td>const</td>
+                        <td>❌ না</td>
+                        <td>Block scoped</td>
+                        <td>✅ ডিফল্ট হিসেবে ব্যবহার করুন</td>
+                    </tr>
+                </div>
+
+                <div class="interactive-demo">
+                    <h4>🎯 ভেরিয়েবল ডেমো</h4>
+                    <button class="demo-button" onclick="demoVariables()">ভেরিয়েবল দেখুন</button>
+                    <button class="demo-button" onclick="clearOutput()">Clear</button>
                     <div class="output-box" id="output"></div>
                 </div>
             </div>
 
-            <!-- Data Types -->
+            <!-- Data Types Section -->
             <div id="datatypes" class="section">
                 <div class="section-header">
                     <span class="section-icon">🔢</span>
-                    <h2>ডেটা টাইপ এবং মূল্য</h2>
+                    <h2>ডেটা টাইপ</h2>
                 </div>
 
-                <div class="intro-text">
-                    JavaScript এ দুই ধরনের ডেটা আছে: <strong>Primitive</strong> (সরল) এবং <strong>Non-Primitive</strong> (জটিল)। প্রতিটির নিজস্ব বৈশিষ্ট্য আছে।
+                <div class="feature-box">
+                    JavaScript এ দুই ধরনের ডেটা আছে: <strong>Primitive</strong> (সহজ) এবং <strong>Non-Primitive</strong> (জটিল)।
                 </div>
 
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <div class="concept-name">📝 String - টেক্সট</div>
-                        <div class="concept-desc">শব্দ, বাক্য এবং যেকোনো লেখা।</div>
-                        <div class="code-block">const name = "রবিউল";
-const msg = 'হ্যালো বিশ্ব';
-const full = `নাম: ${name}`;</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
+                <div class="two-column">
+                    <div class="column-box">
+                        <h4>Primitive ডেটা টাইপ</h4>
+                        <div class="code-section">// String - টেক্সট
+const name = "রবিউল";
+const text = 'হ্যালো';
 
-                    <div class="concept-card">
-                        <div class="concept-name">🔢 Number - সংখ্যা</div>
-                        <div class="concept-desc">পূর্ণ সংখ্যা এবং দশমিক সংখ্যা।</div>
-                        <div class="code-block">const age = 25;
+// Number - সংখ্যা
+const age = 25;
 const price = 99.99;
-const negative = -50;
-const pi = 3.14159;</div>
-                        <span class="badge">বেসিক</span>
-                    </div>
 
-                    <div class="concept-card">
-                        <div class="concept-name">✅ Boolean - সত্য/মিথ্
+// Boolean - সত্য/মিথ্যা
+const isStudent = true;
+const isPassed = false;
+
+// Undefined - মূল্য নির্ধারিত নয়
+let x;
+
+// Null - খালি মূল্য
+let y = null;</div>
+                    </div>
+                    <div class="column-box">
+                        <h4>Non-Primitive ডেটা টাইপ</h4>
+                        <div class="code-section">// Array - তালিকা
+const fruits = ["আম", "কলা
