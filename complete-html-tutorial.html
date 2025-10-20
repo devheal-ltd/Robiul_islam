@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML সম্পূর্ণ ট্যাগ লিস্ট - সংগঠিত এবং শেখা সহজ। সকল HTML5 ট্যাগের বিস্তারিত গাইড।">
+    <meta name="keywords" content="HTML tags, HTML5, web development, web design, বাংলা টিউটোরিয়াল">
+    <meta name="author" content="Robiul Islam">
+    <title>HTML Complete Tag Reference | robiulislam.org</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            animation: slideDown 0.6s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        nav button {
+            padding: 10px 20px;
+            border: none;
+            background: #667eea;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        nav button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        nav button.active {
+            background: #764ba2;
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .tag-category {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tag-category.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .category-icon {
+            font-size: 2.5em;
+            margin-right: 15px;
+        }
+
+        .category-header h2 {
+            font-size: 2em;
+            color: #667eea;
+        }
+
+        .tag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tag-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tag-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+            border-left: 4px solid #764ba2;
+        }
+
+        .tag-name {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .tag-description {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .tip-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border-left: 5px solid #ff9800;
+        }
+
+        .tip-section h3 {
+            color: #e65100;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .tip-section p {
+            color: #d84315;
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+        footer {
+            background: #2d2d2d;
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 3px solid #667eea;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav {
+                padding: 15px 20px;
+                gap: 10px;
+            }
+
+            nav button {
+                padding: 8px 15px;
+                font-size: 0.85em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .tag-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .search-box {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 HTML Complete Tag Reference</h1>
+            <p>সংগঠিত এবং সহজে শেখার জন্য HTML5 এর সম্পূর্ণ ট্যাগ লিস্ট</p>
+        </header>
+
+        <nav>
+            <button class="nav-btn active" data-category="basic">📐 বেসিক স্ট্রাকচার</button>
+            <button class="nav-btn" data-category="text">✍️ টেক্সট ফরম্যাটিং</button>
+            <button class="nav-btn" data-category="media">🖼️ মিডিয়া</button>
+            <button class="nav-btn" data-category="links">🔗 লিংক এবং নেভিগেশন</button>
+            <button class="nav-btn" data-category="lists">📋 লিস্ট</button>
+            <button class="nav-btn" data-category="table">🧍 টেবিল</button>
+            <button class="nav-btn" data-category="form">🧾 ফর্ম</button>
+            <button class="nav-btn" data-category="semantic">🧩 সেমান্টিক HTML5</button>
+        </nav>
+
+        <div class="content">
+            <!-- Basic Structure -->
+            <div id="basic" class="tag-category active">
+                <div class="category-header">
+                    <span class="category-icon">📐</span>
+                    <h2>বেসিক স্ট্রাকচার ট্যাগস</h2>
+                </div>
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;!DOCTYPE html&gt;</div>
+                        <div class="tag-description">ডকুমেন্টের ধরন নির্ধারণ করে। সবসময় প্রথমে থাকতে হয়।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;html&gt;</div>
+                        <div class="tag-description">সম্পূর্ণ HTML ডকুমেন্টের রুট এলিমেন্ট।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;head&gt;</div>
+                        <div class="tag-description">ডকুমেন্টের মেটাডেটা এবং তথ্য রাখে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;title&gt;</div>
+                        <div class="tag-description">ব্রাউজার ট্যাবে দেখানো হয়। এসইও এর জন্য গুরুত্বপূর্ণ।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;meta&gt;</div>
+                        <div class="tag-description">ডকুমেন্টের বর্ণনা, কীওয়ার্ড ইত্যাদি তথ্য দেয়।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;link&gt;</div>
+                        <div class="tag-description">বাহ্যিক সম্পদ যেমন CSS লিংক করে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;style&gt;</div>
+                        <div class="tag-description">HTML ডকুমেন্টে সরাসরি CSS কোড লেখা যায়।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;script&gt;</div>
+                        <div class="tag-description">JavaScript কোড যোগ করতে ব্যবহৃত হয়।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;body&gt;</div>
+                        <div class="tag-description">ওয়েব পেজের সমস্ত দৃশ্যমান কন্টেন্ট এখানে থাকে।</div>
+                    </div>
+                </div>
+                <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="bn"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;আমার ওয়েবসাইট&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;স্বাগতম!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+            </div>
+
+            <!-- Text Formatting -->
+            <div id="text" class="tag-category">
+                <div class="category-header">
+                    <span class="category-icon">✍️</span>
+                    <h2>টেক্সট ফরম্যাটিং ট্যাগস</h2>
+                </div>
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;h1&gt; থেকে &lt;h6&gt;</div>
+                        <div class="tag-description">শিরোনাম এবং উপশিরোনাম। h1 সবচেয়ে গুরুত্বপূর্ণ।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;p&gt;</div>
+                        <div class="tag-description">অনুচ্ছেদ বা প্যারাগ্রাফ যোগ করে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;br&gt;</div>
+                        <div class="tag-description">লাইন ব্রেক বা নতুন লাইন তৈরি করে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;hr&gt;</div>
+                        <div class="tag-description">অনুভূমিক লাইন যোগ করে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;b&gt; এবং &lt;strong&gt;</div>
+                        <div class="tag-description">বোল্ড টেক্সট। strong বেশি সিমান্টিক।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;i&gt; এবং &lt;em&gt;</div>
+                        <div class="tag-description">ইটালিক টেক্সট। em বেশি গুরুত্বপূর্ণ।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;u&gt;</div>
+                        <div class="tag-description">আন্ডারলাইন করা টেক্সট।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;small&gt;</div>
+                        <div class="tag-description">ছোট আকারের টেক্সট।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;mark&gt;</div>
+                        <div class="tag-description">হাইলাইট করা টেক্সট।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;del&gt; এবং &lt;ins&gt;</div>
+                        <div class="tag-description">মুছে ফেলা এবং যোগ করা টেক্সট।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;sub&gt; এবং &lt;sup&gt;</div>
+                        <div class="tag-description">সাবস্ক্রিপ্ট এবং সুপারস্ক্রিপ্ট।</div>
+                    </div>
+                </div>
+                <div class="code-block">&lt;h1&gt;এটি একটি শিরোনাম&lt;/h1&gt;
+&lt;p&gt;এটি একটি অনুচ্ছেদ। এতে &lt;strong&gt;গুরুত্বপূর্ণ&lt;/strong&gt; এবং &lt;em&gt;জোর দেওয়া&lt;/em&gt; টেক্সট থাকতে পারে।&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O এবং E=mc&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</div>
+            </div>
+
+            <!-- Media -->
+            <div id="media" class="tag-category">
+                <div class="category-header">
+                    <span class="category-icon">🖼️</span>
+                    <h2>ইমেজ এবং মাল্টিমিডিয়া ট্যাগস</h2>
+                </div>
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;img&gt;</div>
+                        <div class="tag-description">ছবি ডিসপ্লে করে। src এবং alt অ্যাট্রিবিউট গুরুত্বপূর্ণ।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;audio&gt;</div>
+                        <div class="tag-description">অডিও ফাইল প্লে করে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;video&gt;</div>
+                        <div class="tag-description">ভিডিও ফাইল প্লে করে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;source&gt;</div>
+                        <div class="tag-description">অডিও এবং ভিডিওর উৎস নির্দিষ্ট করে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;canvas&gt;</div>
+                        <div class="tag-description">JavaScript দিয়ে গ্রাফিক্স আঁকতে ব্যবহার করা হয়।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;picture&gt;</div>
+                        <div class="tag-description">বিভিন্ন ডিভাইসের জন্য বিভিন্ন ইমেজ সরবরাহ করে।</div>
+                    </div>
+                </div>
+                <div class="code-block">&lt;img src="image.jpg" alt="ছবির বর্ণনা" width="300"&gt;
+
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
+&lt;/video&gt;</div>
+            </div>
+
+            <!-- Links -->
+            <div id="links" class="tag-category">
+                <div class="category-header">
+                    <span class="category-icon">🔗</span>
+                    <h2>লিংক এবং নেভিগেশন ট্যাগস</h2>
+                </div>
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;a&gt;</div>
+                        <div class="tag-description">হাইপারলিংক তৈরি করে। href অ্যাট্রিবিউট ব্যবহার করুন।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;nav&gt;</div>
+                        <div class="tag-description">নেভিগেশন লিংকের জন্য সেমান্টিক কন্টেইনার।</div>
+                    </div>
+                </div>
+                <div class="code-block">&lt;nav&gt;
+  &lt;a href="index.html"&gt;হোম&lt;/a&gt;
+  &lt;a href="about.html"&gt;আমাদের সম্পর্কে&lt;/a&gt;
+  &lt;a href="contact.html"&gt;যোগাযোগ&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;p&gt;&lt;a href="https://robiulislam.org" target="_blank"&gt;আমাদের ওয়েবসাইট ভিজিট করুন&lt;/a&gt;&lt;/p&gt;</div>
+            </div>
+
+            <!-- Lists -->
+            <div id="lists" class="tag-category">
+                <div class="category-header">
+                    <span class="category-icon">📋</span>
+                    <h2>লিস্ট ট্যাগস</h2>
+                </div>
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;ul&gt;</div>
+                        <div class="tag-description">আনঅর্ডারড লিস্ট (বুলেট পয়েন্ট সহ)।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;ol&gt;</div>
+                        <div class="tag-description">অর্ডারড লিস্ট (নাম্বার সহ)।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;li&gt;</div>
+                        <div class="tag-description">লিস্ট আইটেম।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;dl&gt;</div>
+                        <div class="tag-description">ডেসক্রিপশন লিস্ট।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;dt&gt;</div>
+                        <div class="tag-description">ডেসক্রিপশন টার্ম।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;dd&gt;</div>
+                        <div class="tag-description">ডেসক্রিপশন।</div>
+                    </div>
+                </div>
+                <div class="code-block">&lt;ul&gt;
+  &lt;li&gt;প্রথম আইটেম&lt;/li&gt;
+  &lt;li&gt;দ্বিতীয় আইটেম&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;এক&lt;/li&gt;
+  &lt;li&gt;দুই&lt;/li&gt;
+  &lt;li&gt;তিন&lt;/li&gt;
+&lt;/ol&gt;</div>
+            </div>
+
+            <!-- Table -->
+            <div id="table" class="tag-category">
+                <div class="category-header">
+                    <span class="category-icon">🧍</span>
+                    <h2>টেবিল ট্যাগস</h2>
+                </div>
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;table&gt;</div>
+                        <div class="tag-description">টেবিল কন্টেইনার।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;tr&gt;</div>
+                        <div class="tag-description">টেবিল রো (সারি)।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;th&gt;</div>
+                        <div class="tag-description">টেবিল হেডার সেল।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;td&gt;</div>
+                        <div class="tag-description">টেবিল ডেটা সেল।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;thead&gt;</div>
+                        <div class="tag-description">টেবিল হেডার গ্রুপ।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;tbody&gt;</div>
+                        <div class="tag-description">টেবিল বডি গ্রুপ।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;tfoot&gt;</div>
+                        <div class="tag-description">টেবিল ফুটার গ্রুপ।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;caption&gt;</div>
+                        <div class="tag-description">টেবিলের শিরোনাম।</div>
+                    </div>
+                </div>
+                <div class="code-block">&lt;table&gt;
+  &lt;caption&gt;শিক্ষার্থী নম্বর&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;নাম&lt;/th&gt;
+      &lt;th&gt;ক্লাস&lt;/th&gt;
+      &lt;th&gt;নম্বর&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;আহমেদ&lt;/td&gt;
+      &lt;td&gt;নবম&lt;/td&gt;
+      &lt;td&gt;৯৫&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</div>
+            </div>
+
+            <!-- Forms -->
+            <div id="form" class="tag-category">
+                <div class="category-header">
+                    <span class="category-icon">🧾</span>
+                    <h2>ফর্ম ট্যাগস</h2>
+                </div>
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;form&gt;</div>
+                        <div class="tag-description">ফর্ম কন্টেইনার। action এবং method অত্যন্ত গুরুত্বপূর্ণ।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;input&gt;</div>
+                        <div class="tag-description">ইনপুট ফিল্ড। type অনুযায়ী বিভিন্ন ধরনের ইনপুট।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;textarea&gt;</div>
+                        <div class="tag-description">বহুলাইন টেক্সট ইনপুট।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;button&gt;</div>
+                        <div class="tag-description">ক্লিকযোগ্য বাটন।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;select&gt;</div>
+                        <div class="tag-description">ড্রপডাউন মেনু তৈরি করে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;option&gt;</div>
+                        <div class="tag-description">Select এর অপশন।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;label&gt;</div>
+                        <div class="tag-description">ইনপুটের লেবেল তৈরি করে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;fieldset&gt;</div>
+                        <div class="tag-description">ফর্ম এলিমেন্ট গ্রুপ করে।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;legend&gt;</div>
+                        <div class="tag-description">Fieldset এর শিরোনাম।</div>
+                    </div>
+                </div>
+                <div class="code-block">&lt;form action="submit.php" method="POST"&gt;
+  &lt;label for="name"&gt;নাম:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+
+  &lt;label for="email"&gt;ইমেইল:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;
+
+  &lt;label for="message"&gt;বার্তা:&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="5"&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;পাঠান&lt;/button&gt;
+&lt;/form&gt;</div>
+            </div>
+
+            <!-- Semantic HTML5 -->
+            <div id="semantic" class="tag-category">
+                <div class="category-header">
+                    <span class="category-icon">🧩</span>
+                    <h2>সেমান্টিক HTML5 ট্যাগস</h2>
+                </div>
+                <div class="tag-grid">
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;header&gt;</div>
+                        <div class="tag-description">পেজের শুরুর অংশ, লোগো এবং নেভিগেশনের জন্য।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;footer&gt;</div>
+                        <div class="tag-description">পেজের শেষের অংশ, কপিরাইট এবং যোগাযোগের জন্য।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;main&gt;</div>
+                        <div class="tag-description">পেজের প্রধান কন্টেন্ট এলাকা।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;section&gt;</div>
+                        <div class="tag-description">কন্টেন্টের একটি অংশ বা বিভাগ।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;article&gt;</div>
+                        <div class="tag-description">স্বাধীন কন্টেন্ট যেমন ব্লগ পোস্ট।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;aside&gt;</div>
+                        <div class="tag-description">সাইডবার বা পার্শ্বীয় কন্টেন্ট।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;figure&gt;</div>
+                        <div class="tag-description">ইলাস্ট্রেশন বা ছবির কন্টেইনার।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;figcaption&gt;</div>
+                        <div class="tag-description">Figure এর শিরোনাম বা ক্যাপশন।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;details&gt;</div>
+                        <div class="tag-description">লুকানো তথ্য যা ক্লিক করে খোলা যায়।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;summary&gt;</div>
+                        <div class="tag-description">Details এর শিরোনাম।</div>
+                    </div>
+                    <div class="tag-card">
+                        <div class="tag-name">&lt;time&gt;</div>
+                        <div class="tag-description">তারিখ এবং সময় উল্লেখ করে।</div>
+                    </div>
+                </div>
+                <div class="code-block">&lt;header&gt;
+  &lt;h1&gt;আমার ব্লগ&lt;/h1&gt;
+  &lt;nav&gt;&lt;a href="#"&gt;হোম&lt;/a&gt;&lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;আমার প্রথম পোস্ট&lt;/h2&gt;
+    &lt;time datetime="2024-10-20"&gt;২০ অক্টোবর ২০২৪&lt;/time&gt;
+    &lt;p&gt;এটি একটি নতুন পোস্ট...&lt;/p&gt;
+  &lt;/article&gt;
+  
+  &lt;aside&gt;
+    &lt;h3&gt;বিভাগ&lt;/h3&gt;
+    &lt;ul&gt;&lt;li&gt;প্রযুক্তি&lt;/li&gt;&lt;/ul&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;&copy; ২০২৪ আমার ব্লগ। সর্বাধিকার সংরক্ষিত।&lt;/p&gt;
+&lt;/footer&gt;</div>
+            </div>
+
+            <div class="tip-section">
+                <h3>✨ শিক্ষার্থীদের জন্য টিপস</h3>
+                <p>
+                    <strong>শুরুর দিকে:</strong> &lt;html&gt;, &lt;head&gt;, &lt;body&gt;, &lt;h1&gt; থেকে &lt;p&gt; পর্যন্ত ভালোভাবে বুঝে প্র্যাকটিস করুন। প্রতিটি ট্যাগ দিয়ে ছোট প্রজেক্ট তৈরি করুন।
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>মধ্যম স্তর:</strong> ধীরে ধীরে ফর্ম, টেবিল, ইমেজ, লিংক, এবং লেআউট ট্যাগ শিখুন। প্র্যাকটিক্যাল ওয়েবসাইট তৈরি করুন।
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>উন্নত স্তর:</strong> সেমান্টিক HTML5 ট্যাগ এবং এসইও অপটিমাইজেশন শিখুন। প্রকল্প-ভিত্তিক কাজ করুন।
+                </p>
+                <p style="margin-top: 10px;">
+                    💡 <strong>স্মার্ট টিপ:</strong> প্রতিটি ট্যাগের উদাহরণ এবং আউটপুট দেখে দেখে শিখলে মনে দীর্ঘদিন থাকবে। এই পেজটি বুকমার্ক করুন এবং নিয়মিত রেফার করুন!
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>HTML Complete Tag Reference | robiulislam.org</strong></p>
+            <p>এই টিউটোরিয়াল আপনার ওয়েব ডেভেলপমেন্ট যাত্রায় সাহায্য করার জন্য তৈরি।</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">
+                আরও শিখুন: <a class="footer-link" href="https://robiulislam.org">robiulislam.org</a> | 
+                <span style="color: #667eea;">প্রফেশনাল ওয়েব ডেভেলপমেন্ট কোর্স</span>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const navButtons = document.querySelectorAll('.nav-btn');
+        const tagCategories = document.querySelectorAll('.tag-category');
+
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                tagCategories.forEach(cat => cat.classList.remove('active'));
+
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding category
+                const categoryId = button.getAttribute('data-category');
+                document.getElementById(categoryId).classList.add('active');
+            });
+        });
+
+        // Add smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>

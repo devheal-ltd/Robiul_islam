@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSS সম্পূর্ণ রেফারেন্স গাইড - বিগিনার থেকে অ্যাডভান্সড পর্যন্ত। সব CSS প্রপার্টি এবং সিলেক্টর একটি জায়গায়।">
+    <meta name="keywords" content="CSS guide, CSS tutorial, CSS properties, CSS selectors, web design, বাংলা টিউটোরিয়াল, CSS flexbox, CSS grid">
+    <meta name="author" content="Robiul Islam">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Complete Reference Guide | robiulislam.org</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            animation: slideDown 0.7s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-60px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 15px 40px;
+            font-size: 0.9em;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            background: white;
+            padding: 20px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-start;
+            border-bottom: 2px solid var(--border-color);
+            overflow-x: auto;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav button {
+            padding: 10px 18px;
+            border: 2px solid var(--primary-color);
+            background: white;
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        nav button:hover {
+            background: #f0f4ff;
+            transform: translateY(-2px);
+        }
+
+        nav button.active {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .section-icon {
+            font-size: 3em;
+            margin-right: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .section-header h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .property-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .property-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+            border-left-color: var(--secondary-color);
+        }
+
+        .property-name {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            word-break: break-word;
+        }
+
+        .property-description {
+            color: var(--text-light);
+            font-size: 0.95em;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .property-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Monaco', monospace;
+            font-size: 0.85em;
+            overflow-x: auto;
+            line-height: 1.5;
+        }
+
+        .code-section {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 30px;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 30px 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.8;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .column-box {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+        }
+
+        .column-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #ff9800;
+            animation: slideInLeft 0.6s ease;
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .tip-box h3 {
+            color: #e65100;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .tip-box p {
+            color: #d84315;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .learning-path {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+
+        .learning-path h3 {
+            color: #065f46;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+
+        .path-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .step {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #059669;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.2);
+        }
+
+        .step-number {
+            font-size: 2em;
+            color: #059669;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .step-title {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            font-family: 'Monaco', monospace;
+            font-size: 0.95em;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .comparison-table tr:hover {
+            background: #e6ecff;
+        }
+
+        footer {
+            background: #2d2d2d;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        footer p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .footer-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-top: 10px;
+        }
+
+        .badge.advanced {
+            background: #f093fb;
+        }
+
+        .badge.intermediate {
+            background: #fbb03b;
+        }
+
+        @media (max-width: 1024px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .section-header h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 50px 20px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav {
+                padding: 15px 20px;
+                gap: 8px;
+            }
+
+            nav button {
+                padding: 8px 12px;
+                font-size: 0.8em;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .comparison-table {
+                font-size: 0.85em;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+            }
+
+            .path-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-highlight {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 CSS Complete Reference</h1>
+            <p>বিগিনার থেকে অ্যাডভান্সড পর্যন্ত সম্পূর্ণ CSS গাইড</p>
+        </header>
+
+        <div class="breadcrumb">
+            <span>📍 </span>
+            <a href="https://robiulislam.org">robiulislam.org</a> › CSS Tutorial › Complete Reference
+        </div>
+
+        <nav>
+            <button class="nav-btn active" data-section="intro">📚 ইন্ট্রোডাকশন</button>
+            <button class="nav-btn" data-section="selectors">🎯 সিলেক্টর</button>
+            <button class="nav-btn" data-section="colors">💅 রং এবং ব্যাকগ্রাউন্ড</button>
+            <button class="nav-btn" data-section="text">✍️ টেক্সট এবং ফন্ট</button>
+            <button class="nav-btn" data-section="boxmodel">📦 বক্স মডেল</button>
+            <button class="nav-btn" data-section="layout">🧩 লেআউট</button>
+            <button class="nav-btn" data-section="flexbox">🔀 ফ্লেক্সবক্স</button>
+            <button class="nav-btn" data-section="grid">📐 গ্রিড</button>
+            <button class="nav-btn" data-section="effects">✨ ইফেক্ট এবং এনিমেশন</button>
+            <button class="nav-btn" data-section="responsive">📱 রেসপন্সিভ</button>
+            <button class="nav-btn" data-section="advanced">⚡ অ্যাডভান্সড</button>
+        </nav>
+
+        <div class="content">
+            <!-- Introduction Section -->
+            <div id="intro" class="section active">
+                <div class="section-header">
+                    <span class="section-icon">📚</span>
+                    <h2>CSS ইন্ট্রোডাকশন</h2>
+                </div>
+
+                <div class="feature-highlight">
+                    <strong>CSS (Cascading Style Sheets)</strong> ওয়েবপেজের স্টাইলিং এবং লেআউট পরিচালনা করে। HTML কাঠামো তৈরি করলে, CSS তার সৌন্দর্য যোগ করে।
+                </div>
+
+                <div class="two-column">
+                    <div class="column-box">
+                        <h4>CSS এর বেসিক সিনট্যাক্স</h4>
+                        <div class="code-section">selector {
+  property: value;
+  property: value;
+}
+
+/* উদাহরণ */
+p {
+  color: blue;
+  font-size: 16px;
+}</div>
+                    </div>
+                    <div class="column-box">
+                        <h4>CSS যোগ করার ৩টি উপায়</h4>
+                        <div class="code-section">/* ১. Inline */
+&lt;p style="color:red;"&gt;হ্যালো&lt;/p&gt;
+
+/* ২. Internal */
+&lt;style&gt;p {color: red;}&lt;/style&gt;
+
+/* ৩. External */
+&lt;link rel="stylesheet" 
+      href="style.css"&gt;</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h3>💡 পেশাদার টিপ</h3>
+                    <p>সর্বদা <strong>External CSS ফাইল</strong> ব্যবহার করুন। এটি আপনার কোড পরিচ্ছন্ন রাখে এবং রক্ষণাবেক্ষণ সহজ করে।</p>
+                </div>
+            </div>
+
+            <!-- Selectors Section -->
+            <div id="selectors" class="section">
+                <div class="section-header">
+                    <span class="section-icon">🎯</span>
+                    <h2>CSS সিলেক্টর</h2>
+                </div>
+
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">text-decoration</div>
+                        <div class="property-description">লাইন এবং আন্ডারলাইন যোগ করে।</div>
+                        <div class="property-example">text-decoration: underline;
+text-decoration: none;
+text-decoration: line-through;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">line-height</div>
+                        <div class="property-description">লাইনের মধ্যে দূরত্ব নির্ধারণ করে।</div>
+                        <div class="property-example">line-height: 1.5;
+line-height: 2;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">letter-spacing</div>
+                        <div class="property-description">অক্ষরের মধ্যে দূরত্ব বৃদ্ধি করে।</div>
+                        <div class="property-example">letter-spacing: 2px;
+letter-spacing: 0.1em;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">text-shadow</div>
+                        <div class="property-description">টেক্সটে ছায়া যোগ করে।</div>
+                        <div class="property-example">text-shadow: 2px 2px 5px gray;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box Model -->
+            <div id="boxmodel" class="section">
+                <div class="section-header">
+                    <span class="section-icon">📦</span>
+                    <h2>বক্স মডেল</h2>
+                </div>
+
+                <div class="feature-highlight">
+                    <strong>CSS Box Model:</strong> Content → Padding → Border → Margin
+                </div>
+
+                <div class="two-column">
+                    <div class="column-box">
+                        <h4>মূল বক্স প্রপার্টি</h4>
+                        <div class="code-section">/* সাইজ */
+width: 200px;
+height: 100px;
+
+/* প্যাডিং (অভ্যন্তর) */
+padding: 10px;
+padding: 10px 20px;
+
+/* বর্ডার */
+border: 2px solid black;
+border-radius: 10px;
+
+/* মার্জিন (বাহ্যিক) */
+margin: 20px;
+margin: 10px auto;</div>
+                    </div>
+                    <div class="column-box">
+                        <h4>উন্নত বক্স প্রপার্টি</h4>
+                        <div class="code-section">/* বক্স সাইজিং */
+box-sizing: border-box;
+
+/* ছায়া */
+box-shadow: 0 4px 8px 
+  rgba(0,0,0,0.1);
+
+/* সীমাবদ্ধতা */
+max-width: 100%;
+min-height: 50px;
+
+/* ওভারফ্লো */
+overflow: hidden;
+overflow: auto;</div>
+                    </div>
+                </div>
+
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">width & height</div>
+                        <div class="property-description">উপাদানের প্রস্থ এবং উচ্চতা।</div>
+                        <div class="property-example">width: 300px;
+width: 100%;
+width: 50vw;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">padding</div>
+                        <div class="property-description">বিষয়বস্তু এবং সীমানার মধ্যে স্থান।</div>
+                        <div class="property-example">padding: 10px;
+padding: 10px 20px;
+padding-top: 15px;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">margin</div>
+                        <div class="property-description">উপাদানের বাইরের স্থান।</div>
+                        <div class="property-example">margin: 20px;
+margin: 0 auto;
+margin-left: 30px;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">border</div>
+                        <div class="property-description">উপাদানের চারপাশে সীমানা।</div>
+                        <div class="property-example">border: 2px solid #000;
+border: 1px dashed red;
+border: 3px dotted blue;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">border-radius</div>
+                        <div class="property-description">সীমানার কোণ গোল করে।</div>
+                        <div class="property-example">border-radius: 10px;
+border-radius: 50%;
+border-radius: 10px 20px;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">box-shadow</div>
+                        <div class="property-description">উপাদানে ছায়া যোগ করে।</div>
+                        <div class="property-example">box-shadow: 0 4px 8px 
+  rgba(0,0,0,0.1);
+box-shadow: inset 0 0 5px;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">box-sizing</div>
+                        <div class="property-description">প্যাডিং এবং বর্ডার পরিমাপ পদ্ধতি।</div>
+                        <div class="property-example">box-sizing: border-box;
+box-sizing: content-box;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">max-width & min-width</div>
+                        <div class="property-description">সর্বাধিক এবং ন্যূনতম প্রস্থ সীমা।</div>
+                        <div class="property-example">max-width: 1200px;
+min-width: 200px;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layout -->
+            <div id="layout" class="section">
+                <div class="section-header">
+                    <span class="section-icon">🧩</span>
+                    <h2>লেআউট এবং ডিসপ্লে</h2>
+                </div>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>প্রপার্টি</th>
+                        <th>বর্ণনা</th>
+                        <th>উদাহরণ</th>
+                    </tr>
+                    <tr>
+                        <td>display: block</td>
+                        <td>সম্পূর্ণ প্রস্থ জুড়ে প্রসারিত</td>
+                        <td>div, p, h1</td>
+                    </tr>
+                    <tr>
+                        <td>display: inline</td>
+                        <td>প্রয়োজনীয় প্রস্থ নেয়</td>
+                        <td>span, a, strong</td>
+                    </tr>
+                    <tr>
+                        <td>display: inline-block</td>
+                        <td>ইনলাইন কিন্তু সাইজ সেট করা যায়</td>
+                        <td>button, img</td>
+                    </tr>
+                    <tr>
+                        <td>display: flex</td>
+                        <td>ফ্লেক্সিবল লেআউট সিস্টেম</td>
+                        <td>আধুনিক নেভিগেশন</td>
+                    </tr>
+                    <tr>
+                        <td>display: grid</td>
+                        <td>২D গ্রিড লেআউট সিস্টেম</td>
+                        <td>কমপ্লেক্স লেআউট</td>
+                    </tr>
+                    <tr>
+                        <td>display: none</td>
+                        <td>উপাদান লুকিয়ে রাখে</td>
+                        <td>মোবাইল মেনু</td>
+                    </tr>
+                </table>
+
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">position: static</div>
+                        <div class="property-description">ডিফল্ট অবস্থান। স্বাভাবিক প্রবাহে থাকে।</div>
+                        <div class="property-example">position: static;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">position: relative</div>
+                        <div class="property-description">নিজের অবস্থান থেকে সম্পর্কিত।</div>
+                        <div class="property-example">position: relative;
+top: 10px;
+left: 20px;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">position: absolute</div>
+                        <div class="property-description">প্রিন্ট থেকে পৃথক। প্যারেন্টের সাপেক্ষে।</div>
+                        <div class="property-example">position: absolute;
+top: 0;
+right: 0;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">position: fixed</div>
+                        <div class="property-description">স্ক্রল করলেও একই জায়গায় থাকে।</div>
+                        <div class="property-example">position: fixed;
+bottom: 20px;
+right: 20px;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">position: sticky</div>
+                        <div class="property-description">স্ক্রল করার সময় উপরে আটকে যায়।</div>
+                        <div class="property-example">position: sticky;
+top: 0;</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">z-index</div>
+                        <div class="property-description">উপাদানের স্তর নির্ধারণ করে।</div>
+                        <div class="property-example">z-index: 10;
+z-index: -1;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flexbox -->
+            <div id="flexbox" class="section">
+                <div class="section-header">
+                    <span class="section-icon">🔀</span>
+                    <h2>ফ্লেক্সবক্স লেআউট</h2>
+                </div>
+
+                <div class="feature-highlight">
+                    <strong>Flexbox</strong> আধুনিক ওয়েব ডিজাইনের জন্য সবচেয়ে শক্তিশালী টুল। এটি এক-মাত্রিক লেআউট তৈরি করে।
+                </div>
+
+                <div class="code-section">/* কন্টেইনারে সেট করুন */
+.container {
+  display: flex;
+  justify-content: center;    /* X-অক্ষ সারিবদ্ধকরণ */
+  align-items: center;        /* Y-অক্ষ সারিবদ্ধকরণ */
+  flex-direction: row;        /* দিকনির্দেশনা */
+  flex-wrap: wrap;            /* মোড়ানো */
+  gap: 20px;                  /* আইটেমের মধ্যে ফাঁক */
+}</div>
+
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">justify-content</div>
+                        <div class="property-description">প্রধান অক্ষে আইটেম সারিবদ্ধ করে।</div>
+                        <div class="property-example">justify-content: center;
+justify-content: space-between;
+justify-content: flex-start;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">align-items</div>
+                        <div class="property-description">ক্রস অক্ষে আইটেম সারিবদ্ধ করে।</div>
+                        <div class="property-example">align-items: center;
+align-items: flex-start;
+align-items: stretch;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">flex-direction</div>
+                        <div class="property-description">ফ্লেক্স আইটেমের দিকনির্দেশনা।</div>
+                        <div class="property-example">flex-direction: row;
+flex-direction: column;
+flex-direction: row-reverse;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">flex-wrap</div>
+                        <div class="property-description">আইটেম আরেকটি লাইনে যাবে কিনা।</div>
+                        <div class="property-example">flex-wrap: wrap;
+flex-wrap: nowrap;
+flex-wrap: wrap-reverse;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">gap</div>
+                        <div class="property-description">ফ্লেক্স আইটেমের মধ্যে ফাঁক।</div>
+                        <div class="property-example">gap: 20px;
+gap: 10px 20px;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">flex (শর্টহ্যান্ড)</div>
+                        <div class="property-description">আইটেমের বৃদ্ধি এবং সংকোচন।</div>
+                        <div class="property-example">flex: 1;  /* সমান ভাগ */
+flex: 2;  /* দ্বিগুণ ভাগ */</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div id="grid" class="section">
+                <div class="section-header">
+                    <span class="section-icon">📐</span>
+                    <h2>গ্রিড লেআউট</h2>
+                </div>
+
+                <div class="feature-highlight">
+                    <strong>CSS Grid</strong> দ্বি-মাত্রিক লেআউট তৈরি করে - সারি এবং কলাম উভয়েই নিয়ন্ত্রণ করে।
+                </div>
+
+                <div class="code-section">/* বেসিক গ্রিড সেটআপ */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+/* রেসপন্সিভ গ্রিড */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}</div>
+
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">grid-template-columns</div>
+                        <div class="property-description">কলামের সংখ্যা এবং আকার।</div>
+                        <div class="property-example">grid-template-columns: 1fr 1fr;
+grid-template-columns: 200px auto;
+grid-template-columns: repeat(3, 1fr);</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">grid-template-rows</div>
+                        <div class="property-description">সারির সংখ্যা এবং আকার।</div>
+                        <div class="property-example">grid-template-rows: auto;
+grid-template-rows: 100px 200px;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">gap</div>
+                        <div class="property-description">সারি এবং কলামের মধ্যে ফাঁক।</div>
+                        <div class="property-example">gap: 20px;
+gap: 10px 20px;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">grid-column</div>
+                        <div class="property-description">আইটেম কতটা কলাম জুড়ে থাকবে।</div>
+                        <div class="property-example">grid-column: 1 / 3;
+grid-column: span 2;</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">grid-row</div>
+                        <div class="property-description">আইটেম কতটা সারি জুড়ে থাকবে।</div>
+                        <div class="property-example">grid-row: 1 / 3;
+grid-row: span 2;</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">grid-auto-flow</div>
+                        <div class="property-description">অনুপস্থিত আইটেমের স্থান নির্ধারণ।</div>
+                        <div class="property-example">grid-auto-flow: row;
+grid-auto-flow: column;</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effects & Animation -->
+            <div id="effects" class="section">
+                <div class="section-header">
+                    <span class="section-icon">✨</span>
+                    <h2>ইফেক্ট এবং অ্যানিমেশন</h2>
+                </div>
+
+                <div class="two-column">
+                    <div class="column-box">
+                        <h4>ট্রানজিশন</h4>
+                        <div class="code-section">/* মসৃণ পরিবর্তন */
+.box {
+  background: blue;
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  background: red;
+  transform: scale(1.1);
+}</div>
+                    </div>
+                    <div class="column-box">
+                        <h4>অ্যানিমেশন</h4>
+                        <div class="code-section">/* ঘূর্ণায়মান অ্যানিমেশন */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.box {
+  animation: spin 2s linear 
+    infinite;
+}</div>
+                    </div>
+                </div>
+
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">transition</div>
+                        <div class="property-description">প্রপার্টি পরিবর্তনকে মসৃণ করে।</div>
+                        <div class="property-example">transition: all 0.3s ease;
+transition: color 0.5s;
+transition-property: opacity;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">@keyframes</div>
+                        <div class="property-description">অ্যানিমেশন ফ্রেম সংজ্ঞায়িত করে।</div>
+                        <div class="property-example">@keyframes slide {
+  from { left: 0; }
+  to { left: 100px; }
+}</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">animation</div>
+                        <div class="property-description">@keyframes অ্যানিমেশন প্রয়োগ করে।</div>
+                        <div class="property-example">animation: slide 2s 
+  ease-in-out infinite;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">transform</div>
+                        <div class="property-description">উপাদানকে রূপান্তরিত করে।</div>
+                        <div class="property-example">transform: rotate(45deg);
+transform: scale(1.5);
+transform: translate(50px, 20px);</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">filter</div>
+                        <div class="property-description">ভিজ্যুয়াল ইফেক্ট প্রয়োগ করে।</div>
+                        <div class="property-example">filter: blur(5px);
+filter: brightness(120%);
+filter: grayscale(100%);</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">clip-path</div>
+                        <div class="property-description">উপাদান ক্লিপ করে আকৃতি তৈরি করে।</div>
+                        <div class="property-example">clip-path: circle(50%);
+clip-path: polygon(0% 0%, 100% 0%, 50% 100%);</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responsive Design -->
+            <div id="responsive" class="section">
+                <div class="section-header">
+                    <span class="section-icon">📱</span>
+                    <h2>রেসপন্সিভ ডিজাইন</h2>
+                </div>
+
+                <div class="feature-highlight">
+                    <strong>রেসপন্সিভ ডিজাইন</strong> সব ডিভাইসে সুন্দরভাবে কাজ করে - মোবাইল, ট্যাবলেট এবং ডেস্কটপ।
+                </div>
+
+                <div class="code-section">/* মোবাইল ফার্স্ট অ্যাপ্রোচ */
+body {
+  font-size: 16px;
+}
+
+/* ট্যাবলেট */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* ডেস্কটপ */
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
+}</div>
+
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">@media query</div>
+                        <div class="property-description">বিভিন্ন স্ক্রিন সাইজের জন্য স্টাইল।</div>
+                        <div class="property-example">@media (max-width: 768px) {
+  /* মোবাইল স্টাইল */
+}</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">viewport meta</div>
+                        <div class="property-description">মোবাইলে সঠিক জুম নিয়ন্ত্রণ।</div>
+                        <div class="property-example">&lt;meta name="viewport"
+  content="width=device-width,
+  initial-scale=1.0"&gt;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">Flexible units</div>
+                        <div class="property-description">নমনীয় ইউনিট ব্যবহার করুন।</div>
+                        <div class="property-example">width: 100%;
+width: 50vw;
+font-size: 1.5rem;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">max-width</div>
+                        <div class="property-description">বৃহৎ স্ক্রিনে সর্বাধিক প্রস্থ সীমিত করুন।</div>
+                        <div class="property-example">.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">Grid responsive</div>
+                        <div class="property-description">গ্রিড বিভিন্ন ডিভাইসে পরিবর্তিত হয়।</div>
+                        <div class="property-example">@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">picture & srcset</div>
+                        <div class="property-description">বিভিন্ন ডিভাইসের জন্য ভিন্ন ইমেজ।</div>
+                        <div class="property-example">&lt;img srcset="small.jpg 480w,
+  large.jpg 1200w"&gt;</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced -->
+            <div id="advanced" class="section">
+                <div class="section-header">
+                    <span class="section-icon">⚡</span>
+                    <h2>অ্যাডভান্সড CSS</h2>
+                </div>
+
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">CSS Variables</div>
+                        <div class="property-description">পুনরায় ব্যবহারযোগ্য মূল্য সংরক্ষণ করুন।</div>
+                        <div class="property-example">:root {
+  --main-color: #667eea;
+}
+
+h1 {
+  color: var(--main-color);
+}</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">Pseudo-elements</div>
+                        <div class="property-description">::before এবং ::after দ্বারা উপাদান যোগ করুন।</div>
+                        <div class="property-example">p::before {
+  content: "👉 ";
+}
+
+p::after {
+  content: " ✓";
+}</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">@font-face</div>
+                        <div class="property-description">কাস্টম ফন্ট যোগ করুন।</div>
+                        <div class="property-example">@font-face {
+  font-family: 'CustomFont';
+  src: url('font.woff2');
+}</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">calc()</div>
+                        <div class="property-description">গতিশীল মান গণনা করুন।</div>
+                        <div class="property-example">width: calc(100% - 20px);
+margin: calc(1rem + 5px);</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">backdrop-filter</div>
+                        <div class="property-description">পটভূমিতে ফিল্টার প্রয়োগ করুন।</div>
+                        <div class="property-example">backdrop-filter: blur(10px);
+background: rgba(255,255,255,0.8);</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">mix-blend-mode</div>
+                        <div class="property-description">ব্লেন্ডিং মোড নির্ধারণ করুন।</div>
+                        <div class="property-example">mix-blend-mode: multiply;
+mix-blend-mode: screen;
+mix-blend-mode: overlay;</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">CSS Counters</div>
+                        <div class="property-description">স্বয়ংক্রিয় গণনা সিস্টেম।</div>
+                        <div class="property-example">counter-reset: section;
+counter-increment: section;
+content: counter(section);</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">writing-mode</div>
+                        <div class="property-description">লেখার দিকনির্দেশনা পরিবর্তন করুন।</div>
+                        <div class="property-example">writing-mode: horizontal-tb;
+writing-mode: vertical-rl;</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h3>⚡ উন্নত টিপস</h3>
+                    <p><strong>CSS Selectors Specificity:</strong> ID (100) > Class (10) > Element (1)</p>
+                    <p style="margin-top: 10px;"><strong>Performance:</strong> ব্রাউজার DevTools ব্যবহার করে আপনার সাইট পরীক্ষা করুন এবং অপ্টিমাইজ করুন।</p>
+                    <p style="margin-top: 10px;"><strong>Best Practice:</strong> Mobile-first অ্যাপ্রোচ অনুসরণ করুন এবং বড় স্ক্রিনের জন্য প্রগতিশীল উন্নতি করুন।</p>
+                </div>
+            </div>
+
+            <!-- Learning Path -->
+            <div class="learning-path">
+                <h3>🧭 শিক্ষার্থীদের জন্য শেখার পথ</h3>
+                <div class="path-steps">
+                    <div class="step">
+                        <div class="step-number">1️⃣</div>
+                        <div class="step-title">বেসিক সিনট্যাক্স এবং সিলেক্টর</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2️⃣</div>
+                        <div class="step-title">বক্স মডেল এবং স্পেসিং</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3️⃣</div>
+                        <div class="step-title">রঙ, ফন্ট এবং টেক্সট</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4️⃣</div>
+                        <div class="step-title">লেআউট এবং পজিশনিং</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5️⃣</div>
+                        <div class="step-title">ফ্লেক্সবক্স এবং গ্রিড</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6️⃣</div>
+                        <div class="step-title">অ্যানিমেশন এবং ট্রানজিশন</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">7️⃣</div>
+                        <div class="step-title">রেসপন্সিভ ডিজাইন</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">8️⃣</div>
+                        <div class="step-title">প্রকল্প ভিত্তিক কাজ</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h3>✅ CSS বেস্ট প্র্যাকটিস</h3>
+                <p>
+                    <strong>১. নামকরণ কনভেনশন:</strong> অর্থপূর্ণ ক্লাস নাম ব্যবহার করুন যেমন <code>.header-main</code> বা <code>.card-title</code>।
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>২. DRY নীতি:</strong> একই স্টাইল বারবার লিখবেন না। ক্লাস এবং মিক্সিন ব্যবহার করুন।
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>३. মোবাইল ফার্স্ট:</strong> প্রথমে মোবাইলের জন্য ডিজাইন করুন, তারপর বড় স্ক্রিনের জন্য বৃদ্ধি করুন।
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>४. Specificity এড়ান:</strong> !important ব্যবহার করবেন না এবং অত্যধিক নেস্টেড সিলেক্টর এড়িয়ে চলুন।
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>५. পারফরম্যান্স:</strong> CSS ফাইল ছোট রাখুন এবং অপ্রয়োজনীয় সিলেক্টর সরান।
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>६. ব্রাউজার সামঞ্জস্য:</strong> বিভিন্ন ব্রাউজারে টেস্ট করুন এবং প্রয়োজনে vendor prefix যোগ করুন।
+                </p>
+            </div>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>ইউনিট</th>
+                    <th>বর্ণনা</th>
+                    <th>ব্যবহার</th>
+                </tr>
+                <tr>
+                    <td>px</td>
+                    <td>পিক্সেল - নিরঙ্কুশ মান</td>
+                    <td>বর্ডার, ছোট প্যাডিং</td>
+                </tr>
+                <tr>
+                    <td>em</td>
+                    <td>প্যারেন্ট ফন্ট সাইজের সাপেক্ষে</td>
+                    <td>রেসপন্সিভ টেক্সট</td>
+                </tr>
+                <tr>
+                    <td>rem</td>
+                    <td>রুট ফন্ট সাইজের সাপেক্ষে</td>
+                    <td>আধুনিক লেআউট</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>প্যারেন্টের শতাংশ</td>
+                    <td>রেসপন্সিভ প্রস্থ</td>
+                </tr>
+                <tr>
+                    <td>vw / vh</td>
+                    <td>ভিউপোর্ট প্রস্থ/উচ্চতা</td>
+                    <td>ফুল স্ক্রিন এলিমেন্ট</td>
+                </tr>
+                <tr>
+                    <td>ch</td>
+                    <td>অক্ষরের প্রস্থ</td>
+                    <td>টাইপোগ্রাফি নিয়ন্ত্রণ</td>
+                </tr>
+                <tr>
+                    <td>fr</td>
+                    <td>গ্রিড ফ্র্যাকশন ইউনিট</td>
+                    <td>গ্রিড লেআউট</td>
+                </tr>
+            </table>
+
+            <div class="tip-box">
+                <h3>🎯 কমন CSS সমস্যা এবং সমাধান</h3>
+                <p>
+                    <strong>সমস্যা:</strong> মার্জিন collapse হয়ে যাচ্ছে।<br>
+                    <strong>সমাধান:</strong> প্যারেন্টে <code>overflow: hidden</code> যোগ করুন বা <code>padding</code> ব্যবহার করুন।
+                </p>
+                <p style="margin-top: 15px;">
+                    <strong>সমস্যা:</strong> ফ্লোটিং এলিমেন্ট কাজ করছে না।<br>
+                    <strong>সমাধান:</strong> Flexbox বা Grid ব্যবহার করুন (float এখন ডিপ্রিকেটেড)।
+                </p>
+                <p style="margin-top: 15px;">
+                    <strong>সমস্যা:</strong> মোবাইলে টেক্সট খুব বড়।<br>
+                    <strong>সমাধান:</strong> মিডিয়া কোয়েরি ব্যবহার করে font-size কমান।
+                </p>
+                <p style="margin-top: 15px;">
+                    <strong>সমস্যা:</strong> z-index কাজ করছে না।<br>
+                    <strong>সমাধান:</strong> নিশ্চিত করুন যে <code>position</code> static নয়।
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>🎨 CSS Complete Reference Guide | robiulislam.org</strong></p>
+            <p>এই সম্পূর্ণ গাইড আপনার ওয়েব ডেভেলপমেন্ট যাত্রায় সাহায্য করার জন্য ডিজাইন করা হয়েছে।</p>
+            <p style="margin-top: 15px;">
+                আরও শিখুন এবং প্র্যাকটিস করুন: <a class="footer-link" href="https://robiulislam.org" target="_blank">robiulislam.org</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #999;">
+                ✨ প্রতিটি দিন নতুন কিছু শিখুন এবং প্রোজেক্ট তৈরি করুন | Made with ❤️ for Students
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const navButtons = document.querySelectorAll('.nav-btn');
+        const sections = document.querySelectorAll('.section');
+
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const sectionId = button.getAttribute('data-section');
+                
+                // Remove active class from all
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                sections.forEach(section => section.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding section
+                button.classList.add('active');
+                document.getElementById(sectionId).classList.add('active');
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                const activeBtn = document.querySelector('.nav-btn.active');
+                const nextBtn = activeBtn.nextElementSibling;
+                if (nextBtn && nextBtn.classList.contains('nav-btn')) {
+                    nextBtn.click();
+                }
+            } else if (e.key === 'ArrowLeft') {
+                const activeBtn = document.querySelector('.nav-btn.active');
+                const prevBtn = activeBtn.previousElementSibling;
+                if (prevBtn && prevBtn.classList.contains('nav-btn')) {
+                    prevBtn.click();
+                }
+            }
+        });
+
+        // Add smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>-name">Element Selector</div>
+                        <div class="property-description">HTML এলিমেন্ট সরাসরি নির্বাচন করে।</div>
+                        <div class="property-example">p { color: blue; }</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">Class Selector</div>
+                        <div class="property-description">ক্লাস নাম দ্বারা এলিমেন্ট নির্বাচন করে।</div>
+                        <div class="property-example">.title { font-size: 24px; }</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">ID Selector</div>
+                        <div class="property-description">অনন্য ID দ্বারা এলিমেন্ট নির্বাচন করে।</div>
+                        <div class="property-example">#main { width: 100%; }</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">Universal Selector</div>
+                        <div class="property-description">সকল এলিমেন্ট নির্বাচন করে।</div>
+                        <div class="property-example">* { margin: 0; }</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">Descendant Selector</div>
+                        <div class="property-description">প্যারেন্টের মধ্যে থাকা চাইল্ড নির্বাচন করে।</div>
+                        <div class="property-example">div p { color: red; }</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">Child Selector</div>
+                        <div class="property-description">সরাসরি চাইল্ড এলিমেন্ট নির্বাচন করে।</div>
+                        <div class="property-example">div > p { color: green; }</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">Attribute Selector</div>
+                        <div class="property-description">নির্দিষ্ট অ্যাট্রিবিউট দ্বারা নির্বাচন করে।</div>
+                        <div class="property-example">input[type="text"] { }</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">Pseudo-class</div>
+                        <div class="property-description">বিশেষ অবস্থা (hover, active ইত্যাদি) নির্বাচন করে।</div>
+                        <div class="property-example">a:hover { color: red; }</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colors & Background -->
+            <div id="colors" class="section">
+                <div class="section-header">
+                    <span class="section-icon">💅</span>
+                    <h2>রং এবং ব্যাকগ্রাউন্ড</h2>
+                </div>
+
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">color</div>
+                        <div class="property-description">টেক্সটের রং নির্ধারণ করে।</div>
+                        <div class="property-example">color: #ff0000;
+color: rgb(255,0,0);
+color: red;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">background-color</div>
+                        <div class="property-description">পটভূমির রং সেট করে।</div>
+                        <div class="property-example">background-color: #f0f0f0;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">background-image</div>
+                        <div class="property-description">পটভূমিতে ছবি যোগ করে।</div>
+                        <div class="property-example">background-image: url('img.jpg');</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">background-size</div>
+                        <div class="property-description">ব্যাকগ্রাউন্ড ইমেজের আকার নির্ধারণ করে।</div>
+                        <div class="property-example">background-size: cover;
+background-size: contain;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">background-position</div>
+                        <div class="property-description">ব্যাকগ্রাউন্ড ইমেজের অবস্থান নির্ধারণ করে।</div>
+                        <div class="property-example">background-position: center;
+background-position: top right;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">background-repeat</div>
+                        <div class="property-description">ব্যাকগ্রাউন্ড ইমেজ পুনরাবৃত্তি নিয়ন্ত্রণ করে।</div>
+                        <div class="property-example">background-repeat: no-repeat;
+background-repeat: repeat-x;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">opacity</div>
+                        <div class="property-description">উপাদানের স্বচ্ছতা (০-১)।</div>
+                        <div class="property-example">opacity: 0.5;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">gradient</div>
+                        <div class="property-description">গ্র্যাডিয়েন্ট পটভূমি তৈরি করে।</div>
+                        <div class="property-example">background: linear-gradient(
+  to right, red, blue);</div>
+                        <span class="badge advanced">অ্যাডভান্সড</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text & Font -->
+            <div id="text" class="section">
+                <div class="section-header">
+                    <span class="section-icon">✍️</span>
+                    <h2>টেক্সট এবং ফন্ট</h2>
+                </div>
+
+                <div class="property-grid">
+                    <div class="property-card">
+                        <div class="property-name">font-family</div>
+                        <div class="property-description">ফন্ট টাইপ নির্ধারণ করে।</div>
+                        <div class="property-example">font-family: 'Arial', 
+  sans-serif;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">font-size</div>
+                        <div class="property-description">ফন্টের আকার নির্ধারণ করে।</div>
+                        <div class="property-example">font-size: 18px;
+font-size: 1.5em;
+font-size: 2rem;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">font-weight</div>
+                        <div class="property-description">ফন্টের ঘনত্ব নির্ধারণ করে।</div>
+                        <div class="property-example">font-weight: bold;
+font-weight: 700;
+font-weight: normal;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">font-style</div>
+                        <div class="property-description">ফন্টকে ইটালিক বা নরমাল করে।</div>
+                        <div class="property-example">font-style: italic;
+font-style: normal;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">text-align</div>
+                        <div class="property-description">টেক্সটের সারিবদ্ধকরণ নির্ধারণ করে।</div>
+                        <div class="property-example">text-align: center;
+text-align: left;
+text-align: right;</div>
+                        <span class="badge">বেসিক</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property-name">text-transform</div>
+                        <div class="property-description">টেক্সটের কেস পরিবর্তন করে।</div>
+                        <div class="property-example">text-transform: uppercase;
+text-transform: lowercase;</div>
+                        <span class="badge intermediate">মাঝারি</span>
+                    </div>
+
+                    <div class="property-card">
+                        <div class="property
