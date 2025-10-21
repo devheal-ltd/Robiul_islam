@@ -901,3 +901,175 @@
         font-size: 1rem;
       }
     }
+    /* Service Cards Container */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Individual Service Item */
+.service-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--primary);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  gap: 1.5rem;
+}
+
+.service-item:hover {
+  transform: translateY(-8px);
+  border-left-color: var(--secondary);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 212, 255, 0.2);
+}
+
+/* Service Content */
+.service-content {
+  flex: 1;
+}
+
+.service-item .icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.service-item b {
+  font-size: 1.2rem;
+  color: #f8fafc;
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Service Buttons Container */
+.service-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Free Resource Button */
+.btn-free {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.85rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), #00d4ff);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-free:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+  background: linear-gradient(135deg, #00e5ff, #00d4ff);
+}
+
+.btn-free:active {
+  transform: translateY(-2px);
+}
+
+/* Syllabus Button */
+.btn-syllabus {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.85rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--secondary), #9333ea);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-syllabus:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+  background: linear-gradient(135deg, #8b5cf6, #9333ea);
+}
+
+.btn-syllabus:active {
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-item {
+    padding: 1.5rem;
+  }
+
+  .service-buttons {
+    gap: 0.75rem;
+  }
+
+  .btn-free, .btn-syllabus {
+    min-width: auto;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-item {
+    padding: 1.2rem;
+  }
+
+  .service-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-free, .btn-syllabus {
+    width: 100%;
+    padding: 0.8rem 1rem;
+  }
+
+  .service-item .icon {
+    font-size: 1.8rem;
+  }
+
+  .service-item b {
+    font-size: 1.1rem;
+  }
+}
