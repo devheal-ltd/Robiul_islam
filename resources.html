@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="title" content="ফ্রি রিসোর্স - HTML, CSS, JavaScript সম্পূর্ণ গাইড | রবিউল ইসলাম">
+    <meta name="description" content="বিনামূল্যে শিখুন HTML, CSS এবং JavaScript - সম্পূর্ণ রেফারেন্স গাইড, টিউটোরিয়াল এবং ডেমো সহ। শিক্ষার্থীদের জন্য সেরা রিসোর্স।">
+    <meta name="keywords" content="HTML tutorial, CSS guide, JavaScript reference, ওয়েব ডেভেলপমেন্ট, শিখুন প্রোগ্রামিং, বাংলায় টিউটোরিয়াল, রবিউল ইসলাম">
+    <meta name="author" content="Robiul Islam">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://robiulislam.org/resources.html">
+    <meta property="og:title" content="ফ্রি রিসোর্স - HTML, CSS, JavaScript">
+    <meta property="og:description" content="বিনামূল্যে শিখুন HTML, CSS এবং JavaScript - সম্পূর্ণ রেফারেন্স গাইড এবং টিউটোরিয়াল।">
+    <meta property="og:locale" content="bn_BD">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ফ্রি রিসোর্স - HTML, CSS, JavaScript">
+    <meta name="twitter:description" content="বিনামূল্যে ওয়েব ডেভেলপমেন্ট শিক্ষা - HTML, CSS, JavaScript সম্পূর্ণ গাইড।">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "ফ্রি লার্নিং রিসোর্স",
+        "description": "HTML, CSS, JavaScript সম্পূর্ণ রেফারেন্স এবং টিউটোরিয়াল",
+        "url": "https://robiulislam.org/resources.html",
+        "creator": {
+            "@type": "Person",
+            "name": "Robiul Islam"
+        },
+        "hasPart": [
+            {
+                "@type": "LearningResource",
+                "name": "HTML Complete Tag Reference",
+                "educationalLevel": "Beginner to Advanced"
+            },
+            {
+                "@type": "LearningResource",
+                "name": "CSS Complete Reference Guide",
+                "educationalLevel": "Beginner to Advanced"
+            },
+            {
+                "@type": "LearningResource",
+                "name": "JavaScript Complete Reference",
+                "educationalLevel": "Beginner to Advanced"
+            }
+        ]
+    }
+    </script>
+    
+    <title>ফ্রি রিসোর্স - HTML, CSS, JavaScript গাইড | Robiul Islam</title>
+    <link rel="icon" type="image/svg+xml" href="image/logo-image/favico1.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --border: #e2e8f0;
+            --success: #48BB78;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 25px 100px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border);
+            position: sticky;
+            top: -20px;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.3em;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            animation: slideDown 0.8s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 80px 40px;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 60px;
+            border-left: 5px solid var(--primary);
+            text-align: center;
+        }
+
+        .intro-box h2 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .intro-box p {
+            color: var(--text-light);
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* Resource Grid */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+            border-top-color: var(--secondary);
+        }
+
+        .card-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 3.5em;
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .card-content h3 {
+            font-size: 1.6em;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .card-content p {
+            color: var(--text-light);
+            font-size: 0.95em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .features li {
+            color: var(--text-light);
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .btn-access {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-access:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Why Section */
+        .why-section {
+            background: var(--bg-light);
+            padding: 60px 40px;
+            border-radius: 18px;
+            margin-bottom: 60px;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .why-section h2 {
+            font-size: 2.2em;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .why-item-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .why-item h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .why-item p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .footer-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            header {
+                padding: 50px 20px;
+            }
+
+            .intro-box {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .resource-card {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .resource-card:nth-child(1) { animation-delay: 0.1s; }
+        .resource-card:nth-child(2) { animation-delay: 0.2s; }
+        .resource-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .breadcrumb {
+            padding: 15px 40px;
+            background: var(--bg-light);
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <a href="index.html" class="logo">🏠 Robiul Islam</a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">সেবা</a></li>
+                <li><a href="index.html#process">পদ্ধতি</a></li>
+                <li><a href="index.html#review">রিভিউ</a></li>
+                <li><a href="tel:+8801733017521">📞 যোগাযোগ</a></li>
+            </ul>
+        </nav>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="index.html">হোম</a> › ফ্রি রিসোর্স
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>📚 শিখুন বিনামূল্যে</h1>
+            <p>প্রোগ্রামিং এর সম্পূর্ণ রেফারেন্স গাইড - HTML, CSS এবং JavaScript</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Intro Box -->
+            <div class="intro-box">
+                <h2>🎯 আপনার শেখার যাত্রা শুরু করুন</h2>
+                <p>এই বিনামূল্যের সম্পূর্ণ রিসোর্স দিয়ে ওয়েব ডেভেলপমেন্ট শিখুন। প্রতিটি গাইড বিস্তারিত, সহজবোধ্য এবং বাংলায় লেখা।</p>
+            </div>
+
+            <!-- Resource Cards -->
+            <div class="resource-grid">
+                <!-- HTML Card -->
+                <div class="resource-card">
+                    <div class="card-icon">📝</div>
+                    <div class="card-content">
+                        <h3>HTML সম্পূর্ণ গাইড</h3>
+                        <p>HTML5 এর সব ট্যাগ, অ্যাট্রিবিউট এবং সেমান্টিক উপাদান শিখুন সংগঠিতভাবে।</p>
+                        <ul class="features">
+                            <li>সব HTML5 ট্যাগ</li>
+                            <li>ফর্ম এবং ইনপুট</li>
+                            <li>মিডিয়া উপাদান</li>
+                            <li>বাস্তব উদাহরণ</li>
+                        </ul>
+                        <a href="html-reference.html" class="btn-access">📖 শুরু করুন</a>
+                    </div>
+                </div>
+
+                <!-- CSS Card -->
+                <div class="resource-card">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-content">
+                        <h3>CSS সম্পূর্ণ রেফারেন্স</h3>
+                        <p>সিলেক্টর থেকে গ্রিড পর্যন্ত - আধুনিক CSS এর সবকিছু এক জায়গায়।</p>
+                        <ul class="features">
+                            <li>সব প্রপার্টি এবং ভ্যালু</li>
+                            <li>ফ্লেক্সবক্স এবং গ্রিড</li>
+                            <li>অ্যানিমেশন এবং ট্রানজিশন</li>
+                            <li>রেসপন্সিভ ডিজাইন</li>
+                        </ul>
+                        <a href="css-reference.html" class="btn-access">🎨 শুরু করুন</a>
+                    </div>
+                </div>
+
+                <!-- JavaScript Card -->
+                <div class="resource-card">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-content">
+                        <h3>JavaScript সম্পূর্ণ গাইড</h3>
+                        <p>বিগিনার থেকে অ্যাডভান্সড পর্যন্ত - সব JavaScript কনসেপ্ট বিস্তারিতভাবে।</p>
+                        <ul class="features">
+                            <li>ভেরিয়েবল এবং ডেটা টাইপ</li>
+                            <li>ফাংশন এবং অবজেক্ট</li>
+                            <li>DOM এবং ইভেন্ট</li>
+                            <li>লাইভ ডেমো এবং উদাহরণ</li>
+                        </ul>
+                        <a href="javascript-reference.html" class="btn-access">⚡ শুরু করুন</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Section -->
+            <div class="why-section">
+                <h2>কেন এই রিসোর্স ব্যবহার করবেন?</h2>
+                <div class="why-grid">
+                    <div class="why-item">
+                        <div class="why-item-icon">✅</div>
+                        <h3>সম্পূর্ণ বিনামূল্যে</h3>
+                        <p>কোন লুকানো খরচ নেই, সবকিছু একদম ফ্রি</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-item-icon">🇧🇩</div>
+                        <h3>বাংলায় লেখা</h3>
+                        <p>মাতৃভাষায় সহজ এবং স্পষ্ট ব্যাখ্যা</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-item-icon">🎯</div>
+                        <h3>বিগিনার থেকে অ্যাডভান্সড</h3>
+                        <p>সব লেভেলের শিক্ষার্থীদের জন্য উপযুক্ত</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-item-icon">💻</div>
+                        <h3>লাইভ ডেমো এবং উদাহরণ</h3>
+                        <p>প্রতিটি টপিক এর সাথে ব্যবহারিক উদাহরণ</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-item-icon">📱</div>
+                        <h3>সবকিছুতে কাজ করে</h3>
+                        <p>মোবাইল, ট্যাবলেট এবং কম্পিউটারে নিখুঁত</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-item-icon">🚀</div>
+                        <h3>দ্রুত এবং সুবিধাজনক</h3>
+                        <p>কোন ডাউনলোড বা সাইন আপের প্রয়োজন নেই</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 60px 40px; border-radius: 18px; color: white; text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.2em; margin-bottom: 20px;">আরও গভীর শেখার জন্য</h2>
+                <p style="font-size: 1.1em; margin-bottom: 30px; opacity: 0.95;">আমার সাথে ওয়ান-টু-ওয়ান কোচিং নিন এবং আপনার দক্ষতা বাড়ান</p>
+                <a href="tel:+8801733017521" style="display: inline-block; background: white; color: var(--primary); padding: 16px 40px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1.05em; transition: all 0.3s ease;">📞 একটি কল বুক করুন</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>ফ্রি রিসোর্স হাব - Robiul Islam</strong></p>
+            <p>সব রিসোর্স শিক্ষার্থীদের জন্য সম্পূর্ণ বিনামূল্যে উপলব্ধ</p>
+            <p style="margin-top: 20px; opacity: 0.8;">
+                আরও জানতে: <a href="https://robiulislam.org" class="footer-link">robiulislam.org</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">
+                © 2025 Robiul Islam | সকল অধিকার সংরক্ষিত
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.resource-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
