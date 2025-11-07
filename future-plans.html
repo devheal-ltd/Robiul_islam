@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the future projects of Robiul Islam including DevHeal (technology & development), Global Islamic Care (Islamic knowledge), and All Skill Here (skills learning). A complete platform for technology, education, and Islamic guidance.">
+    <meta name="keywords" content="Robiul Islam, DevHeal, Global Islamic Care, All Skill Here, প্রযুক্তি, ইসলামী শিক্ষা, দক্ষতা উন্নয়ন">
+    <meta property="og:title" content="Robiul Islam - Smart Solutions Through Programming & Islamic Knowledge">
+    <meta property="og:description" content="ডিজিটাল সমাধান, ইসলামী জ্ঞান এবং দক্ষতা উন্নয়নে আপনার সঙ্গী">
+    <meta property="og:image" content="https://robiulislam.org/og-image.jpg">
+    <title>My Future Plans – DevHeal, Global Islamic Care, All Skill Here | Robiul Islam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #10b981;
+            --accent-color: #f59e0b;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6366f1, #10b981);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #6366f1, #764ba2);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            text-align: center;
+            color: white;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .tagline {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: 600;
+            animation: fadeInUp 0.8s ease;
+            animation-fill-mode: both;
+        }
+
+        .tag:nth-child(1) { animation-delay: 0.1s; }
+        .tag:nth-child(2) { animation-delay: 0.2s; }
+        .tag:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: -3rem auto 4rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Cards Grid */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 40px 80px rgba(99, 102, 241, 0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .card-title-highlight {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .card-features li {
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .card-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .card-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            border: none;
+        }
+
+        .card-btn:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .about-item {
+            padding: 1.5rem;
+        }
+
+        .about-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .about-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 4rem;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .contact-label {
+            display: block;
+            font-size: 0.85rem;
+            opacity: 0.85;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                margin: -2rem auto 2rem;
+                padding: 0 1rem;
+            }
+
+            .platforms-grid {
+                gap: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .contact-info {
+                gap: 1.5rem;
+            }
+
+            .about-section {
+                padding: 2rem;
+            }
+
+            .contact-section {
+                padding: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Robiul Islam</div>
+            <div class="nav-links">
+                <a href="#platforms">প্ল্যাটফর্ম</a>
+                <a href="#about">পরিচয়</a>
+                <a href="#contact" class="contact-btn">যোগাযোগ করুন</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>স্মার্ট সমাধনের মাধ্যমে <span style="color: #fbbf24;">আপনার ভবিষ্যৎ</span> গড়ুন</h1>
+        <p class="hero-subtitle">প্রযুক্তি, ইসলামী জ্ঞান এবং পেশাদার দক্ষতা উন্নয়নে আমরা আপনার সঙ্গী</p>
+        
+        <div class="tagline">
+            <div class="tag">💻 প্রযুক্তি সমাধান</div>
+            <div class="tag">📚 ইসলামী শিক্ষা</div>
+            <div class="tag">🎯 দক্ষতা উন্নয়ন</div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Platforms Section -->
+        <section id="platforms" class="platforms-grid">
+            <!-- DevHeal Card -->
+            <div class="card scroll-animate">
+                <div class="card-icon">💻</div>
+                <h3><span class="card-title-highlight">DevHeal</span></h3>
+                <p style="font-weight: 600; color: var(--primary-color);">স্মার্ট প্রযুক্তি সমাধান</p>
+                <p>আপনার ব্যবসা ও প্রকল্পের জন্য আধুনিক ডিজিটাল সমাধান তৈরি করি। অ্যাপ ডেভেলপমেন্ট থেকে সম্পূর্ণ ওয়েব সলিউশন—সব কিছুই এক জায়গায়।</p>
+                <ul class="card-features">
+                    <li>অ্যাপ ডেভেলপমেন্ট</li>
+                    <li>ওয়েব ডিজাইন ও উন্নয়ন</li>
+                    <li>সফটওয়্যার সমাধান</li>
+                    <li>ডিজিটাল পরামর্শ সেবা</li>
+                </ul>
+                <a href="https://devheal.com/" target="_blank" class="card-btn">ভিজিট করুন →</a>
+            </div>
+
+            <!-- Global Islamic Care Card -->
+            <div class="card scroll-animate">
+                <div class="card-icon">📖</div>
+                <h3><span class="card-title-highlight">Global Islamic Care</span></h3>
+                <p style="font-weight: 600; color: var(--secondary-color);">বিশ্বব্যাপী ইসলামী শিক্ষা</p>
+                <p>কুরআন, হাদীস এবং ইসলামী জীবনধারা সম্পর্কে সহজ, সুন্দর এবং বাস্তবসম্মত জ্ঞান শিখুন। সকল বয়সের মানুষের জন্য উন্মুক্ত।</p>
+                <ul class="card-features">
+                    <li>কুরআন-হাদীস শিক্ষা</li>
+                    <li>ইসলামী গল্প ও আখ্যান</li>
+                    <li>নৈতিক মূল্যবোধ শিক্ষা</li>
+                    <li>জীবন ঘনিষ্ঠ দিকনির্দেশনা</li>
+                </ul>
+                <a href="https://globalislamiccare.com/" target="_blank" class="card-btn">ভিজিট করুন →</a>
+            </div>
+
+            <!-- All Skill Here Card -->
+            <div class="card scroll-animate">
+                <div class="card-icon">🎓</div>
+                <h3><span class="card-title-highlight">All Skill Here</span></h3>
+                <p style="font-weight: 600; color: var(--accent-color);">যেকোনো দক্ষতা শিখুন সহজে</p>
+                <p>প্রোগ্রামিং, মার্কেটিং, ভাষা থেকে সৃজনশীলতা—সব ধরনের দক্ষতা এক প্ল্যাটফর্মে। শিক্ষানবিস থেকে পেশাদার সবার জন্য।</p>
+                <ul class="card-features">
+                    <li>প্রোগ্রামিং কোর্স</li>
+                    <li>ডিজিটাল মার্কেটিং</li>
+                    <li>ভাষা শিক্ষা</li>
+                    <li>ব্যক্তিগত উন্নয়ন কর্মশালা</li>
+                </ul>
+                <a href="http://allskillhere.com/" target="_blank" class="card-btn">ভিজিট করুন →</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section scroll-animate">
+            <h2>কেন এই তিনটি প্ল্যাটফর্ম?</h2>
+            <div class="about-grid">
+                <div class="about-item">
+                    <h3>🌟 সম্পূর্ণ সমাধান</h3>
+                    <p>প্রযুক্তি, শিক্ষা এবং দক্ষতা—তিনটি পাশাপাশি পেয়ে আপনার সার্বিক উন্নয়ন নিশ্চিত করুন।</p>
+                </div>
+                <div class="about-item">
+                    <h3>💡 সহজ ও সুলভ</h3>
+                    <p>জটিল বিষয়গুলোকে সহজ ভাষায় উপস্থাপন করা হয় যাতে সবাই বুঝতে পারে।</p>
+                </div>
+                <div class="about-item">
+                    <h3>🤝 কমিউনিটি চালিত</h3>
+                    <p>একটি দায়বদ্ধ কমিউনিটির অংশ হয়ে অন্যদের সাথে শিখুন এবং বৃদ্ধি পান।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section scroll-animate">
+            <h2>আমাদের সাথে যোগাযোগ করুন</h2>
+            <p>যেকোনো প্রশ্ন বা পরামর্শের জন্য আমরা সর্বদা প্রস্তুত।</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">📱 ফোন</span>
+                    <a href="tel:+8801733017521">+880 1733-017-521</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">📧 ইমেইল</span>
+                    <a href="mailto:org.robiulislam@gmail.com">org.robiulislam@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">🌐 মূল ওয়েবসাইট</span>
+                    <a href="https://robiulislam.org/" target="_blank">robiulislam.org</a>
+                </div>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.2); display: inline-block;">
+                <p style="margin: 0; font-size: 0.95rem;">📍 আমরা বিশ্বব্যাপী সেবা প্রদান করি</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Robiul Islam. সকল অধিকার সংরক্ষিত।</p>
+        <p style="font-size: 0.9rem; opacity: 0.7;">তিনটি প্ল্যাটফর্মের মাধ্যমে ডিজিটাল বাংলাদেশ গড়ি, একসাথে।</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Update contact number - change the placeholder number to your actual number
+        // Replace +8801700000000 with your actual WhatsApp/Phone number
+    </script>
+</body>
+</html>
