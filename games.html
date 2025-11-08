@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Games - robiulislam.org</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            margin-top: 10px;
+            opacity: 0.85;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Game Categories */
+        .categories-section {
+            margin-bottom: 60px;
+        }
+
+        .category {
+            margin-bottom: 45px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid #fff;
+            font-weight: 600;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .game-card:hover::before {
+            left: 100%;
+        }
+
+        .game-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .game-card h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .game-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .download-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .download-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .download-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Platform Icons */
+        .platform-info {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            color: white;
+        }
+
+        .platform-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .platforms {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .platform {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .platform-icon {
+            font-size: 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: white;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .category-title {
+                font-size: 1.5rem;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .game-card {
+                padding: 20px;
+            }
+
+            .download-badge {
+                font-size: 0.7rem;
+                padding: 6px 10px;
+            }
+        }
+
+        /* Coming Soon Badge */
+        .coming-soon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎮 Educational Games</h1>
+            <p>Develop Skills While Having Fun</p>
+            <p class="subtitle">Android & iOS Available</p>
+        </div>
+
+        <!-- Games Categories -->
+        <div class="categories-section">
+            
+            <!-- Memory Booster Games -->
+            <div class="category">
+                <div class="category-title">🧠 Memory Booster Games</div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🎯</div>
+                        <h3>MindMatch</h3>
+                        <p>Match patterns and improve your memory with challenging levels.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.mindmatch" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/mindmatch" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">⚡</div>
+                        <h3>FlashMemory</h3>
+                        <p>Quick memory flash cards to enhance recall speed and accuracy.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.flashmemory" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/flashmemory" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🔄</div>
+                        <h3>Pattern Recall</h3>
+                        <p>Remember and reproduce complex patterns to train visual memory.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.patternrecall" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/patternrecall" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🎴</div>
+                        <h3>Quick Cards</h3>
+                        <p>Fast-paced card matching game for memory enhancement.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.quickcards" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/quickcards" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logic & Puzzle Games -->
+            <div class="category">
+                <div class="category-title">🧩 Logic & Puzzle Games</div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🔲</div>
+                        <h3>BrainGrid</h3>
+                        <p>Solve grid-based logic puzzles to sharpen your problem-solving skills.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.braingrid" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/braingrid" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🧠</div>
+                        <h3>SmartPuzzle</h3>
+                        <p>Progressive puzzle challenges for intellectual development.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.smartpuzzle" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/smartpuzzle" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🎲</div>
+                        <h3>Logic Master</h3>
+                        <p>Master logical reasoning with increasingly difficult levels.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.logicmaster" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/logicmaster" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">💭</div>
+                        <h3>ThinkSharp</h3>
+                        <p>Keep your mind sharp with daily logic challenges.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.thinksharp" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/thinksharp" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educational Quiz Games -->
+            <div class="category">
+                <div class="category-title">📚 Educational Quiz Games</div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🎓</div>
+                        <h3>KnowQuest</h3>
+                        <p>Embark on a quest to expand your general knowledge.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.knowquest" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/knowquest" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">❓</div>
+                        <h3>QuizMaster</h3>
+                        <p>Challenge yourself with diverse quiz categories and difficulty levels.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.quizmaster" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/quizmaster" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">📖</div>
+                        <h3>SmartLearn Quiz</h3>
+                        <p>Learn while you play with educational quiz content.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.smartlearnquiz" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/smartlearnquiz" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">⭐</div>
+                        <h3>GeniusChallenge</h3>
+                        <p>Become a genius with our comprehensive knowledge challenges.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.geniuschallenge" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/geniuschallenge" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Islamic Learning Games -->
+            <div class="category">
+                <div class="category-title">☪️ Islamic Learning Games</div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🕌</div>
+                        <h3>DeenQuest</h3>
+                        <p>Journey through Islamic knowledge and teachings.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.deenquest" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/deenquest" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🤲</div>
+                        <h3>Salah Trainer</h3>
+                        <p>Learn and practice the correct method of performing Salah.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.salahtrainer" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/salahtrainer" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🔤</div>
+                        <h3>Arabic Alpha Adventure</h3>
+                        <p>Master Arabic alphabets and basic words through interactive lessons.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.arabicalpha" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/arabicalpha" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">📜</div>
+                        <h3>Prophet Stories Journey</h3>
+                        <p>Explore inspiring stories of Islamic prophets.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.prophetstories" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/prophetstories" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">📿</div>
+                        <h3>Qur'an Word Match</h3>
+                        <p>Match Qur'anic words and build familiarity with the Qur'an.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.quranmatch" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/quranmatch" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy & Planning Games -->
+            <div class="category">
+                <div class="category-title">🎯 Strategy & Planning Games</div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🏗️</div>
+                        <h3>PlanCraft</h3>
+                        <p>Develop strategic planning skills through building challenges.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.plancraft" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/plancraft" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🏙️</div>
+                        <h3>SmartCity Builder</h3>
+                        <p>Build and manage your own smart city with resource management.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.smartcity" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/smartcity" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🚜</div>
+                        <h3>Farm Strategy Pro</h3>
+                        <p>Master agricultural strategies and farm management.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.farmstrategy" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/farmstrategy" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">👑</div>
+                        <h3>Resource Empire</h3>
+                        <p>Build your empire by managing resources strategically.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.resourceempire" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/resourceempire" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing & Reflex Games -->
+            <div class="category">
+                <div class="category-title">⌨️ Typing & Reflex Games</div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">✍️</div>
+                        <h3>TypeSpeed Pro</h3>
+                        <p>Increase your typing speed and accuracy with progressive challenges.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.typespeed" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/typespeed" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">⚡</div>
+                        <h3>QuickReflex</h3>
+                        <p>Test and improve your reaction time with quick reflexes.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.quickreflex" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/quickreflex" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🚀</div>
+                        <h3>Reaction Rush</h3>
+                        <p>Race against time in fast-paced reaction games.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.reactionrush" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/reactionrush" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">👆</div>
+                        <h3>TapFast</h3>
+                        <p>Tap fast and accurately to achieve high scores.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.tapfast" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/tapfast" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Math Learning Games -->
+            <div class="category">
+                <div class="category-title">🔢 Math Learning Games</div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🦸</div>
+                        <h3>MathHero</h3>
+                        <p>Become a math hero by solving equations and calculations.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.mathhero" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/mathhero" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">⚡</div>
+                        <h3>FastMath Challenge</h3>
+                        <p>Challenge your math skills with speed and accuracy.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.fastmath" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/fastmath" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🥋</div>
+                        <h3>Number Ninja</h3>
+                        <p>Master number manipulation through ninja-style challenges.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.numberninja" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/numberninja" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🏃</div>
+                        <h3>Math Sprint</h3>
+                        <p>Sprint through math problems in this fast-paced game.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.mathsprint" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/mathsprint" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calmness & Emotion Control Games -->
+            <div class="category">
+                <div class="category-title">🧘 Calmness & Emotion Control Games</div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🌿</div>
+                        <h3>CalmQuest</h3>
+                        <p>Find inner peace through calming challenges and meditation.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.calmquest" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/calmquest" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🌊</div>
+                        <h3>FocusFlow</h3>
+                        <p>Achieve deep focus and mindfulness with flow-based games.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.focusflow" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/focusflow" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">☪️</div>
+                        <h3>Sabr Challenge</h3>
+                        <p>Build patience (Sabr) through Islamic principles and practice.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.sabr" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/sabr" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🧩</div>
+                        <h3>PeaceMind Puzzle</h3>
+                        <p>Solve puzzles while maintaining inner peace and tranquility.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.peacemind" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/peacemind" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Life Skills & Productivity Games -->
+            <div class="category">
+                <div class="category-title">🌟 Life Skills & Productivity Games</div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">✅</div>
+                        <h3>HabitBuilder</h3>
+                        <p>Build positive habits and track your daily progress.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.habitbuilder" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/habitbuilder" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">💰</div>
+                        <h3>BudgetMaster</h3>
+                        <p>Master financial planning and budget management skills.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.budgetmaster" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/budgetmaster" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">⏱️</div>
+                        <h3>TimeManager</h3>
+                        <p>Learn efficient time management through interactive challenges.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.timemanager" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/timemanager" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="game-icon">🎯</div>
+                        <h3>LifeSkill Academy</h3>
+                        <p>Comprehensive life skills training through gamified learning.</p>
+                        <div class="download-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.robiulislam.lifeskills" class="download-badge" target="_blank">🤖 Play Store</a>
+                            <a href="https://apps.apple.com/app/lifeskills" class="download-badge" target="_blank">🍎 App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Platform Information -->
+        <div class="platform-info">
+            <h3>📱 Available on All Platforms</h3>
+            <div class="platforms">
+                <div class="platform">
+                    <span class="platform-icon">🍎</span>
+                    <span>iOS</span>
+                </div>
+                <div class="platform">
+                    <span class="platform-icon">🤖</span>
+                    <span>Android</span>
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.95rem;">Download links will be available soon on Google Play Store and Apple App Store</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2025 robiulislam.org | All Educational Games | Develop Skills While Having Fun</p>
+        </div>
+    </div>
+</body>
+</html>
