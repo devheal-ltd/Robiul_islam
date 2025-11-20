@@ -874,7 +874,419 @@
   25% { transform: scale(1.2); }
   50% { transform: scale(1); }
 }
+/* ============================================
+   🖼️ BANNER CAROUSEL STYLES - সব সার্ভিস
+   ============================================ */
 
+.banner-carousel {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin-top: 80px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Carousel Slides */
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Slide Background Image */
+.carousel-slide img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Slide Overlay with Gradient */
+.slide-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.85) 0%,
+    rgba(15, 23, 42, 0.5) 50%,
+    rgba(0, 212, 255, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+/* Slide Content */
+.slide-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  padding: 0 20px;
+  animation: slideContentFadeIn 0.8s ease-out;
+}
+
+@keyframes slideContentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Badge */
+.slide-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(0, 212, 255, 0.15);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  border-radius: 30px;
+  color: #00d4ff;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  animation: slideInDown 0.6s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Title */
+.slide-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #00d4ff, #00f5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: slideInUp 0.7s ease-out 0.1s both;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Description */
+.slide-description {
+  font-size: 18px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  animation: slideInUp 0.7s ease-out 0.2s both;
+}
+
+/* Slide Button */
+.slide-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #00d4ff, #0084ff);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+  animation: slideInUp 0.7s ease-out 0.3s both;
+}
+
+.slide-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+}
+
+.slide-btn:active {
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   Navigation Dots
+   ============================================ */
+
+.carousel-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+.dot.active {
+  background: #00d4ff;
+  width: 32px;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.dot:hover {
+  background: rgba(0, 212, 255, 0.8);
+  transform: scale(1.2);
+}
+
+/* ============================================
+   Navigation Arrows
+   ============================================ */
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 50%;
+  color: #00d4ff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.carousel-prev {
+  left: 20px;
+}
+
+.carousel-next {
+  right: 20px;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0, 212, 255, 0.3);
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* ============================================
+   Auto-play Indicator Bar
+   ============================================ */
+
+.autoplay-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 212, 255, 0.1);
+  z-index: 9;
+}
+
+.indicator-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4ff, #0084ff);
+  width: 0%;
+  animation: autoplayProgress 6s linear infinite;
+}
+
+@keyframes autoplayProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .banner-carousel {
+    height: 500px;
+    margin-top: 70px;
+  }
+
+  .slide-title {
+    font-size: 42px;
+  }
+
+  .slide-description {
+    font-size: 16px;
+  }
+
+  .slide-btn {
+    padding: 10px 28px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-carousel {
+    height: 400px;
+    margin-top: 70px;
+  }
+
+  .slide-content {
+    padding: 0 15px;
+  }
+
+  .slide-badge {
+    font-size: 12px;
+    padding: 6px 16px;
+    margin-bottom: 12px;
+  }
+
+  .slide-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .slide-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .slide-btn {
+    padding: 10px 24px;
+    font-size: 13px;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .carousel-prev {
+    left: 10px;
+  }
+
+  .carousel-next {
+    right: 10px;
+  }
+
+  .carousel-dots {
+    bottom: 20px;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot.active {
+    width: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-carousel {
+    height: 300px;
+    margin-top: 60px;
+  }
+
+  .slide-content {
+    padding: 0 10px;
+  }
+
+  .slide-badge {
+    font-size: 11px;
+    padding: 5px 14px;
+    margin-bottom: 10px;
+  }
+
+  .slide-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .slide-description {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .slide-btn {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .carousel-prev {
+    left: 8px;
+  }
+
+  .carousel-next {
+    right: 8px;
+  }
+
+  .carousel-dots {
+    bottom: 15px;
+    gap: 6px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dot.active {
+    width: 24px;
+  }
+}
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .footer-container {
