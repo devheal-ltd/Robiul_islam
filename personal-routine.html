@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Speaking Practice Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .verb-list {
+            margin-bottom: 40px;
+        }
+
+        .verb-item {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .verb-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+        }
+
+        .verb-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .verb-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 12px;
+        }
+
+        .tense-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .tense {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .tense-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .tense-english {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .tense-bengali {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .question-row {
+            background: #fff3cd;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+
+        .question-label {
+            font-size: 11px;
+            color: #856404;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .question-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .question-item {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ffc107;
+        }
+
+        .question-english {
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .question-bengali {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .practice-section {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border: 2px solid #667eea;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .practice-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .practice-title::before {
+            content: "✨";
+            font-size: 24px;
+        }
+
+        .practice-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .practice-steps {
+            display: grid;
+            gap: 18px;
+        }
+
+        .step {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .step-content {
+            margin-top: 8px;
+        }
+
+        .step-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .step-example {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #666;
+            border-left: 3px solid #ffc107;
+        }
+
+        .step-example-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .example-item {
+            margin: 5px 0;
+            padding-left: 15px;
+        }
+
+        .example-item::before {
+            content: "→";
+            margin-right: 8px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .quote-section strong {
+            display: block;
+            margin: 12px 0;
+            font-size: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .tense-row,
+            .question-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .practice-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Daily English Speaking Practice</h1>
+            <p>15 Essential Verbs with Present, Past & Future Tenses</p>
+        </div>
+
+        <div class="content">
+            <div class="verb-list">
+                <!-- 1. Eat -->
+                <div class="verb-item">
+                    <div class="verb-number">1</div>
+                    <div class="verb-title">Eat</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I eat rice</div>
+                            <div class="tense-bengali">আমি ভাত খাই</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I ate rice</div>
+                            <div class="tense-bengali">আমি ভাত খেয়েছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will eat rice</div>
+                            <div class="tense-bengali">আমি ভাত খাব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you eat rice?</div>
+                                <div class="question-bengali">তুমি কি ভাত খাও?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you eat rice?</div>
+                                <div class="question-bengali">তুমি কি ভাত খেয়েছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you eat rice?</div>
+                                <div class="question-bengali">তুমি কি ভাত খাবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Read -->
+                <div class="verb-item">
+                    <div class="verb-number">2</div>
+                    <div class="verb-title">Read</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I read books</div>
+                            <div class="tense-bengali">আমি বই পড়ি</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I read books (past: /red/)</div>
+                            <div class="tense-bengali">আমি বই পড়েছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will read books</div>
+                            <div class="tense-bengali">আমি বই পড়ব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you read books?</div>
+                                <div class="question-bengali">তুমি কি বই পড়ো?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you read books?</div>
+                                <div class="question-bengali">তুমি কি বই পড়েছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you read books?</div>
+                                <div class="question-bengali">তুমি কি বই পড়বে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Write -->
+                <div class="verb-item">
+                    <div class="verb-number">3</div>
+                    <div class="verb-title">Write</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I write a letter</div>
+                            <div class="tense-bengali">আমি চিঠি লিখি</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I wrote a letter</div>
+                            <div class="tense-bengali">আমি চিঠি লিখেছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will write a letter</div>
+                            <div class="tense-bengali">আমি চিঠি লিখব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you write a letter?</div>
+                                <div class="question-bengali">তুমি কি চিঠি লেখ?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you write a letter?</div>
+                                <div class="question-bengali">তুমি কি চিঠি লিখেছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you write a letter?</div>
+                                <div class="question-bengali">তুমি কি চিঠি লিখবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Go -->
+                <div class="verb-item">
+                    <div class="verb-number">4</div>
+                    <div class="verb-title">Go</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I go to school</div>
+                            <div class="tense-bengali">আমি স্কুলে যাই</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I went to school</div>
+                            <div class="tense-bengali">আমি স্কুলে গিয়েছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will go to school</div>
+                            <div class="tense-bengali">আমি স্কুলে যাব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you go to school?</div>
+                                <div class="question-bengali">তুমি কি স্কুলে যাও?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you go to school?</div>
+                                <div class="question-bengali">তুমি কি স্কুলে গিয়েছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you go to school?</div>
+                                <div class="question-bengali">তুমি কি স্কুলে যাবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Come -->
+                <div class="verb-item">
+                    <div class="verb-number">5</div>
+                    <div class="verb-title">Come</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I come home</div>
+                            <div class="tense-bengali">আমি বাড়ি আসি</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I came home</div>
+                            <div class="tense-bengali">আমি বাড়ি এসেছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will come home</div>
+                            <div class="tense-bengali">আমি বাড়ি আসব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you come home?</div>
+                                <div class="question-bengali">তুমি কি বাড়ি আসো?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you come home?</div>
+                                <div class="question-bengali">তুমি কি বাড়ি এসেছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you come home?</div>
+                                <div class="question-bengali">তুমি কি বাড়ি আসবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Drink -->
+                <div class="verb-item">
+                    <div class="verb-number">6</div>
+                    <div class="verb-title">Drink</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I drink water</div>
+                            <div class="tense-bengali">আমি পানি খাই</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I drank water</div>
+                            <div class="tense-bengali">আমি পানি খেয়েছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will drink water</div>
+                            <div class="tense-bengali">আমি পানি খাব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you drink water?</div>
+                                <div class="question-bengali">তুমি কি পানি খাও?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you drink water?</div>
+                                <div class="question-bengali">তুমি কি পানি খেয়েছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you drink water?</div>
+                                <div class="question-bengali">তুমি কি পানি খাবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Play -->
+                <div class="verb-item">
+                    <div class="verb-number">7</div>
+                    <div class="verb-title">Play</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I play football</div>
+                            <div class="tense-bengali">আমি ফুটবল খেলি</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I played football</div>
+                            <div class="tense-bengali">আমি ফুটবল খেলেছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will play football</div>
+                            <div class="tense-bengali">আমি ফুটবল খেলব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you play football?</div>
+                                <div class="question-bengali">তুমি কি ফুটবল খেলো?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you play football?</div>
+                                <div class="question-bengali">তুমি কি ফুটবল খেলেছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you play football?</div>
+                                <div class="question-bengali">তুমি কি ফুটবল খেলবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Take Rest -->
+                <div class="verb-item">
+                    <div class="verb-number">8</div>
+                    <div class="verb-title">Take Rest</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I take rest</div>
+                            <div class="tense-bengali">আমি বিশ্রাম নিই</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I took rest</div>
+                            <div class="tense-bengali">আমি বিশ্রাম নিয়েছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will take rest</div>
+                            <div class="tense-bengali">আমি বিশ্রাম নেব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you take rest?</div>
+                                <div class="question-bengali">তুমি কি বিশ্রাম নাও?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you take rest?</div>
+                                <div class="question-bengali">তুমি কি বিশ্রাম নিয়েছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you take rest?</div>
+                                <div class="question-bengali">তুমি কি বিশ্রাম নেবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Learn -->
+                <div class="verb-item">
+                    <div class="verb-number">9</div>
+                    <div class="verb-title">Learn</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I learn English</div>
+                            <div class="tense-bengali">আমি ইংরেজি শিখি</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I learned English</div>
+                            <div class="tense-bengali">আমি ইংরেজি শিখেছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will learn English</div>
+                            <div class="tense-bengali">আমি ইংরেজি শিখব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you learn English?</div>
+                                <div class="question-bengali">তুমি কি ইংরেজি শিখো?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you learn English?</div>
+                                <div class="question-bengali">তুমি কি ইংরেজি শিখেছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you learn English?</div>
+                                <div class="question-bengali">তুমি কি ইংরেজি শিখবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Teach -->
+                <div class="verb-item">
+                    <div class="verb-number">10</div>
+                    <div class="verb-title">Teach</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I teach students</div>
+                            <div class="tense-bengali">আমি ছাত্রদের পড়াই</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I taught students</div>
+                            <div class="tense-bengali">আমি পড়িয়েছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will teach students</div>
+                            <div class="tense-bengali">আমি পড়াব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you teach students?</div>
+                                <div class="question-bengali">তুমি কি ছাত্রদের পড়াও?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you teach students?</div>
+                                <div class="question-bengali">তুমি কি ছাত্রদের পড়িয়েছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you teach students?</div>
+                                <div class="question-bengali">তুমি কি ছাত্রদের পড়াবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Cook -->
+                <div class="verb-item">
+                    <div class="verb-number">11</div>
+                    <div class="verb-title">Cook</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I cook food</div>
+                            <div class="tense-bengali">আমি রান্না করি</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I cooked food</div>
+                            <div class="tense-bengali">আমি রান্না করেছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will cook food</div>
+                            <div class="tense-bengali">আমি রান্না করব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you cook food?</div>
+                                <div class="question-bengali">তুমি কি রান্না করো?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you cook food?</div>
+                                <div class="question-bengali">তুমি কি রান্না করেছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you cook food?</div>
+                                <div class="question-bengali">তুমি কি রান্না করবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Clean -->
+                <div class="verb-item">
+                    <div class="verb-number">12</div>
+                    <div class="verb-title">Clean</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I clean my room</div>
+                            <div class="tense-bengali">আমি রুম পরিষ্কার করি</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I cleaned my room</div>
+                            <div class="tense-bengali">আমি পরিষ্কার করেছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will clean my room</div>
+                            <div class="tense-bengali">আমি পরিষ্কার করব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you clean your room?</div>
+                                <div class="question-bengali">তুমি কি তোমার রুম পরিষ্কার করো?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you clean your room?</div>
+                                <div class="question-bengali">তুমি কি পরিষ্কার করেছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you clean your room?</div>
+                                <div class="question-bengali">তুমি কি পরিষ্কার করবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. Watch -->
+                <div class="verb-item">
+                    <div class="verb-number">13</div>
+                    <div class="verb-title">Watch</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I watch TV</div>
+                            <div class="tense-bengali">আমি TV দেখি</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I watched TV</div>
+                            <div class="tense-bengali">আমি TV দেখেছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will watch TV</div>
+                            <div class="tense-bengali">আমি TV দেখব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you watch TV?</div>
+                                <div class="question-bengali">তুমি কি TV দেখো?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you watch TV?</div>
+                                <div class="question-bengali">তুমি কি TV দেখেছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you watch TV?</div>
+                                <div class="question-bengali">তুমি কি TV দেখবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Open -->
+                <div class="verb-item">
+                    <div class="verb-number">14</div>
+                    <div class="verb-title">Open</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I open the door</div>
+                            <div class="tense-bengali">আমি দরজা খুলি</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I opened the door</div>
+                            <div class="tense-bengali">আমি দরজা খুলেছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will open the door</div>
+                            <div class="tense-bengali">আমি দরজা খুলব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you open the door?</div>
+                                <div class="question-bengali">তুমি কি দরজা খুলো?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you open the door?</div>
+                                <div class="question-bengali">তুমি কি দরজা খুলেছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you open the door?</div>
+                                <div class="question-bengali">তুমি কি দরজা খুলবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Close -->
+                <div class="verb-item">
+                    <div class="verb-number">15</div>
+                    <div class="verb-title">Close</div>
+                    <div class="tense-row">
+                        <div class="tense">
+                            <div class="tense-label">Present</div>
+                            <div class="tense-english">I close the window</div>
+                            <div class="tense-bengali">আমি জানালা বন্ধ করি</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Past</div>
+                            <div class="tense-english">I closed the window</div>
+                            <div class="tense-bengali">আমি বন্ধ করেছিলাম</div>
+                        </div>
+                        <div class="tense">
+                            <div class="tense-label">Future</div>
+                            <div class="tense-english">I will close the window</div>
+                            <div class="tense-bengali">আমি বন্ধ করব</div>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <div class="question-label">Questions</div>
+                        <div class="question-grid">
+                            <div class="question-item">
+                                <div class="question-english">Do you close the window?</div>
+                                <div class="question-bengali">তুমি কি জানালা বন্ধ করো?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Did you close the window?</div>
+                                <div class="question-bengali">তুমি কি জানালা বন্ধ করেছিলে?</div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-english">Will you close the window?</div>
+                                <div class="question-bengali">তুমি কি জানালা বন্ধ করবে?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Section -->
+            <div class="practice-section">
+                <div class="practice-title">Super Simple Speaking Practice Method</div>
+                <div class="practice-subtitle">(Only 10 Lines a Day)</div>
+
+                <div class="practice-steps">
+                    <!-- Step 1 -->
+                    <div class="step">
+                        <div class="step-number">1️⃣</div>
+                        <div class="step-content">
+                            <div class="step-text">আপনার তালিকা থেকে যেকোনো ১০টি লাইন মার্ক করুন।</div>
+                            <div class="step-example">
+                                <div class="step-example-title">উদাহরণ:</div>
+                                <div class="example-item">Eat, Read, Write, Go, Come... ইত্যাদি থেকে</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step">
+                        <div class="step-number">2️⃣</div>
+                        <div class="step-content">
+                            <div class="step-text">প্রতিদিন শুধু এই ১০টি লাইন জোরে জোরে বলবেন:</div>
+                            <div class="step-example">
+                                <div class="step-example-title">তিনভাবে পড়ুন:</div>
+                                <div class="example-item">Present</div>
+                                <div class="example-item">Past</div>
+                                <div class="example-item">Future</div>
+                            </div>
+                            <div class="step-text" style="margin-top: 12px; color: #667eea; font-weight: 600;">→ এভাবে আপনার জিভ, কান এবং ব্রেইন ইংরেজির সাথে অভ্যস্ত হয়ে যাবে।</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step">
+                        <div class="step-number">3️⃣</div>
+                        <div class="step-content">
+                            <div class="step-text">দিনের মধ্যে যেকোনো কাজ করার সময় যদি সেই ১০টি লাইনের কোনোটা আপনার জীবনে ঘটে — আপনি সঙ্গে সঙ্গে ইংরেজিতে বলবেন।</div>
+                            <div class="step-example">
+                                <div class="step-example-title">উদাহরণ:</div>
+                                <div class="example-item">আপনি পানি খাচ্ছেন → বলবেন: I am drinking water.</div>
+                                <div class="example-item">আপনি বই পড়ছেন → বলবেন: I am reading a book.</div>
+                            </div>
+                            <div class="step-text" style="margin-top: 12px; color: #667eea; font-weight: 600;">👉 এই ছোট ছোট লাইভ-সিচুয়েশন প্র্যাকটিসই আপনাকে দ্রুত স্পিকিং-এ উন্নতি করাবে।</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step">
+                        <div class="step-number">4️⃣</div>
+                        <div class="step-content">
+                            <div class="step-text">প্রতিদিন ১০টি লাইন শিখলে ৩০ দিনে আপনার ৩০০+ লাইনের স্পিকিং প্র্যাকটিস হয়ে যাবে — যা Beginner থেকে Confident Speaker হতে সবচেয়ে কার্যকর পদ্ধতি।</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote Section -->
+            <div class="quote-section">
+                <div style="font-size: 16px; line-height: 1.8;">
+                    <strong>"আপনি চাইলে খুব সহজভাবে প্রতিদিন মাত্র ১০টি লাইন প্র্যাকটিস করতে পারেন।"</strong>
+                    <div>তালিকার যেকোনো ১০টি লাইন মার্ক করবেন এবং Present–Past–Future তিনভাবে উচ্চারণ করবেন।</div>
+                    <div>এছাড়া দিনের মধ্যে যদি কোনো কাজ সেই লাইনের সাথে মিলে যায়, তখনই ইংরেজিতে বলবেন।</div>
+                    <strong style="color: #ffc107; display: block; margin-top: 15px;">এই ছোট প্র্যাকটিসটুকু আপনাকে খুব দ্রুত ফ্লুয়েন্ট স্পিকিং-এ সাহায্য করবে ইনশাআল্লাহ।</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><a href="index.html">© Robiul Islam</a></p>
+        </div>
+    </div>
+</body>
+</html>
